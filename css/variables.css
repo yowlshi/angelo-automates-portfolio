@@ -1,0 +1,35 @@
+:root {
+
+    /* Brand */
+
+    --primary: #FF6240;
+    --primary-dark: #E44F2E;
+
+    /* Text */
+
+    --heading: #302F2F;
+    --heading-secondary: #333333;
+    --body: #666666;
+
+    /* Background */
+
+    --white: #FFFFFF;
+    --section: #F8F9FA;
+    --border: #EAEAEA;
+
+    /* Navbar */
+
+    --navbar: #333333;
+
+    /* Effects */
+
+    --radius: 18px;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    /* Layout */
+
+    --container: 1200px;
+
+}
