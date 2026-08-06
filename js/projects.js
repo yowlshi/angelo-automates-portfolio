@@ -668,7 +668,7 @@ lessons: [
 
         "OpenAI",
 
-        "OCR.Space",
+        "OCR Space",
 
         "Google Drive",
 
