@@ -609,7 +609,7 @@ lessons: [
     image: "assets/images/AI-Powered Invoice Management Agent Through Telegram_modal hero.png",
 
     overview:
-        "Built an AI-powered Telegram assistant capable of extracting invoice information from uploaded documents, structuring the extracted data, and providing summarized responses for easier invoice management.",
+        "AI-powered invoice processing workflow that extracts invoice data using OCR and GPT-4o, validates duplicate records before insertion, stores structured data in Google Sheets, uploads invoice images to Google Drive, and sends automated invoice summaries through Telegram.",
 
     problem:
         "Processing invoices manually is repetitive, time-consuming, and prone to data entry errors.",
