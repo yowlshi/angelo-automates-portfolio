@@ -106,19 +106,19 @@ lessons: [
     workflow: {
     image: "assets/images/AI Dental Appointment Setter_wa.png",
     description:
-        "The workflow receives a natural language question, processes it using OpenAI, queries PostgreSQL through n8n, and returns conversational insights."
+        "This workflow uses Vapi AI, n8n, Airtable, and Google Calendar to automate the entire dental appointment booking process. The AI voice assistant answers incoming calls, checks calendar availability, confirms patient details, creates appointments, and records booking information in Airtable, reducing manual scheduling and improving response times."
 },
 
 challenges: [
-    "Designed prompts that consistently generated accurate SQL queries.",
-    "Handled conversational context to improve follow-up questions.",
-    "Structured the workflow for maintainability and scalability."
+    "Integrated real-time Google Calendar availability with conversational AI.",
+    "Managed conversation branching for available and unavailable appointment slots.",
+    "Ensured reliable synchronization between Vapi, n8n, Airtable, and Google Calendar."
 ],
 
 lessons: [
-    "Prompt engineering significantly affects SQL generation quality.",
-    "Breaking workflows into modular nodes improves debugging.",
-    "Combining AI with automation platforms enables powerful business applications."
+    "Modular workflows simplify debugging and future enhancements.",
+    "Careful prompt engineering improves the AI's conversational accuracy.",
+    "Combining voice AI with workflow automation significantly reduces administrative workload while improving the patient experience."
 ],
 
     features: [
@@ -185,19 +185,19 @@ lessons: [
     workflow: {
     image: "assets/images/RAG Employee Handbook Assistant_wa.png",
     description:
-        "The workflow receives a natural language question, processes it using OpenAI, queries PostgreSQL through n8n, and returns conversational insights."
+        "This workflow implements a Retrieval-Augmented Generation (RAG) system using OpenAI, n8n, Supabase Vector Store, and Google Drive. Employee handbook documents are automatically ingested, chunked, embedded, and stored in a vector database, enabling employees to ask natural language questions and receive accurate, context-aware answers sourced directly from company documentation."
 },
 
 challenges: [
-    "Designed prompts that consistently generated accurate SQL queries.",
-    "Handled conversational context to improve follow-up questions.",
-    "Structured the workflow for maintainability and scalability."
+    "Optimized document chunking to improve retrieval accuracy.",
+    "Configured embedding dimensions to match the Supabase Vector Store requirements.",
+    "Reduced hallucinations by ensuring responses were grounded only in retrieved handbook content."
 ],
 
 lessons: [
-    "Prompt engineering significantly affects SQL generation quality.",
-    "Breaking workflows into modular nodes improves debugging.",
-    "Combining AI with automation platforms enables powerful business applications."
+    "High-quality document preprocessing has a major impact on RAG performance.",
+    "Vector databases enable fast and scalable semantic search across large document collections.",
+    "Grounding AI responses with retrieved context produces more reliable and trustworthy answers than relying solely on the language model."
 ],
 
     features: [
