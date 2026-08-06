@@ -74,7 +74,7 @@ lessons: [
 
     ],
 
-    github: href="",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/SQL%20AI%20Sales%20Analytics%20Assistant",
 
     demo: href="https://drive.google.com/file/d/1C35anRxbbnb36Dz8n1Pm0LIHx8sZbrUS/view?usp=sharing"
 
@@ -153,7 +153,7 @@ lessons: [
 
     ],
 
-    github: href="",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/AI%20Dental%20Appointment%20Setter",
 
     demo: href="https://drive.google.com/file/d/14XY2mK7uQPuPhWIXZlSuV3kY2nKOIayI/view?usp=sharing"
 
@@ -237,7 +237,7 @@ lessons: [
 
     ],
 
-    github: href= "",
+    github: href= "https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/RAG-Powered%20Employee%20Handbook%20Assistant",
 
     demo: href="https://drive.google.com/file/d/1s-6Cvgi6wNuXmzTxRQbe76H00jxNMUrb/view?usp=sharing"
 
@@ -302,7 +302,7 @@ lessons: [
         "assets/images/Full Context AI Assistant (Prompt-Based)_gallery.png"
     ],
 
-    github: "",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/Full%20Context%20AI%20Assistant%20-%20Prompt%20Based",
 
     demo: href="https://drive.google.com/file/d/1y00Vgwb4m_Bk-oID_X-5OkaAqoNa_bpp/view?usp=sharing"
 },
@@ -367,7 +367,7 @@ lessons: [
         "assets/images/Full Context AI Assistant (Prompt-Based Flexible)_gallery.png"
     ],
 
-    github: "",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/Full%20Context%20AI%20Assistant%20-%20Prompt%20Based%20Flexible",
 
     demo: href="https://drive.google.com/file/d/1gf2h73vgWXjWWq47j_q9kQFewaON7UfD/view?usp=sharing"
 },
@@ -432,7 +432,7 @@ lessons: [
         "assets/images/Full Context AI Assistant (Tool-Based)_gallery.png"
     ],
 
-    github: "",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/Full%20Context%20AI%20Assistant%20-%20Tool%20Based",
 
     demo: href="https://drive.google.com/file/d/1ZvORo79RuPMjzWWytG6Hdf6403eyIF3O/view?usp=sharing"
 },
@@ -499,7 +499,7 @@ lessons: [
 
     ],
 
-    github: "",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/Facebook%20Messenger%20AI%20Inquiry%20Assistant",
 
     demo: href="https://drive.google.com/file/d/18OKBxVZsRCFrzGMZt-CisnYN8rHSNkjn/view?usp=sharing"
 },
@@ -589,7 +589,7 @@ lessons: [
 
     ],
 
-    github: "",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/AI%20Sales%20Data%20Assistant",
 
     demo: href="https://drive.google.com/file/d/1DXfl4su5Fu9cqSiXezmeplKnAm_3Am7J/view?usp=sharing"
 
@@ -682,7 +682,7 @@ lessons: [
 
     ],
 
-    github: "",
+    github: href="https://github.com/yowlshi/n8n-AI-Automation-Portfolio/tree/84b35874b18d5afc339d08ce1b2d44fd96d1dca2/AI-Powered%20Invoice%20Management%20Agent",
 
     demo: href="https://drive.google.com/file/d/1Xzk9AauZG3KkX3TmVVTRzuxTD7ToGzIX/view?usp=sharing"
 
