@@ -668,6 +668,8 @@ lessons: [
 
         "OpenAI",
 
+        "OCR.Space",
+
         "Google Drive",
 
         "Google Sheet"
