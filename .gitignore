@@ -1,3 +1,8 @@
 .DS_Store
 Thumbs.db
 .vscode/settings.json
+
+# Full-resolution original working screenshots stay local-only.
+# Public, optimized copies live one level up in assets/images/projects/<project>/.
+# (Only affects untracked files; source files committed earlier remain tracked.)
+assets/images/projects/*/source/
