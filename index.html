@@ -876,9 +876,10 @@
       <div class="booking" id="book" data-reveal>
         <div class="booking-intro">
           <h3>Book a call</h3>
-          <p>Send a short note about the process you want to automate and a few times that suit you. I'll reply with a calendar invite.</p>
-          <!-- To restore the embedded GoHighLevel calendar: set href and data-src to a working booking-widget URL; js/site.js loads it on click. -->
-          <a class="btn btn-primary" id="load-booking" href="mailto:angelo.automates@gmail.com?subject=Call%20request%20%E2%80%94%20automation%20project" data-src="">Email to book a call</a>
+          <p>Pick a time for a discovery call. The calendar is provided by GoHighLevel and loads only when you open it.</p>
+          <!-- js/site.js embeds data-src on click; without JS the link opens the calendar in a new tab. Leave data-src empty to make this a plain link. -->
+          <a class="btn btn-primary" id="load-booking" href="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" target="_blank" rel="noopener" data-src="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me">Open booking calendar</a>
+          <p class="booking-fallback">Calendar not loading? <a href="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:angelo.automates@gmail.com?subject=Call%20request%20%E2%80%94%20automation%20project">angelo.automates@gmail.com</a>.</p>
         </div>
         <div class="booking-frame" id="booking-frame" hidden></div>
       </div>

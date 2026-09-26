@@ -572,7 +572,10 @@ figcaption strong { color: var(--text); font-weight: 600; }
 .booking-intro h3 { font-size: var(--fs-h3); line-height: 1.3; letter-spacing: -0.01em; }
 .booking-intro p { margin-top: var(--s2); font-size: var(--fs-body-sm); color: var(--muted); }
 .booking-intro .btn { margin-top: var(--s5); }
+.booking-intro p.booking-fallback { margin-top: var(--s4); font-size: var(--fs-caption); }
+.booking-fallback a { display: inline-block; padding-block: 0.6rem; margin-block: -0.6rem; }
 .booking-frame { border-top: 1px solid var(--line); }
+.booking-status { padding: var(--s4) clamp(1.25rem, 0.75rem + 2vw, 2rem) 0; font-size: var(--fs-body-sm); color: var(--muted); }
 .booking-frame iframe { display: block; width: 100%; height: 860px; border: 0; background: #fff; }
 
 /* ---------- Footer ---------- */

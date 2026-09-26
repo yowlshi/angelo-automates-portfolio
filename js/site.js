@@ -52,14 +52,18 @@
     if (e.metaKey || e.ctrlKey || e.shiftKey) return; // let modified clicks open a tab
     e.preventDefault();
     if (!bookingFrame.firstChild) {
+      const status = document.createElement('p');
+      status.className = 'booking-status';
+      status.setAttribute('role', 'status');
+      status.textContent = 'Loading calendar…';
       const iframe = document.createElement('iframe');
       iframe.src = bookingBtn.dataset.src;
       iframe.title = 'Booking calendar for a call with Angelo Torrevillas';
-      bookingFrame.append(iframe);
+      iframe.addEventListener('load', () => { status.textContent = ''; status.hidden = true; }, { once: true });
+      bookingFrame.append(status, iframe);
     }
     bookingFrame.hidden = false;
-    bookingBtn.textContent = 'Calendar loaded below';
-    bookingBtn.setAttribute('aria-disabled', 'true');
+    bookingBtn.textContent = 'Calendar opened below';
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     bookingFrame.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
   });
