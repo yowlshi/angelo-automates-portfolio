@@ -625,12 +625,14 @@ details[open] > summary .sum-icon { transform: rotate(45deg); }
 
 /* ---------- Footer ---------- */
 /* A signature, not a section: two-tone name and role on one side, plain text links on the other. */
-/* Bottom padding keeps the fixed back-to-top button clear of the links at the page end. */
-.site-footer { padding-block: var(--s8) calc(46px + var(--s5) + var(--s3)); border-top: 1px solid var(--line); background: var(--bg-band); font-size: var(--fs-label); color: var(--muted); }
+.site-footer { padding-block: var(--s8); border-top: 1px solid var(--line); background: var(--bg-band); font-size: var(--fs-label); color: var(--muted); }
 .footer-sign { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3) var(--s8); }
 .footer-name { font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem); line-height: 1.25; letter-spacing: -0.02em; font-weight: 650; color: var(--text); }
 .footer-role { margin-top: var(--s1); line-height: 1.5; }
 .footer-social { display: flex; flex-wrap: wrap; gap: 0 var(--s4); margin-inline: calc(-1 * var(--s1)); }
+/* Below ~1400px the fixed back-to-top button lands in the links' column at the page end;
+   reserve its width beside the links rather than padding the bottom of the page. */
+@media (max-width: 87.49rem) { .footer-social { margin-right: calc(46px + var(--s4)); } }
 .footer-social a {
   position: relative; display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--s1);
   font-size: var(--fs-label); font-weight: 550; color: var(--muted); text-decoration: none;
