@@ -663,7 +663,7 @@
           <ol class="flow">
             <li><div><strong>Sync invoices</strong><span>Accounting adapter → idempotent upsert into PostgreSQL</span></div></li>
             <li><div><strong>Plan chases</strong><span>Eligibility rules, one consolidated reminder per customer at its highest tier</span></div></li>
-            <li class="human"><div><strong>Large invoices held <em>Human decision</em></strong><span>Above the approval threshold, reminders wait for a person and are never auto-sent</span></div></li>
+            <li class="human"><div><strong>Final notices held <em>Never auto-sent</em></strong><span>Invoices 45 or more days overdue: the final notice is held, based on invoice age, not amount</span></div></li>
             <li><div><strong>Dispatch</strong><span>Atomic claim → re-check payment → allowlist → kill switch → send</span></div></li>
             <li><div><strong>Route replies</strong><span>Keyword pre-filter, then AI classification with a confidence floor</span></div></li>
             <li><div><strong>Audit trail</strong><span>Every sent, blocked, superseded or failed outcome is recorded</span></div></li>
@@ -671,7 +671,7 @@
         </div>
         <div class="case-body">
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Invoice sync with stable, duplicate-free upserts</li><li>Eligibility and escalation-tier decisions</li><li>Per-customer consolidation and outbox de-duplication</li><li>Template rendering per tier</li><li>Reply triage: opt-out, bounce, out-of-office, promise-to-pay, dispute</li></ul></div>
-          <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Reminders above the approval threshold stay in <em>awaiting approval</em>; dispatch cannot claim them</li><li>Low-confidence reply classifications aren't acted on automatically</li><li>An operator can stop all sending with the kill switch</li></ul></div>
+          <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Final notices for invoices 45 or more days overdue stay in <em>awaiting approval</em>; dispatch cannot claim them, and no approval step is built yet</li><li>Low-confidence reply classifications aren't acted on automatically</li><li>An operator can stop all sending with the kill switch</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>Atomic claim — a single <code>UPDATE … RETURNING</code></li><li>Send-time revalidation: paid or closed invoices are superseded, not sent</li><li>Recipient-domain allowlist</li><li>Kill switch that safely releases claimed rows</li><li>AI classifier has no tools and no write access to financial state</li></ul></div>
         </div>
         <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 4 images</span></p>
