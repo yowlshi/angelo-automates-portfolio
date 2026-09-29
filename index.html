@@ -615,12 +615,11 @@
       <div class="booking" data-reveal>
         <div class="booking-intro">
           <h3>Book a discovery call</h3>
-          <p>Pick a time that suits you. The calendar is provided by GoHighLevel and loads only when you open it.</p>
-          <!-- js/site.js embeds data-src on click; without JS the link opens the calendar in a new tab. Leave data-src empty to make this a plain link. -->
-          <a class="btn btn-primary" id="load-booking" href="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" target="_blank" rel="noopener" data-src="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me">Open booking calendar</a>
+          <p>Pick a time that suits you. The calendar is provided by GoHighLevel and loads as you reach this section.</p>
           <p class="booking-fallback">Calendar not loading? <a href="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:angelo.automates@gmail.com?subject=Call%20request%20%E2%80%94%20automation%20project">angelo.automates@gmail.com</a>.</p>
         </div>
-        <div class="booking-frame" id="booking-frame" hidden></div>
+        <!-- js/site.js embeds data-src as the visitor nears this section; without JS the links above are the way in. -->
+        <div class="booking-frame" id="booking-frame" data-src="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" hidden></div>
       </div>
     </div>
   </section>

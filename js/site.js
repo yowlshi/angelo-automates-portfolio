@@ -2,7 +2,37 @@
 (() => {
   const root = document.documentElement;
   const header = document.querySelector('.site-header');
-  const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Booking calendar: the third-party iframe loads once, as the visitor nears it (not on page load).
+  // Kept first so its no-IntersectionObserver fallback still runs if later features fail.
+  const bookingFrame = document.getElementById('booking-frame');
+  if (bookingFrame && bookingFrame.dataset.src) {
+    const status = document.createElement('p');
+    status.className = 'booking-status';
+    status.setAttribute('role', 'status');
+    status.textContent = 'The calendar loads as you reach it.';
+    bookingFrame.append(status);
+    bookingFrame.hidden = false;   // shown only with JS; hidden elements are never observed
+    let loaded = false;
+    const loadBooking = () => {
+      if (loaded) return;
+      loaded = true;
+      status.textContent = 'Loading calendar…';
+      const iframe = document.createElement('iframe');
+      iframe.src = bookingFrame.dataset.src;
+      iframe.title = 'Booking calendar for a call with Angelo Torrevillas';
+      iframe.addEventListener('load', () => { status.textContent = ''; status.hidden = true; }, { once: true });
+      bookingFrame.append(iframe);
+    };
+    if ('IntersectionObserver' in window) {
+      const bookingIo = new IntersectionObserver(entries => {
+        if (entries.some(e => e.isIntersecting)) { bookingIo.disconnect(); loadBooking(); }
+      }, { rootMargin: '300px 0px' });
+      bookingIo.observe(bookingFrame);
+    } else {
+      loadBooking();
+    }
+  }
 
   // Theme: dark by default, light as the alternate; remembered per visitor
   const themeBtn = document.querySelector('.theme-toggle');
@@ -192,27 +222,4 @@
     if (expanded && firstHidden) firstHidden.querySelector('h3 a').focus({ preventScroll: true });
   });
   render();
-
-  // Booking calendar: third-party iframe loads only on request
-  const bookingBtn = document.getElementById('load-booking');
-  const bookingFrame = document.getElementById('booking-frame');
-  bookingBtn.addEventListener('click', e => {
-    if (!bookingBtn.dataset.src) return;               // no calendar configured: plain link
-    if (e.metaKey || e.ctrlKey || e.shiftKey) return; // let modified clicks open a tab
-    e.preventDefault();
-    if (!bookingFrame.firstChild) {
-      const status = document.createElement('p');
-      status.className = 'booking-status';
-      status.setAttribute('role', 'status');
-      status.textContent = 'Loading calendar…';
-      const iframe = document.createElement('iframe');
-      iframe.src = bookingBtn.dataset.src;
-      iframe.title = 'Booking calendar for a call with Angelo Torrevillas';
-      iframe.addEventListener('load', () => { status.textContent = ''; status.hidden = true; }, { once: true });
-      bookingFrame.append(status, iframe);
-    }
-    bookingFrame.hidden = false;
-    bookingBtn.textContent = 'Calendar opened below';
-    bookingFrame.scrollIntoView({ block: 'start', behavior: reduceMotion() ? 'auto' : 'smooth' });
-  });
 })();
