@@ -59,15 +59,15 @@
     body.scrollTop = 0;
     const title = node.querySelector('.case-title');
     if (title) dialog.setAttribute('aria-labelledby', title.id);
-    root.classList.add('dialog-open');
     dialog.showModal();
+    syncScrollLock();
     dialog.querySelector('.dialog-close').focus();
     return true;
   };
   dialog.addEventListener('close', () => {
     if (current && home) { home.replaceWith(current); }
     current = home = null;
-    root.classList.remove('dialog-open');
+    syncScrollLock();
     if (trigger && document.contains(trigger)) trigger.focus();
     trigger = null;
   });
@@ -78,6 +78,85 @@
     if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
     if (openCase(a.dataset.case, a)) e.preventDefault();
   });
+
+  // Image viewer: its own modal layer over the case dialog. Without JS, gallery links open the image file.
+  const viewer = document.getElementById('viewer');
+  const vStage = viewer.querySelector('.viewer-stage');
+  const vImg = viewer.querySelector('.viewer-img');
+  const vCount = viewer.querySelector('.viewer-count');
+  const vCap = viewer.querySelector('.viewer-cap');
+  const vPrev = viewer.querySelector('.viewer-prev');
+  const vNext = viewer.querySelector('.viewer-next');
+  const vZoom = viewer.querySelector('.viewer-zoom');
+  let shots = [], index = 0, canZoom = false, origin = null;
+  function syncScrollLock() { root.classList.toggle('dialog-open', dialog.open || viewer.open); }
+  const setZoom = on => {
+    viewer.classList.toggle('is-zoomed', on);
+    vZoom.setAttribute('aria-pressed', String(on));
+    vZoom.setAttribute('aria-label', on ? 'Fit image to screen' : 'Show actual size');
+    if (on) { vStage.tabIndex = 0; vStage.setAttribute('aria-label', 'Image at actual size, scrollable'); }
+    else { vStage.removeAttribute('tabindex'); vStage.removeAttribute('aria-label'); }
+    vStage.scrollTo(0, 0);
+  };
+  const show = i => {
+    index = (i + shots.length) % shots.length;
+    const link = shots[index];
+    const thumb = link.querySelector('img');
+    const cap = link.closest('figure').querySelector('figcaption');
+    const w = +thumb.getAttribute('width'), h = +thumb.getAttribute('height');
+    setZoom(false);
+    vImg.width = w; vImg.height = h;
+    vImg.src = link.href;
+    vImg.alt = thumb.alt;
+    vCount.textContent = `${index + 1} / ${shots.length}`;
+    vCap.textContent = cap ? cap.textContent.trim() : '';
+    // "Actual size" only helps when the image is larger than the space it is fitted into
+    canZoom = w > vStage.clientWidth + 1 || h > vStage.clientHeight + 1;
+    vZoom.hidden = !canZoom;
+    viewer.classList.toggle('can-zoom', canZoom);
+  };
+  const openViewer = link => {
+    shots = [...link.closest('.gallery-wrap').querySelectorAll('.shot-link')];
+    vPrev.hidden = vNext.hidden = shots.length < 2;
+    viewer.showModal();
+    syncScrollLock();
+    show(shots.indexOf(link));
+    viewer.querySelector('.viewer-close').focus();
+    origin = link;
+  };
+  viewer.addEventListener('close', () => {
+    vImg.removeAttribute('src');
+    setZoom(false);
+    syncScrollLock();
+    if (origin && document.contains(origin)) origin.focus();   // back to the thumbnail; the case dialog stays open
+    origin = null;
+  });
+  viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+  vPrev.addEventListener('click', () => show(index - 1));
+  vNext.addEventListener('click', () => show(index + 1));
+  vZoom.addEventListener('click', () => setZoom(!viewer.classList.contains('is-zoomed')));
+  vImg.addEventListener('click', () => { if (canZoom) setZoom(!viewer.classList.contains('is-zoomed')); });
+  vStage.addEventListener('click', e => { if (e.target === vStage) viewer.close(); });   // empty space only, never the image
+  viewer.addEventListener('keydown', e => {
+    if (shots.length < 2 || viewer.classList.contains('is-zoomed')) return;   // zoomed: arrows scroll the image
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(index - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+  });
+  let touchX = null, touchY = 0;
+  vStage.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }, { passive: true });
+  vStage.addEventListener('touchend', e => {
+    if (touchX === null || shots.length < 2 || viewer.classList.contains('is-zoomed')) { touchX = null; return; }
+    const dx = e.changedTouches[0].clientX - touchX, dy = e.changedTouches[0].clientY - touchY;
+    touchX = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a.shot-link');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    openViewer(a);
+  });
+
   if (location.hash.startsWith('#case-')) openCase(location.hash.slice(1));
 
   // All builds: filters + "show all"

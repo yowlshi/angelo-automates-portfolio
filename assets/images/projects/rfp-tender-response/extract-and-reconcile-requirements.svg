@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-126 -47 700 2362" width="700" height="2362" role="img" aria-labelledby="t">
+<title id="t">n8n workflow graph: 03 Extract and Reconcile Requirements</title>
+<style>
+.e{fill:none;stroke:#C9C1B9;stroke-width:1.6}
+.e.ai{stroke-dasharray:4 4}
+.n rect{fill:#fff;stroke:#DCD5CE;stroke-width:1.2}
+.n text{font:500 12px Inter,system-ui,sans-serif;fill:#1F1D1B;text-anchor:middle}
+.n.trigger rect{stroke:#FF6240;stroke-width:2}
+.n.human rect{fill:#FFF1EC;stroke:#D9481F;stroke-width:1.6}
+.n.ai rect{fill:#F4F1EE}
+.n.sub rect{fill:#F4F1EE;stroke-dasharray:3 3}
+.n.sub text{font-size:11px;fill:#5E5A56}
+</style>
+<rect x="-126" y="-47" width="700" height="2362" fill="#FAF8F6"/>
+<path d="M0 23 C0 47 0 37 0 61" class="e"/>
+<path d="M0 107 C0 131 0 121 0 145" class="e"/>
+<path d="M0 191 C0 215 0 205 0 229" class="e"/>
+<path d="M0 191 C0 215 224 205 224 229" class="e"/>
+<path d="M0 275 C0 299 0 289 0 313" class="e"/>
+<path d="M0 359 C0 383 0 373 0 397" class="e"/>
+<path d="M0 359 C0 383 224 373 224 397" class="e"/>
+<path d="M224 443 C224 467 224 457 224 481" class="e"/>
+<path d="M224 527 C224 551 224 541 224 565" class="e"/>
+<path d="M224 611 C224 635 224 625 224 649" class="e"/>
+<path d="M224 611 C224 635 448 625 448 649" class="e"/>
+<path d="M224 695 C224 719 224 709 224 733" class="e"/>
+<path d="M448 695 C448 719 224 709 224 733" class="e"/>
+<path d="M224 779 C224 803 224 793 224 817" class="e"/>
+<path d="M224 863 C224 887 224 877 224 901" class="e"/>
+<path d="M224 863 C224 887 448 877 448 901" class="e"/>
+<path d="M224 947 C224 971 224 961 224 985" class="e"/>
+<path d="M448 947 C448 971 224 961 224 985" class="e"/>
+<path d="M224 1031 C224 1055 224 1045 224 1069" class="e"/>
+<path d="M224 1115 C224 1139 224 1129 224 1153" class="e"/>
+<path d="M224 1199 C224 1223 224 1213 224 1237" class="e"/>
+<path d="M224 1283 C224 1307 224 1297 224 1321" class="e"/>
+<path d="M224 1283 C224 1307 448 1297 448 1321" class="e"/>
+<path d="M224 1367 C224 1391 224 1381 224 1405" class="e"/>
+<path d="M224 1367 C224 1391 448 1381 448 1405" class="e"/>
+<path d="M224 1451 C224 1475 224 1465 224 1489" class="e"/>
+<path d="M448 1451 C448 1512 224 1512 224 1573" class="e"/>
+<path d="M224 1535 C224 1559 224 1549 224 1573" class="e"/>
+<path d="M224 1619 C224 1643 224 1633 224 1657" class="e"/>
+<path d="M224 1703 C224 1727 224 1717 224 1741" class="e"/>
+<path d="M224 1787 C224 1811 224 1801 224 1825" class="e"/>
+<path d="M224 1871 C224 1895 224 1885 224 1909" class="e"/>
+<path d="M224 1955 C224 1979 224 1969 224 1993" class="e"/>
+<path d="M224 2039 C224 2063 224 2053 224 2077" class="e"/>
+<path d="M224 2123 C224 2147 224 2137 224 2161" class="e"/>
+<path d="M224 2207 C224 2231 224 2221 224 2245" class="e"/>
+<g class="n trigger"><rect x="-102" y="-23" width="204" height="46" rx="9"/><text x="0" y="4">Receive Document Uploaded</text></g>
+<g class="n sub"><rect x="-102" y="61" width="204" height="46" rx="9"/><text x="0" y="88">Check Automation Enabled</text></g>
+<g class="n step"><rect x="-102" y="145" width="204" height="46" rx="9"/><text x="0" y="172">Route on Automation Enabled</text></g>
+<g class="n step"><rect x="-102" y="229" width="204" height="46" rx="9"/><text x="0" y="256">Check Extraction Status</text></g>
+<g class="n step"><rect x="122" y="229" width="204" height="46" rx="9"/><text x="224" y="256">Return Automation Disabled</text></g>
+<g class="n step"><rect x="-102" y="313" width="204" height="46" rx="9"/><text x="0" y="340">Route on Already Processed</text></g>
+<g class="n step"><rect x="-102" y="397" width="204" height="46" rx="9"/><text x="0" y="424">Return Already Processed</text></g>
+<g class="n step"><rect x="122" y="397" width="204" height="46" rx="9"/><text x="224" y="424">Fetch Tender Document Set</text></g>
+<g class="n step"><rect x="122" y="481" width="204" height="46" rx="9"/><text x="224" y="508">Shape Document Set</text></g>
+<g class="n step"><rect x="122" y="565" width="204" height="46" rx="9"/><text x="224" y="592">Route on Request Doc Present</text></g>
+<g class="n sub"><rect x="122" y="649" width="204" height="46" rx="9"/><text x="224" y="676">Parse Request Document</text></g>
+<g class="n step"><rect x="346" y="649" width="204" height="46" rx="9"/><text x="448" y="676">Skip Request Parse</text></g>
+<g class="n step"><rect x="122" y="733" width="204" height="46" rx="9"/><text x="224" y="760">Merge Request Parse Result</text></g>
+<g class="n step"><rect x="122" y="817" width="204" height="46" rx="9"/><text x="224" y="844">Route on Matrix Present</text></g>
+<g class="n sub"><rect x="122" y="901" width="204" height="46" rx="9"/><text x="224" y="928">Parse Response Matrix</text></g>
+<g class="n step"><rect x="346" y="901" width="204" height="46" rx="9"/><text x="448" y="928">Skip Matrix Parse</text></g>
+<g class="n step"><rect x="122" y="985" width="204" height="46" rx="9"/><text x="224" y="1012">Merge Matrix Parse Result</text></g>
+<g class="n step"><rect x="122" y="1069" width="204" height="46" rx="9"/><text x="224" y="1096">Run Deterministic Extraction Pa…</text></g>
+<g class="n sub"><rect x="122" y="1153" width="204" height="46" rx="9"/><text x="224" y="1180">Run Reconciliation AI Call</text></g>
+<g class="n step"><rect x="122" y="1237" width="204" height="46" rx="9"/><text x="224" y="1264">Route on AI Call Ok</text></g>
+<g class="n step"><rect x="122" y="1321" width="204" height="46" rx="9"/><text x="224" y="1348">Route on Both Documents Present</text></g>
+<g class="n step"><rect x="346" y="1321" width="204" height="46" rx="9"/><text x="448" y="1348">Return Extraction Failed</text></g>
+<g class="n sub"><rect x="122" y="1405" width="204" height="46" rx="9"/><text x="224" y="1432">Run Request-Only Reconciliation</text></g>
+<g class="n step"><rect x="346" y="1405" width="204" height="46" rx="9"/><text x="448" y="1432">Skip Conflict Check</text></g>
+<g class="n sub"><rect x="122" y="1489" width="204" height="46" rx="9"/><text x="224" y="1516">Run Inter-Document Conflict Che…</text></g>
+<g class="n step"><rect x="122" y="1573" width="204" height="46" rx="9"/><text x="224" y="1600">Merge Conflict Check Result</text></g>
+<g class="n step"><rect x="122" y="1657" width="204" height="46" rx="9"/><text x="224" y="1684">Combine Reconciliation Output</text></g>
+<g class="n step"><rect x="122" y="1741" width="204" height="46" rx="9"/><text x="224" y="1768">Write Requirement Rows</text></g>
+<g class="n step"><rect x="122" y="1825" width="204" height="46" rx="9"/><text x="224" y="1852">Count Written Requirements</text></g>
+<g class="n step"><rect x="122" y="1909" width="204" height="46" rx="9"/><text x="224" y="1936">Update Document Extraction Stat…</text></g>
+<g class="n step"><rect x="122" y="1993" width="204" height="46" rx="9"/><text x="224" y="2020">Build Audit Events</text></g>
+<g class="n step"><rect x="122" y="2077" width="204" height="46" rx="9"/><text x="224" y="2104">Log Extraction Audit Events</text></g>
+<g class="n step"><rect x="122" y="2161" width="204" height="46" rx="9"/><text x="224" y="2188">Limit To Single Result</text></g>
+<g class="n step"><rect x="122" y="2245" width="204" height="46" rx="9"/><text x="224" y="2272">Return Extraction Result</text></g>
+</svg>

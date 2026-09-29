@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-126 -47 476 1186" width="476" height="1186" role="img" aria-labelledby="t">
+<title id="t">n8n workflow graph: Send Payment Confirmation Email</title>
+<style>
+.e{fill:none;stroke:#C9C1B9;stroke-width:1.6}
+.e.ai{stroke-dasharray:4 4}
+.n rect{fill:#fff;stroke:#DCD5CE;stroke-width:1.2}
+.n text{font:500 12px Inter,system-ui,sans-serif;fill:#1F1D1B;text-anchor:middle}
+.n.trigger rect{stroke:#FF6240;stroke-width:2}
+.n.human rect{fill:#FFF1EC;stroke:#D9481F;stroke-width:1.6}
+.n.ai rect{fill:#F4F1EE}
+.n.sub rect{fill:#F4F1EE;stroke-dasharray:3 3}
+.n.sub text{font-size:11px;fill:#5E5A56}
+</style>
+<rect x="-126" y="-47" width="476" height="1186" fill="#FAF8F6"/>
+<path d="M0 23 C0 47 0 37 0 61" class="e"/>
+<path d="M0 107 C0 131 0 121 0 145" class="e"/>
+<path d="M0 191 C0 215 0 205 0 229" class="e"/>
+<path d="M0 275 C0 299 0 289 0 313" class="e"/>
+<path d="M0 275 C0 299 224 289 224 313" class="e"/>
+<path d="M0 359 C0 383 0 373 0 397" class="e"/>
+<path d="M0 359 C0 383 224 373 224 397" class="e"/>
+<path d="M0 443 C0 467 0 457 0 481" class="e"/>
+<path d="M0 527 C0 551 0 541 0 565" class="e"/>
+<path d="M0 527 C0 630 224 630 224 733" class="e"/>
+<path d="M0 611 C0 635 0 625 0 649" class="e"/>
+<path d="M0 695 C0 719 0 709 0 733" class="e"/>
+<path d="M0 695 C0 719 224 709 224 733" class="e"/>
+<path d="M0 779 C0 803 0 793 0 817" class="e"/>
+<path d="M0 779 C0 803 224 793 224 817" class="e"/>
+<path d="M0 863 C0 887 0 877 0 901" class="e"/>
+<path d="M0 947 C0 971 0 961 0 985" class="e"/>
+<path d="M0 1031 C0 1055 0 1045 0 1069" class="e"/>
+<g class="n trigger"><rect x="-102" y="-23" width="204" height="46" rx="9"/><text x="0" y="4">Check For Pending Confirmations</text></g>
+<g class="n step"><rect x="-102" y="61" width="204" height="46" rx="9"/><text x="0" y="88">Load Email Safety Config</text></g>
+<g class="n step"><rect x="-102" y="145" width="204" height="46" rx="9"/><text x="0" y="172">Find Unsent Paid Confirmations</text></g>
+<g class="n step"><rect x="-102" y="229" width="204" height="46" rx="9"/><text x="0" y="256">Claim Email For Sending</text></g>
+<g class="n step"><rect x="-102" y="313" width="204" height="46" rx="9"/><text x="0" y="340">Was Claim Successful?</text></g>
+<g class="n step"><rect x="122" y="313" width="204" height="46" rx="9"/><text x="224" y="340">Log Claim Database Error</text></g>
+<g class="n step"><rect x="-102" y="397" width="204" height="46" rx="9"/><text x="0" y="424">Validate Payment For Email</text></g>
+<g class="n step"><rect x="122" y="397" width="204" height="46" rx="9"/><text x="224" y="424">Stop - Claim Rejected</text></g>
+<g class="n step"><rect x="-102" y="481" width="204" height="46" rx="9"/><text x="0" y="508">Is Valid For Email?</text></g>
+<g class="n step"><rect x="-102" y="565" width="204" height="46" rx="9"/><text x="0" y="592">Check Recipient Allowlist</text></g>
+<g class="n step"><rect x="-102" y="649" width="204" height="46" rx="9"/><text x="0" y="676">Is Recipient Allowlisted?</text></g>
+<g class="n step"><rect x="-102" y="733" width="204" height="46" rx="9"/><text x="0" y="760">Send Confirmation Email</text></g>
+<g class="n step"><rect x="122" y="733" width="204" height="46" rx="9"/><text x="224" y="760">Mark Email Failed Validation</text></g>
+<g class="n step"><rect x="-102" y="817" width="204" height="46" rx="9"/><text x="0" y="844">Mark Email Sent</text></g>
+<g class="n step"><rect x="122" y="817" width="204" height="46" rx="9"/><text x="224" y="844">Mark Email Failed Send Error</text></g>
+<g class="n step"><rect x="-102" y="901" width="204" height="46" rx="9"/><text x="0" y="928">Verify Sent Recorded</text></g>
+<g class="n step"><rect x="-102" y="985" width="204" height="46" rx="9"/><text x="0" y="1012">Were All Sends Recorded?</text></g>
+<g class="n step"><rect x="-102" y="1069" width="204" height="46" rx="9"/><text x="0" y="1096">Alert Email Sent But Not Record…</text></g>
+</svg>

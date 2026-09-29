@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-126 -47 924 2026" width="924" height="2026" role="img" aria-labelledby="t">
+<title id="t">n8n workflow graph: 05 Retrieve and Draft Answers</title>
+<style>
+.e{fill:none;stroke:#C9C1B9;stroke-width:1.6}
+.e.ai{stroke-dasharray:4 4}
+.n rect{fill:#fff;stroke:#DCD5CE;stroke-width:1.2}
+.n text{font:500 12px Inter,system-ui,sans-serif;fill:#1F1D1B;text-anchor:middle}
+.n.trigger rect{stroke:#FF6240;stroke-width:2}
+.n.human rect{fill:#FFF1EC;stroke:#D9481F;stroke-width:1.6}
+.n.ai rect{fill:#F4F1EE}
+.n.sub rect{fill:#F4F1EE;stroke-dasharray:3 3}
+.n.sub text{font-size:11px;fill:#5E5A56}
+</style>
+<rect x="-126" y="-47" width="924" height="2026" fill="#FAF8F6"/>
+<path d="M0 23 C0 47 0 37 0 61" class="e"/>
+<path d="M0 107 C0 131 0 121 0 145" class="e"/>
+<path d="M0 191 C0 215 0 205 0 229" class="e"/>
+<path d="M0 191 C0 215 224 205 224 229" class="e"/>
+<path d="M0 275 C0 299 0 289 0 313" class="e"/>
+<path d="M0 359 C0 383 0 373 0 397" class="e"/>
+<path d="M0 359 C0 383 224 373 224 397" class="e"/>
+<path d="M224 443 C224 467 224 457 224 481" class="e"/>
+<path d="M224 527 C224 551 224 541 224 565" class="e"/>
+<path d="M224 611 C224 635 224 625 224 649" class="e"/>
+<path d="M224 695 C224 719 224 709 224 733" class="e"/>
+<path d="M224 695 C224 719 448 709 448 733" class="e"/>
+<path d="M224 779 C224 803 224 793 224 817" class="e"/>
+<path d="M224 779 C224 803 448 793 448 817" class="e"/>
+<path d="M448 779 C448 803 672 793 672 817" class="e"/>
+<path d="M224 863 C224 1218 224 1218 224 1573" class="e"/>
+<path d="M448 863 C448 887 448 877 448 901" class="e"/>
+<path d="M448 947 C448 971 448 961 448 985" class="e"/>
+<path d="M448 1031 C448 1055 448 1045 448 1069" class="e"/>
+<path d="M448 1115 C448 1139 448 1129 448 1153" class="e"/>
+<path d="M448 1115 C448 1139 672 1129 672 1153" class="e"/>
+<path d="M448 1199 C448 1223 448 1213 448 1237" class="e"/>
+<path d="M672 1199 C672 1386 224 1386 224 1573" class="e"/>
+<path d="M448 1283 C448 1307 448 1297 448 1321" class="e"/>
+<path d="M448 1283 C448 1307 672 1297 672 1321" class="e"/>
+<path d="M448 1367 C448 1391 448 1381 448 1405" class="e"/>
+<path d="M448 1451 C448 1475 448 1465 448 1489" class="e"/>
+<path d="M448 1451 C448 1475 672 1465 672 1489" class="e"/>
+<path d="M448 1535 C448 1559 448 1549 448 1573" class="e"/>
+<path d="M672 1535 C672 1559 224 1549 224 1573" class="e"/>
+<path d="M448 1619 C448 1643 448 1633 448 1657" class="e"/>
+<path d="M224 1619 C224 1643 224 1633 224 1657" class="e"/>
+<path d="M448 1703 C448 1727 448 1717 448 1741" class="e"/>
+<path d="M448 1787 C448 1811 448 1801 448 1825" class="e"/>
+<path d="M448 1871 C448 1895 448 1885 448 1909" class="e"/>
+<g class="n trigger"><rect x="-102" y="-23" width="204" height="46" rx="9"/><text x="0" y="4">Receive Requirement</text></g>
+<g class="n sub"><rect x="-102" y="61" width="204" height="46" rx="9"/><text x="0" y="88">Check Automation Enabled</text></g>
+<g class="n step"><rect x="-102" y="145" width="204" height="46" rx="9"/><text x="0" y="172">Route on Automation Enabled</text></g>
+<g class="n step"><rect x="-102" y="229" width="204" height="46" rx="9"/><text x="0" y="256">Check Idempotency</text></g>
+<g class="n step"><rect x="122" y="229" width="204" height="46" rx="9"/><text x="224" y="256">Return Automation Disabled</text></g>
+<g class="n step"><rect x="-102" y="313" width="204" height="46" rx="9"/><text x="0" y="340">Route on Already Drafted</text></g>
+<g class="n step"><rect x="-102" y="397" width="204" height="46" rx="9"/><text x="0" y="424">Return Already Drafted</text></g>
+<g class="n step"><rect x="122" y="397" width="204" height="46" rx="9"/><text x="224" y="424">Close Prior Review Task</text></g>
+<g class="n step"><rect x="122" y="481" width="204" height="46" rx="9"/><text x="224" y="508">Fetch Requirement Details</text></g>
+<g class="n sub"><rect x="122" y="565" width="204" height="46" rx="9"/><text x="224" y="592">Retrieve Candidates</text></g>
+<g class="n step"><rect x="122" y="649" width="204" height="46" rx="9"/><text x="224" y="676">Route on Retrieval Ok</text></g>
+<g class="n step"><rect x="122" y="733" width="204" height="46" rx="9"/><text x="224" y="760">Route on Insufficient Source</text></g>
+<g class="n step"><rect x="346" y="733" width="204" height="46" rx="9"/><text x="448" y="760">Raise Infrastructure Alert</text></g>
+<g class="n step"><rect x="122" y="817" width="204" height="46" rx="9"/><text x="224" y="844">Set Insufficient Source Reason</text></g>
+<g class="n step"><rect x="346" y="817" width="204" height="46" rx="9"/><text x="448" y="844">Filter Confidence-Passing Candi…</text></g>
+<g class="n step"><rect x="570" y="817" width="204" height="46" rx="9"/><text x="672" y="844">Return Retrieval Error Result</text></g>
+<g class="n step"><rect x="346" y="901" width="204" height="46" rx="9"/><text x="448" y="928">Fetch Candidate Content</text></g>
+<g class="n step"><rect x="346" y="985" width="204" height="46" rx="9"/><text x="448" y="1012">Merge Candidate Content</text></g>
+<g class="n step"><rect x="346" y="1069" width="204" height="46" rx="9"/><text x="448" y="1096">Route on Source Content Availab…</text></g>
+<g class="n sub"><rect x="346" y="1153" width="204" height="46" rx="9"/><text x="448" y="1180">Run Drafting AI Call</text></g>
+<g class="n step"><rect x="570" y="1153" width="204" height="46" rx="9"/><text x="672" y="1180">Set No Source Content Reason</text></g>
+<g class="n step"><rect x="346" y="1237" width="204" height="46" rx="9"/><text x="448" y="1264">Route on AI Call Ok</text></g>
+<g class="n step"><rect x="346" y="1321" width="204" height="46" rx="9"/><text x="448" y="1348">Validate Draft Against Limits</text></g>
+<g class="n step"><rect x="570" y="1321" width="204" height="46" rx="9"/><text x="672" y="1348">Return Drafting Failed Result</text></g>
+<g class="n step"><rect x="346" y="1405" width="204" height="46" rx="9"/><text x="448" y="1432">Route on Validation Ok</text></g>
+<g class="n step"><rect x="346" y="1489" width="204" height="46" rx="9"/><text x="448" y="1516">Write Answer Row</text></g>
+<g class="n step"><rect x="570" y="1489" width="204" height="46" rx="9"/><text x="672" y="1516">Set Validation Failed Reason</text></g>
+<g class="n step"><rect x="346" y="1573" width="204" height="46" rx="9"/><text x="448" y="1600">Log Audit Event</text></g>
+<g class="n step"><rect x="122" y="1573" width="204" height="46" rx="9"/><text x="224" y="1600">Create Manual-Draft Review Task</text></g>
+<g class="n step"><rect x="346" y="1657" width="204" height="46" rx="9"/><text x="448" y="1684">Create Reviewer Task</text></g>
+<g class="n step"><rect x="122" y="1657" width="204" height="46" rx="9"/><text x="224" y="1684">Return Manual-Draft Result</text></g>
+<g class="n step"><rect x="346" y="1741" width="204" height="46" rx="9"/><text x="448" y="1768">Build Reviewer Notification</text></g>
+<g class="n step"><rect x="346" y="1825" width="204" height="46" rx="9"/><text x="448" y="1852">Notify Reviewer via Slack</text></g>
+<g class="n step"><rect x="346" y="1909" width="204" height="46" rx="9"/><text x="448" y="1936">Return Draft Result</text></g>
+</svg>
