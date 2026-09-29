@@ -22,7 +22,23 @@
       iframe.src = bookingFrame.dataset.src;
       iframe.title = 'Booking calendar for a call with Angelo Torrevillas';
       iframe.addEventListener('load', () => { status.textContent = ''; status.hidden = true; }, { once: true });
-      bookingFrame.append(iframe);
+      // Height follows each booking step: the GHL widget ships iframe-resizer's child script, and
+      // this is its parent half. Until the first size report the iframe keeps its fixed CSS height,
+      // so if the script fails the calendar still works exactly as before.
+      const resizer = document.createElement('script');
+      resizer.src = 'js/vendor/iframeResizer.min.js';
+      resizer.onload = () => {
+        bookingFrame.append(iframe);
+        window.iFrameResize({
+          checkOrigin: [new URL(iframe.src).origin],
+          heightCalculationMethod: 'offset',
+          sizeWidth: false,
+          scrolling: 'omit',
+          onResized: () => bookingFrame.classList.add('is-autosized')
+        }, iframe);
+      };
+      resizer.onerror = () => bookingFrame.append(iframe);
+      document.head.append(resizer);
     };
     if ('IntersectionObserver' in window) {
       const bookingIo = new IntersectionObserver(entries => {
