@@ -129,9 +129,9 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">AI Automation Specialist</p>
-        <h1 class="display" id="hero-title">I turn manual workflows <span class="hero-role">into connected systems.</span></h1>
-        <p class="lede">Payments, CRMs, documents and AI — built with the guardrails and human checkpoints that keep them reliable.</p>
+        <p class="eyebrow">What I can automate for your business</p>
+        <h1 class="display" id="hero-title"><span class="hero-line">Stop repeating tasks.</span> <span class="hero-line">Start <em class="hero-accent">automating.</em></span></h1>
+        <p class="lede">I'm Angelo Torrevillas, an AI automation specialist. I connect the tools your business runs on — CRM, payments, documents, email and chat — into reliable automated workflows, with AI where it helps and a person approving anything costly.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#book">Book a call</a>
           <a class="btn btn-ghost" href="#work">See the systems
@@ -197,10 +197,13 @@
     </div>
   </section>
 
-  <!-- ===================== TICKER (static; what the work covers) ===================== -->
+  <!-- ===================== TICKER (moves left to right; the copy is decorative) ===================== -->
   <div class="ticker">
-    <div class="wrap">
+    <div class="ticker-track">
       <ul class="ticker-list" aria-label="What I build">
+        <li>Workflow automation</li><li>AI agents</li><li>Document retrieval (RAG)</li><li>CRM automation</li><li>Payment webhooks</li><li>Human approval gates</li><li>Database-backed state</li><li>API integrations</li>
+      </ul>
+      <ul class="ticker-list ticker-copy" aria-hidden="true">
         <li>Workflow automation</li><li>AI agents</li><li>Document retrieval (RAG)</li><li>CRM automation</li><li>Payment webhooks</li><li>Human approval gates</li><li>Database-backed state</li><li>API integrations</li>
       </ul>
     </div>
@@ -216,7 +219,7 @@
       </header>
       <div class="grid three">
         <article class="card" data-reveal>
-          <div class="card-media"><img src="assets/images/projects/ar-payment-chasing/dispatch-approved-chases.svg" width="476" height="1270" loading="lazy" decoding="async" alt="Top of the Dispatch Approved Chases workflow graph: webhook, claim pending outbox rows, revalidate live invoice state."></div>
+          <div class="card-media"><img src="assets/images/projects/ar-payment-chasing/card.webp" width="800" height="500" loading="lazy" decoding="async" alt="n8n canvas of the Dispatch Approved Chases workflow: webhook, claim pending outbox rows, revalidate live invoice state, still valid to send."></div>
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">Accounts receivable</span><span class="chip final">Concept Demo · FINAL</span></div>
             <h3><a href="#case-ar" data-case="case-ar">AR Payment Chasing</a></h3>
@@ -226,7 +229,7 @@
           </div>
         </article>
         <article class="card" data-reveal>
-          <div class="card-media"><img src="assets/images/projects/rfp-tender-response/route-human-review.svg" width="700" height="850" loading="lazy" decoding="async" alt="Top of the Route Human Review and Approval workflow graph: review decision form and deadline sweep triggers with automation checks."></div>
+          <div class="card-media"><img src="assets/images/projects/rfp-tender-response/card.webp" width="800" height="500" loading="lazy" decoding="async" alt="n8n canvas of the Route Human Review and Approval workflow: review decision form and deadline sweep triggers with automation checks."></div>
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">Bids &amp; proposals</span><span class="chip final">FINAL · structural</span></div>
             <h3><a href="#case-rfp" data-case="case-rfp">RFP &amp; Tender Response</a></h3>
@@ -242,7 +245,7 @@
             <h3><a href="#case-nc" data-case="case-nc">NEXT-CARE Medical Clinic System</a></h3>
             <p class="card-desc">A paid consultation funnel where access is released only after a signed payment webhook is verified against the database.</p>
             <ul class="pills" aria-label="Stack"><li>GoHighLevel</li><li>n8n</li><li>PostgreSQL</li><li>PayMongo</li></ul>
-            <p class="card-more" aria-hidden="true">Case study <span>→</span></p>
+            <div class="card-foot"><p class="card-more" aria-hidden="true">Case study <span>→</span></p><a class="card-visit" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (fictional clinic, opens in a new tab)</span></a></div>
           </div>
         </article>
       </div>
@@ -453,56 +456,48 @@
       <header class="section-head" data-reveal>
         <p class="eyebrow">Stack</p>
         <h2 id="stack-title">What the systems run on.</h2>
-        <p class="lede">The tools behind the work above, grouped by the job they do — each with where it's actually used.</p>
+        <p class="lede">The tools behind the systems above — every one of them used in a project on this page.</p>
       </header>
-      <div class="stack-groups" data-reveal>
-        <div class="stack-group">
-          <h3>Automation &amp; CRM</h3>
-          <ul class="stack-list">
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/n8n.svg);mask-image:url(assets/images/stack/n8n.svg)"></span></span><span><b>n8n</b><span>All three selected systems and the client build</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/gohighlevel.png);mask-image:url(assets/images/stack/gohighlevel.png)"></span></span><span><b>GoHighLevel</b><span>NEXT-CARE funnel and CRM, earlier CRM builds</span></span></li>
+      <div class="tools" data-reveal>
+        <div class="tools-group">
+          <h3>Current stack <span>n8n systems, CRM, payments and AI</span></h3>
+          <ul class="tools-grid">
+            <li class="tool" style="--brand:#EA4B71"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/n8n.svg);mask-image:url(assets/images/stack/n8n.svg)"></span></span><span class="tool-name">n8n</span></li>
+            <li class="tool" style="--brand:#188BF6"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/gohighlevel.png);mask-image:url(assets/images/stack/gohighlevel.png)"></span></span><span class="tool-name">GoHighLevel</span></li>
+            <li class="tool" style="--brand:#4169E1"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/postgresql.svg);mask-image:url(assets/images/stack/postgresql.svg)"></span></span><span class="tool-name">PostgreSQL</span></li>
+            <li class="tool" style="--brand:#3FCF8E"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/supabase.svg);mask-image:url(assets/images/stack/supabase.svg)"></span></span><span class="tool-name">Supabase</span></li>
+            <li class="tool" style="--brand:#D9F07F"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/paymongo.png);mask-image:url(assets/images/stack/paymongo.png)"></span></span><span class="tool-name">PayMongo</span></li>
+            <li class="tool" style="--brand:#94A3B8"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/openrouter.svg);mask-image:url(assets/images/stack/openrouter.svg)"></span></span><span class="tool-name">OpenRouter</span></li>
+            <li class="tool" style="--brand:#FFFFFF"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/ollama.svg);mask-image:url(assets/images/stack/ollama.svg)"></span></span><span class="tool-name">Ollama</span></li>
+            <li class="tool" style="--brand:#EA4335"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/gmail.svg);mask-image:url(assets/images/stack/gmail.svg)"></span></span><span class="tool-name">Gmail</span></li>
+            <li class="tool" style="--brand:#E01E5A"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/slack.svg);mask-image:url(assets/images/stack/slack.svg)"></span></span><span class="tool-name">Slack</span></li>
+            <li class="tool" style="--brand:#26A5E4"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/telegram.svg);mask-image:url(assets/images/stack/telegram.svg)"></span></span><span class="tool-name">Telegram</span></li>
+            <li class="tool" style="--brand:#0866FF"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/messenger.svg);mask-image:url(assets/images/stack/messenger.svg)"></span></span><span class="tool-name">Messenger</span></li>
+            <li class="tool" style="--brand:#4285F4"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/googledrive.svg);mask-image:url(assets/images/stack/googledrive.svg)"></span></span><span class="tool-name">Google Drive</span></li>
+            <li class="tool" style="--brand:#4285F4"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/googledocs.svg);mask-image:url(assets/images/stack/googledocs.svg)"></span></span><span class="tool-name">Google Docs</span></li>
+            <li class="tool" style="--brand:#34A853"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/googlesheets.svg);mask-image:url(assets/images/stack/googlesheets.svg)"></span></span><span class="tool-name">Google Sheets</span></li>
+            <li class="tool" style="--brand:#F7DF1E"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/javascript.svg);mask-image:url(assets/images/stack/javascript.svg)"></span></span><span class="tool-name">JavaScript</span></li>
+            <li class="tool" style="--brand:#E34F26"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/html5.svg);mask-image:url(assets/images/stack/html5.svg)"></span></span><span class="tool-name">HTML5</span></li>
           </ul>
         </div>
-        <div class="stack-group">
-          <h3>Data &amp; state</h3>
-          <ul class="stack-list">
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/postgresql.svg);mask-image:url(assets/images/stack/postgresql.svg)"></span></span><span><b>PostgreSQL</b><span>State machines, audit trails, pgvector search</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/supabase.svg);mask-image:url(assets/images/stack/supabase.svg)"></span></span><span><b>Supabase</b><span>Hosted Postgres and the RAG vector store</span></span></li>
+        <div class="tools-group is-past">
+          <h3>Earlier builds <span>Zapier, Airtable and Vapi projects</span></h3>
+          <ul class="tools-grid">
+            <li class="tool" style="--brand:#FF4F00"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/zapier.svg);mask-image:url(assets/images/stack/zapier.svg)"></span></span><span class="tool-name">Zapier</span></li>
+            <li class="tool" style="--brand:#18BFFF"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/airtable.svg);mask-image:url(assets/images/stack/airtable.svg)"></span></span><span class="tool-name">Airtable</span></li>
+            <li class="tool" style="--brand:#62F6B5"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/vapi.svg);mask-image:url(assets/images/stack/vapi.svg)"></span></span><span class="tool-name">Vapi</span></li>
           </ul>
         </div>
-        <div class="stack-group">
-          <h3>AI</h3>
-          <ul class="stack-list">
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/openrouter.svg);mask-image:url(assets/images/stack/openrouter.svg)"></span></span><span><b>OpenRouter</b><span>Model access for drafting, review and classification</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/ollama.svg);mask-image:url(assets/images/stack/ollama.svg)"></span></span><span><b>Ollama</b><span>Embeddings for retrieval</span></span></li>
-          </ul>
-        </div>
-        <div class="stack-group">
-          <h3>Payments &amp; integrations</h3>
-          <ul class="stack-list">
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/payments.svg);mask-image:url(assets/images/stack/payments.svg)"></span></span><span><b>PayMongo</b><span>Hosted checkout — sandbox only so far</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/webhooks.svg);mask-image:url(assets/images/stack/webhooks.svg)"></span></span><span><b>Webhooks &amp; HMAC</b><span>Signed, idempotent event intake</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/googledrive.svg);mask-image:url(assets/images/stack/googledrive.svg)"></span></span><span><b>Google Drive, Docs &amp; Sheets</b><span>Documents, files and records</span></span></li>
-          </ul>
-        </div>
-        <div class="stack-group">
-          <h3>Messaging</h3>
-          <ul class="stack-list">
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/gmail.svg);mask-image:url(assets/images/stack/gmail.svg)"></span></span><span><b>Gmail API</b><span>Reminders, proposals and confirmations</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/slack.svg);mask-image:url(assets/images/stack/slack.svg)"></span></span><span><b>Slack</b><span>Assistants and escalation alerts</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/telegram.svg);mask-image:url(assets/images/stack/telegram.svg)"></span></span><span><b>Telegram</b><span>Invoice agent</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/messenger.svg);mask-image:url(assets/images/stack/messenger.svg)"></span></span><span><b>Messenger</b><span>Inquiry assistant</span></span></li>
-          </ul>
-        </div>
-        <div class="stack-group">
-          <h3>Code</h3>
-          <ul class="stack-list">
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/javascript.svg);mask-image:url(assets/images/stack/javascript.svg)"></span></span><span><b>JavaScript</b><span>Custom logic in workflows and pages</span></span></li>
-            <li><span class="logo" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/html5.svg);mask-image:url(assets/images/stack/html5.svg)"></span></span><span><b>HTML &amp; CSS</b><span>GoHighLevel funnel pages and this site</span></span></li>
+        <div class="tools-group is-past">
+          <h3>Background projects <span>Thesis and internship</span></h3>
+          <ul class="tools-grid">
+            <li class="tool" style="--brand:#3776AB"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/python.svg);mask-image:url(assets/images/stack/python.svg)"></span></span><span class="tool-name">Python</span></li>
+            <li class="tool"><span class="tool-tile tool-text" aria-hidden="true">R-CNN</span><span class="tool-name">Mask R-CNN</span></li>
+            <li class="tool" style="--brand:#777BB4"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/php.svg);mask-image:url(assets/images/stack/php.svg)"></span></span><span class="tool-name">PHP</span></li>
+            <li class="tool" style="--brand:#4479A1"><span class="tool-tile" aria-hidden="true"><span class="mark" style="-webkit-mask-image:url(assets/images/stack/mysql.svg);mask-image:url(assets/images/stack/mysql.svg)"></span></span><span class="tool-name">MySQL</span></li>
           </ul>
         </div>
       </div>
-      <p class="stack-note"><b>Earlier builds:</b> Zapier, Airtable and Vapi. <b>Background projects:</b> Python and Mask R-CNN (thesis), PHP and MySQL (internship).</p>
     </div>
   </section>
 
@@ -604,30 +599,50 @@
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" class="band" aria-labelledby="contact-title">
-    <div class="wrap contact-grid">
-      <div data-reveal>
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">Tell me what's manual, slow or fragile.</h2>
-        <p class="lede">I'll tell you honestly whether automation is the right fix — and what it would take to make it dependable.</p>
-        <ul class="contact-list">
-          <li><span class="k">Email</span><a href="mailto:angelo.automates@gmail.com">angelo.automates@gmail.com</a></li>
-          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/angelo-ai-automation" rel="me noopener" target="_blank">linkedin.com/in/angelo-ai-automation</a></li>
-          <li><span class="k">GitHub</span><a href="https://github.com/yowlshi" rel="me noopener" target="_blank">github.com/yowlshi</a></li>
-          <li><span class="k">Location</span><span>Philippines</span></li>
-        </ul>
+  <!-- ===================== DISCOVERY CALL ===================== -->
+  <section id="book" class="band discovery" aria-labelledby="book-title">
+    <div class="wrap discovery-grid">
+      <div class="discovery-intro" data-reveal>
+        <p class="eyebrow">Discovery call</p>
+        <h2 id="book-title">Let's find what's worth automating.</h2>
+        <p class="lede">A short call about how your process runs today, where manual work is slowing it down, and whether automation is the right fix.</p>
+        <ol class="call-steps">
+          <li><h3>Walk through the process</h3><p>How work moves today: the tools, the people and the hand-offs.</p></li>
+          <li><h3>Find the manual gaps</h3><p>Where repetitive work, errors or delays are costing you time.</p></li>
+          <li><h3>Agree on next steps</h3><p>What to automate first, and what it takes to make it dependable.</p></li>
+        </ol>
       </div>
-      <div class="booking" id="book" data-reveal>
+      <div class="booking" data-reveal>
         <div class="booking-intro">
-          <h3>Book a call</h3>
-          <p>Pick a time for a discovery call. The calendar is provided by GoHighLevel and loads only when you open it.</p>
+          <h3>Book a discovery call</h3>
+          <p>Pick a time that suits you. The calendar is provided by GoHighLevel and loads only when you open it.</p>
           <!-- js/site.js embeds data-src on click; without JS the link opens the calendar in a new tab. Leave data-src empty to make this a plain link. -->
           <a class="btn btn-primary" id="load-booking" href="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" target="_blank" rel="noopener" data-src="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me">Open booking calendar</a>
           <p class="booking-fallback">Calendar not loading? <a href="https://api.levelupacademy.ph/widget/bookings/book-discovery-call-with-me" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:angelo.automates@gmail.com?subject=Call%20request%20%E2%80%94%20automation%20project">angelo.automates@gmail.com</a>.</p>
         </div>
         <div class="booking-frame" id="booking-frame" hidden></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Tell me what's manual, slow or fragile.</h2>
+        <p class="lede">Prefer to write first? Send a few lines about the process you want to automate. I'll tell you honestly whether automation is the right fix — and what it would take to make it dependable.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:angelo.automates@gmail.com?subject=Automation%20project">Email me <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn-ghost" href="#book">Book a call instead</a>
+        </div>
+      </div>
+      <ul class="contact-links" data-reveal>
+        <li><a href="mailto:angelo.automates@gmail.com"><span class="k">Email</span><span class="v">angelo.automates@gmail.com</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/angelo-ai-automation" rel="me noopener" target="_blank"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/angelo-ai-automation</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li><a href="https://github.com/yowlshi" rel="me noopener" target="_blank"><span class="k">GitHub</span><span class="v">github.com/yowlshi</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        <li class="static"><span class="k">Based in</span><span class="v">Philippines</span></li>
+      </ul>
     </div>
   </section>
 
@@ -660,20 +675,15 @@
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Invoice sync with stable, duplicate-free upserts</li><li>Eligibility and escalation-tier decisions</li><li>Per-customer consolidation and outbox de-duplication</li><li>Template rendering per tier</li><li>Reply triage: opt-out, bounce, out-of-office, promise-to-pay, dispute</li></ul></div>
           <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Reminders above the approval threshold stay in <em>awaiting approval</em>; dispatch cannot claim them</li><li>Low-confidence reply classifications aren't acted on automatically</li><li>An operator can stop all sending with the kill switch</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>Atomic claim — a single <code>UPDATE … RETURNING</code></li><li>Send-time revalidation: paid or closed invoices are superseded, not sent</li><li>Recipient-domain allowlist</li><li>Kill switch that safely releases claimed rows</li><li>AI classifier has no tools and no write access to financial state</li></ul></div>
-          <dl class="evidence span">
-            <div class="ev-fact"><dt>Documented evidence</dt><dd>Re-running sync kept row counts stable. A customer with three overdue invoices got exactly one reminder at the highest tier, and re-planning created zero duplicates.</dd><dd>Real Gmail sends plus the blocked, superseded and send-failed paths were run live — including one multi-item run hitting all of them. Kill switch tested in both directions.</dd></div>
-            <div class="ev-open"><dt>Not yet proven / deferred</dt><dd>Mutual exclusion under truly simultaneous runs (lock proven within a single run only).</dd><dd>Deferred to a pilot: real Xero connection, the approvals interface, watchdog alerting and opt-out suppression.</dd></div>
-            <div class="ev-expected"><dt>Design objective</dt><dd>Remove manual reminder work while making double-sends, post-payment reminders and wrong-recipient emails prevented by construction. No business outcome has been measured; it runs on synthetic data.</dd></div>
-          </dl>
         </div>
         <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 4 images</span></p>
         <div class="gallery" data-count="4">
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/sync-ar-invoices.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/sync-ar-invoices.svg" width="252" height="850" loading="lazy" decoding="async" alt="Graph of the Sync AR Invoices workflow: webhook, get org and config, retrieve accounting invoices sub-workflow, upsert contact, upsert invoice, set initial chase state, persist it, record a chase-state event, report and respond."></a><figcaption><strong>Workflow 01 · Sync AR Invoices.</strong> Accounting adapter, then idempotent contact and invoice upserts and the initial chase state.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/plan-payment-chases.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/plan-payment-chases.svg" width="252" height="850" loading="lazy" decoding="async" alt="Graph of the Plan Payment Chases workflow: webhook, get org and config, get eligible invoices per contact, evaluate gate and tier sub-workflow, eligibility check, write outbox intent, check the row was created, record the event, report and respond."></a><figcaption><strong>Workflow 02 · Plan Payment Chases.</strong> One outbox intent per eligible customer, at its highest tier.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/dispatch-approved-chases.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/dispatch-approved-chases.svg" width="476" height="1270" loading="lazy" decoding="async" alt="Graph of the Dispatch Approved Chases workflow: webhook, claim pending outbox rows, revalidate live invoice state, still valid to send, retrieve send details, render chase template, check recipient allowlist, check kill switch, send chase email, and record sent, blocked, superseded or failed events."></a><figcaption><strong>Workflow 03 · Dispatch Approved Chases.</strong> Every email passes a claim, a payment re-check, the allowlist and the kill switch first.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/route-inbound-replies.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/route-inbound-replies.svg" width="700" height="1438" loading="lazy" decoding="async" alt="Graph of the Route Inbound Replies workflow: Gmail trigger, extract reply fields, insert the inbound row once, deterministic pre-filter, resolve the thread, call the classifier, validate its output, determine the routing decision, then apply a promise pause, a dispute hard stop or route to a human, and record the classified event."></a><figcaption><strong>Workflow 04 · Route Inbound Replies.</strong> Deterministic pre-filter first; classifier output is validated before any routing.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/n8n-01-sync-ar-invoices.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/n8n-01-sync-ar-invoices.webp" width="2030" height="233" loading="lazy" decoding="async" alt="n8n canvas of 01 Sync AR Invoices: webhook, get org and config, retrieve accounting invoices sub-workflow, upsert contact, upsert invoice, set and persist the initial chase state, record a chase-state event, report and respond."></a><figcaption><strong>01 · Sync AR Invoices.</strong> Accounting adapter, then idempotent contact and invoice upserts and the initial chase state.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/n8n-02-plan-payment-chases.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/n8n-02-plan-payment-chases.webp" width="2070" height="380" loading="lazy" decoding="async" alt="n8n canvas of 02 Plan Payment Chases: webhook, get org and config, get eligible invoices per contact, evaluate gate and tier sub-workflow, eligibility check, write outbox intent, check the row was created, record the event, report and respond."></a><figcaption><strong>02 · Plan Payment Chases.</strong> One outbox intent per eligible customer, at its highest tier.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/n8n-03-dispatch-approved-chases.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/n8n-03-dispatch-approved-chases.webp" width="2431" height="689" loading="lazy" decoding="async" alt="n8n canvas of 03 Dispatch Approved Chases: claim pending outbox rows, revalidate live invoice state, still valid to send, render template, check recipient allowlist, check kill switch, send chase email through Gmail, and record sent, superseded, blocked, paused or failed outcomes."></a><figcaption><strong>03 · Dispatch Approved Chases.</strong> Every email passes a claim, a payment re-check, the allowlist and the kill switch first.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/n8n-04-route-inbound-replies.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ar-payment-chasing/n8n-04-route-inbound-replies.webp" width="2419" height="516" loading="lazy" decoding="async" alt="n8n canvas of 04 Route Inbound Replies: Gmail trigger, extract reply fields, insert the inbound row once, deterministic pre-filter, resolve the thread, call and validate the classifier, determine the routing decision, then apply a promise pause, a dispute hard stop or route to a human."></a><figcaption><strong>04 · Route Inbound Replies.</strong> Deterministic pre-filter first; classifier output is validated before any routing.</figcaption></figure>
         </div>
-        <p class="caption gallery-note">Graphs are drawn from each workflow's exported JSON — node names and connections only.</p>
+        <p class="caption gallery-note">Screenshots of the n8n editor canvas. Sticky notes are hidden; node names and connections are as built.</p>
         </div>
         <p class="case-stack"><b>Stack:</b> n8n · PostgreSQL · Gmail API · OpenRouter LLM (classification only) · JavaScript</p>
       </article>
@@ -701,21 +711,19 @@
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Document parsing and requirement extraction</li><li>Candidate retrieval and confidence scoring</li><li>Structured, validated AI drafting</li><li>Review-package compilation</li><li>Deadline sweeps with tiered Slack escalation</li><li>Answer-library freshness checks</li></ul></div>
           <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Whether to bid at all</li><li>Which requirements are confirmed</li><li>Every answer: approve, reject, or hand to manual drafting after two rejections</li><li>Final sign-off by the bid owner only, through a verified login rather than a typed name</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>AI drafts but never approves</li><li>Owner-only enforcement on sign-off; unauthorized attempts are rejected</li><li>Append-only audit events</li><li>Fail-closed kill switch at twelve entry points</li><li>Duplicate decisions return “already processed”</li></ul></div>
-          <dl class="evidence span">
-            <div class="ev-fact"><dt>Documented evidence</dt><dd>Parsing, extraction, retrieval and drafting (workflows 01–05) were built and tested against synthetic tenders. Review/approval and sign-off/submission (07, 08) were live-tested, including a rejected unauthorized sign-off.</dd><dd>The kill-switch toggle, demo-data reset, library re-embedding and freshness sweep were live-tested; eight review-task lifecycle scenarios passed.</dd></div>
-            <div class="ev-open"><dt>Structural only / deferred</dt><dd>Validated but not runtime-tested: the kill switch wired into the twelve entry points, the confirm-requirements → drafting trigger, and review-package compilation (7 of 8 planned steps).</dd><dd>Deferred: addendum → drafting trigger, OCR for scanned documents, and live DOCX/XLSX tests.</dd></div>
-            <div class="ev-expected"><dt>Design objective</dt><dd>Shorten the path from tender to reviewed draft while keeping every claim traceable to an approved source and every decision to a named person. Not yet measured on real tenders.</dd></div>
-          </dl>
         </div>
-        <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 5 images</span></p>
-        <div class="gallery" data-count="5">
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/rfp-tender-response/ingest-tender-opportunity.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/ingest-tender-opportunity.svg" width="700" height="1270" loading="lazy" decoding="async" alt="Graph of the Ingest Tender Opportunity workflow: intake form, automation-enabled check, client context and configuration checks, idempotency check, create or update the tender record, upload documents to Drive, write document rows with failure records, then trigger extraction."></a><figcaption><strong>Workflow 01 · Ingest Tender Opportunity.</strong> Idempotent intake, document upload and hand-off to extraction.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/rfp-tender-response/extract-and-reconcile-requirements.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/extract-and-reconcile-requirements.svg" width="700" height="2362" loading="lazy" decoding="async" alt="Graph of the Extract and Reconcile Requirements workflow: automation and already-processed checks, parse the request document and response matrix, a deterministic extraction pass, a reconciliation AI call, an inter-document conflict check, then write requirement rows, update status and log audit events."></a><figcaption><strong>Workflow 03 · Extract &amp; Reconcile Requirements.</strong> Deterministic extraction first, then AI reconciliation and a conflict check.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/rfp-tender-response/retrieve-and-draft-answers.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/retrieve-and-draft-answers.svg" width="924" height="2026" loading="lazy" decoding="async" alt="Graph of the Retrieve and Draft Answers workflow: idempotency check, retrieve and score candidates, filter confidence-passing candidates, run the drafting AI call, validate the draft against limits, write the answer, create a reviewer or manual-draft task and notify the reviewer in Slack."></a><figcaption><strong>Workflow 05 · Retrieve &amp; Draft Answers.</strong> Low confidence or failed validation becomes a manual-draft task, not a draft.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/rfp-tender-response/route-human-review.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/route-human-review.svg" width="700" height="850" loading="lazy" decoding="async" alt="Graph of the Route Human Review and Approval workflow: a review decision form checks the automation switch and answer status, then writes an approval event or increments rejections and either triggers a redraft or routes to manual drafting; a scheduled deadline sweep computes escalation tiers and sends notifications."></a><figcaption><strong>Workflow 07 · Route Human Review &amp; Approval.</strong> The human decision form (highlighted) and the scheduled deadline sweep.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/rfp-tender-response/finalize-and-record-submission.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/finalize-and-record-submission.svg" width="924" height="766" loading="lazy" decoding="async" alt="Graph of the Finalize and Record Submission workflow: a sign-off form and a submission-confirmation form, each checking the automation switch; owner authorization is verified and unauthorized attempts rejected, then approval, idempotent submission record and audit events are written."></a><figcaption><strong>Workflow 08 · Finalize &amp; Record Submission.</strong> Owner-only sign-off; unauthorized attempts are rejected and logged.</figcaption></figure>
+        <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 8 images</span></p>
+        <div class="gallery" data-count="8">
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-01-ingest-tender-opportunity.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-01-ingest-tender-opportunity.webp" width="2418" height="448" loading="lazy" decoding="async" alt="n8n canvas of 01 Ingest Tender Opportunity: intake form, automation check, client context and configuration checks, idempotency check, create or update the tender, upload documents to Drive, write document rows with failure records, then trigger extraction."></a><figcaption><strong>01 · Ingest Tender Opportunity.</strong> Idempotent intake, document upload and hand-off to extraction.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-02-record-go-no-go-decision.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-02-record-go-no-go-decision.webp" width="2030" height="469" loading="lazy" decoding="async" alt="n8n canvas of 02 Record Go/No-Go Decision: decision form, automation check, idempotency check, then write the approval event, update tender status and log an audit event."></a><figcaption><strong>02 · Go / no-go decision.</strong> A person decides whether to bid; repeat decisions are rejected.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-03-extract-reconcile-requirements.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-03-extract-reconcile-requirements.webp" width="2349" height="325" loading="lazy" decoding="async" alt="n8n canvas of 03 Extract and Reconcile Requirements: automation and already-processed checks, parse request document and response matrix, deterministic extraction pass, reconciliation AI call, inter-document conflict check, write requirement rows and audit events."></a><figcaption><strong>03 · Extract &amp; Reconcile Requirements.</strong> Deterministic extraction first, then AI reconciliation and a conflict check.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-04-process-addendum.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-04-process-addendum.webp" width="2387" height="745" loading="lazy" decoding="async" alt="n8n canvas of 04 Process Addendum: an upload path that stores and parses the addendum and interprets it with an AI call, and a confirmation path that validates replacement references and cascades the supersession."></a><figcaption><strong>04 · Process Addendum.</strong> Addenda are interpreted, then confirmed by a person before requirements are replaced.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-05-retrieve-draft-answers.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-05-retrieve-draft-answers.webp" width="2367" height="553" loading="lazy" decoding="async" alt="n8n canvas of 05 Retrieve and Draft Answers: idempotency check, retrieve and score candidates, filter by confidence, drafting AI call, validate the draft against limits, write the answer, create a reviewer or manual-draft task and notify in Slack."></a><figcaption><strong>05 · Retrieve &amp; Draft Answers.</strong> Low confidence or failed validation becomes a manual-draft task, not a draft.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-06-compile-review-package.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-06-compile-review-package.webp" width="2003" height="389" loading="lazy" decoding="async" alt="n8n canvas of 06 Compile Review Package: automation check, compilation gate, re-check source currency, flag newly expired citations, assemble the package and log the attempt."></a><figcaption><strong>06 · Compile Review Package.</strong> Sources are re-checked for currency before the package is assembled.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-07-route-human-review.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-07-route-human-review.webp" width="2230" height="900" loading="lazy" decoding="async" alt="n8n canvas of 07 Route Human Review and Approval: a review decision form that writes an approval or increments rejections and redrafts or routes to manual drafting, plus a scheduled deadline sweep that computes escalation tiers and notifies in Slack."></a><figcaption><strong>07 · Route Human Review &amp; Approval.</strong> Per-answer decisions, plus a scheduled deadline sweep with escalation.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/n8n-08-finalize-record-submission.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/rfp-tender-response/n8n-08-finalize-record-submission.webp" width="2030" height="909" loading="lazy" decoding="async" alt="n8n canvas of 08 Finalize and Record Submission: a sign-off form that verifies owner authorization and rejects unauthorized attempts, and a submission form that verifies status and idempotency before writing the submission record and audit event."></a><figcaption><strong>08 · Finalize &amp; Record Submission.</strong> Owner-only sign-off; unauthorized attempts are rejected and logged.</figcaption></figure>
         </div>
-        <p class="caption gallery-note">Graphs are drawn from each workflow's exported JSON — node names and connections only.</p>
+        <p class="caption gallery-note">Screenshots of the n8n editor canvas. Sticky notes are hidden; node names and connections are as built.</p>
         </div>
         <p class="case-stack"><b>Stack:</b> n8n · PostgreSQL + pgvector · Ollama embeddings · OpenRouter (GPT-4o mini) · Google Drive &amp; Docs · n8n Forms with user auth · Slack</p>
       </article>
@@ -725,6 +733,7 @@
         <h3 class="case-title" id="case-nc-title">NEXT-CARE Medical Clinic System</h3>
         <ul class="chips" aria-label="Status"><li class="chip dev">In development · Sandbox</li><li class="chip plain">Portfolio system · fictional clinic</li></ul>
         <p class="case-summary">A paid online-consultation funnel where the patient only receives consultation access after a signed payment webhook has been verified against the database.</p>
+        <p class="case-actions"><a class="btn btn-primary" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a><span>Public GoHighLevel preview of the fictional clinic. Its checkout runs in PayMongo test mode only.</span></p>
         <div class="case-intro">
           <div><p class="kicker">Problem</p><p>For paid online consultations, the consultation link is the product. A clinic needs patients to move smoothly from interest to booking, but access should only be released once payment is genuinely confirmed — not because a redirect page said so.</p></div>
           <div><p class="kicker">Solution</p><p>Built in two stages. First the GoHighLevel layer: a patient funnel and CRM workflows that move contacts through a pipeline, send reminders and alert staff. Then a payment layer in n8n and PostgreSQL: server-side pricing, PayMongo hosted checkout, signature-verified webhooks and a database-backed payment state that decides what the patient receives — synced back to the CRM.</p></div>
@@ -745,35 +754,40 @@
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Lead routing, pipeline moves and booking reminders in GHL</li><li>Price quote, checkout creation and webhook verification</li><li>Payment-state transitions and confirmation email</li><li>Verified-payment status synced to the CRM contact</li></ul></div>
           <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Staff are notified on verified payment and continue the clinic process</li><li>Staff move a patient to the on-site visit stage, which triggers follow-up</li><li>CRM writes run only as deliberate, controlled runs — the sync is kept locked otherwise</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>Missing or invalid doctor is rejected — never defaulted to another doctor</li><li>Invalid webhook signatures get a 401 and are logged</li><li>Duplicate webhooks are acknowledged but not re-processed</li><li>Already-settled payments can't transition twice</li><li>Database outage returns 503 so the provider retries</li></ul></div>
-          <dl class="evidence span">
-            <div class="ev-fact"><dt>Documented evidence</dt><dd>Sandbox payments were completed end-to-end in PayMongo test mode. Pricing was runtime-tested against PostgreSQL. After the latest checkout-guard change, checkout creation was re-tested in sandbox.</dd><dd>One controlled live CRM tag write was verified on a synthetic test contact.</dd></div>
-            <div class="ev-open"><dt>Open items</dt><dd>A full paid run hasn't been repeated since the latest guard change. There's no sweeper for abandoned checkouts yet.</dd><dd>Known limitation: consultations currently share one meeting link; per-patient links are planned. Live merchant activation is out of scope for this phase.</dd></div>
-            <div class="ev-expected"><dt>Design objective</dt><dd>Make “paid” mean “verified by the payment provider and recorded in the database” before any access is sent. The clinic is fictional; no production payments have been processed.</dd></div>
-          </dl>
         </div>
-        <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 12 images</span></p>
-        <p class="gallery-sub">Patient funnel · GoHighLevel pages</p>
-        <div class="gallery" data-count="3">
-          <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/talk-to-a-doctor.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/talk-to-a-doctor.webp" width="1200" height="750" loading="lazy" decoding="async" alt="NEXT-CARE Talk to a Doctor page: headline, consultation price and a Consult Now button."></a><figcaption><strong>Talk to a Doctor.</strong> Entry point of the patient funnel (public preview).</figcaption></figure>
-          <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/doctor-profile.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/doctor-profile.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Doctor profile page with specialty, experience, affiliations, certifications and a Consult Now button showing the fee."></a><figcaption><strong>Doctor profile.</strong> Fictional doctor; demo content for a fictional clinic.</figcaption></figure>
-          <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/payment-invalid-doctor-rejected.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/payment-invalid-doctor-rejected.webp" width="560" height="310" loading="lazy" decoding="async" alt="Payment page showing 'Please select a doctor' because no valid doctor was provided."></a><figcaption><strong>Guardrail in action.</strong> Without a valid doctor the payment page refuses instead of defaulting.</figcaption></figure>
+        <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 22 images</span></p>
+        <p class="gallery-sub">Patient journey · GoHighLevel funnel to PayMongo sandbox</p>
+        <div class="gallery" data-count="10">
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-01-landing.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-01-landing.webp" width="1440" height="3096" loading="lazy" decoding="async" alt="NEXT-CARE landing page: headline 'Expert Medical Care, Right Where You Are', Consult Now and Hospital Near You buttons, testimonials, specialties, a clinic finder and insurance partners."></a><figcaption><strong>1 · Landing page.</strong> Where a patient enters the funnel. Fictional clinic; demo content.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-02-talk-to-a-doctor.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-02-talk-to-a-doctor.webp" width="1440" height="3096" loading="lazy" decoding="async" alt="Talk to a Doctor page: a grid of doctors online now, each with View Profile and a Consult Now button showing the fee, followed by how it works and patient questions."></a><figcaption><strong>2 · Talk to a Doctor.</strong> Choose a doctor; each Consult Now button carries that doctor's fee.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-03-doctor-profile.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-03-doctor-profile.webp" width="1600" height="1330" loading="lazy" decoding="async" alt="Doctor profile page for a fictional doctor: specialty, experience, clinical focus, education, affiliations, certifications, FAQ and a Consult Now button with the fee."></a><figcaption><strong>3 · Doctor profile.</strong> Fictional doctor and credentials, written for the demo clinic.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-04-patient-details.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-04-patient-details.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Empty Patient Details form: full name, phone, date of birth, email, address and a Check Up Now selection, with a Consult Now button."></a><figcaption><strong>4 · Patient details.</strong> The native GoHighLevel form, shown empty.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-05-payment-quotation.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-05-payment-quotation.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Confirm Your Consultation page showing the doctor, a consultation fee of ₱357.21 (USD $5.67 equivalent), a 15-minute quote validity note and a Proceed to Secure Payment button."></a><figcaption><strong>5 · Payment quotation.</strong> The price is quoted server-side in n8n and converted from USD to PHP; the page never sets it.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-06-paymongo-checkout.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-06-paymongo-checkout.webp" width="1600" height="900" loading="lazy" decoding="async" alt="PayMongo hosted checkout for a NEXT-CARE consultation of ₱357.21, offering QR Ph, card and e-wallet payment methods."></a><figcaption><strong>6 · PayMongo checkout.</strong> Hosted by PayMongo in test mode — card details never touch NEXT-CARE.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-07-paymongo-payment-received.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-07-paymongo-payment-received.webp" width="1600" height="900" loading="lazy" decoding="async" alt="PayMongo test-mode page: Card Payment Received for ₱357.21, billed to a test name and test email, with a payment ID and a Return to Merchant button."></a><figcaption><strong>7 · Payment received (sandbox).</strong> A test-card payment billed to a synthetic test customer. No real money moved.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-08-payment-successful.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-08-payment-successful.webp" width="1600" height="900" loading="lazy" decoding="async" alt="NEXT-CARE Payment Successful page confirming the consultation with the fictional doctor, the amount paid and the payment timestamp."></a><figcaption><strong>8 · Payment successful.</strong> Shown on return from PayMongo; access still depends on the verified webhook, not this page.</figcaption></figure>
+          <figure class="shot top"><a class="shot-link" href="assets/images/projects/next-care/funnel-09-confirmation-email.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/funnel-09-confirmation-email.webp" width="958" height="901" loading="lazy" decoding="async" alt="Confirmation email marked SANDBOX TEST: payment confirmation table with doctor, amount, public reference and Paid status, an Online Consultation Link button and a Medical History Form link."></a><figcaption><strong>9 · Confirmation email.</strong> Consultation and medical-history links for a verified payment. This copy was resent manually after the automated send wasn't delivered, as its banner states.</figcaption></figure>
+          <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/payment-invalid-doctor-rejected.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/payment-invalid-doctor-rejected.webp" width="560" height="310" loading="lazy" decoding="async" alt="Payment page showing 'Please select a doctor' because no valid doctor was provided."></a><figcaption><strong>Guardrail.</strong> Without a valid doctor the payment page refuses instead of defaulting.</figcaption></figure>
         </div>
         <p class="gallery-sub">CRM &amp; booking · GoHighLevel workflows</p>
-        <div class="gallery" data-count="5">
+        <div class="gallery" data-count="6">
           <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/ncmc-01-new-lead-booking.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/ncmc-01-new-lead-booking.webp" width="1600" height="491" loading="lazy" decoding="async" alt="GoHighLevel workflow builder showing NCMC 01: form submitted, branch on check-up readiness, create opportunity, wait, add tag, and send welcome email, with an internal notification on unexpected values."></a><figcaption><strong>NCMC 01 · New lead.</strong> Routing by readiness, with a staff alert when the value is missing.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/ncmc-02-booking-updates.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/ncmc-02-booking-updates.webp" width="2800" height="546" loading="lazy" decoding="async" alt="GoHighLevel workflow NCMC 02 Booking Updates: form or tag triggers, a condition on the trigger, opportunity lookup, stage move, tag changes and a confirmation email with the meeting link; a reminder-email path hands contacts to the loop; unexpected cases alert staff."></a><figcaption><strong>NCMC 02 · Booking updates.</strong> Booked contacts get the meeting link; others get a reminder.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/ncmc-02-1-booking-loop.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/ncmc-02-1-booking-loop.webp" width="2800" height="558" loading="lazy" decoding="async" alt="GoHighLevel workflow NCMC 02.1: the booking-reminder loop that re-checks booking status, sends a reminder and hands the contact back to NCMC 02."></a><figcaption><strong>NCMC 02.1 · Reminder loop.</strong> Re-checks booking and hands contacts back to NCMC 02.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/ncmc-03-medical-history.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/ncmc-03-medical-history.webp" width="2800" height="340" loading="lazy" decoding="async" alt="GoHighLevel workflow NCMC 03: medical history form submitted, find the opportunity, move it to Form Filled Up and update tags; staff are alerted if no opportunity is found."></a><figcaption><strong>NCMC 03 · Medical history.</strong> Form submission moves the pipeline stage.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/ncmc-04-onsite-follow-up.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/ncmc-04-onsite-follow-up.webp" width="2400" height="396" loading="lazy" decoding="async" alt="GoHighLevel workflow NCMC 04: pipeline stage manually moved to on-site visit, wait, then send a thank-you email to the patient."></a><figcaption><strong>NCMC 04 · Visit follow-up.</strong> Staff move the stage; a thank-you email follows.</figcaption></figure>
+          <figure class="shot"><a class="shot-link" href="assets/images/projects/next-care/ncmc-05-payment-verification.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/ncmc-05-payment-verification.webp" width="2400" height="677" loading="lazy" decoding="async" alt="GoHighLevel workflow NCMC 05: the 'ncmc payment verified' tag is added to a contact, which notifies the assigned users of the payment verification."></a><figcaption><strong>NCMC 05 · Payment verification alert.</strong> The verified-payment tag written by n8n notifies assigned staff.</figcaption></figure>
         </div>
         <p class="gallery-sub">Payment layer · n8n + PostgreSQL</p>
-        <div class="gallery" data-count="4">
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/next-care/quote-consultation-price.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/quote-consultation-price.svg" width="476" height="850" loading="lazy" decoding="async" alt="Graph of the Quote Consultation Price workflow: validate the doctor slug, resolve doctor and price, check the doctor is active, resolve the USD to PHP rate, create the quote, with 400, 404 and 503 responses for invalid input, missing doctor, missing rate or database outage."></a><figcaption><strong>Quote Consultation Price.</strong> Server-side price; a distinct response for every failure.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/next-care/create-payment-checkout.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/create-payment-checkout.svg" width="476" height="1186" loading="lazy" decoding="async" alt="Graph of the Create Payment Checkout workflow: validate input, consume the quote and verify the doctor, write consultation and payment rows, build the PayMongo request, create the checkout session and redirect, with 400, 409, 502 and 503 responses."></a><figcaption><strong>Create Payment Checkout.</strong> A quote can be consumed once; PayMongo failures return 502.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/next-care/receive-payment-webhook.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/receive-payment-webhook.svg" width="700" height="1270" loading="lazy" decoding="async" alt="Graph of the Receive Payment Webhook workflow: parse signature header, build signed string, compute HMAC, check validity, idempotent insert of the payment event, decide whether to process, guarded payment and consultation transition, and specific responses for invalid signature, duplicates, already settled, success and database unavailable."></a><figcaption><strong>Receive Payment Webhook.</strong> Signed webhook → verified payment state, with a response for every outcome.</figcaption></figure>
-          <figure class="shot graph top"><a class="shot-link" href="assets/images/projects/next-care/send-payment-confirmation-email.svg"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/send-payment-confirmation-email.svg" width="476" height="1186" loading="lazy" decoding="async" alt="Graph of the Send Payment Confirmation Email workflow: scheduled check, load email safety config, find unsent paid confirmations, claim each email, validate the payment, check the recipient allowlist, send, mark sent or failed, and alert if a send was not recorded."></a><figcaption><strong>Send Payment Confirmation Email.</strong> Claimed, validated and allowlisted before sending; unrecorded sends raise an alert.</figcaption></figure>
+        <div class="gallery" data-count="6">
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/next-care/n8n-01-quote-consultation-price.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/n8n-01-quote-consultation-price.webp" width="2176" height="616" loading="lazy" decoding="async" alt="n8n canvas of 01 Quote Consultation Price: validate the doctor slug, resolve doctor and price, check the doctor is found and active, resolve the USD to PHP rate, create the quote, with 400, 404 and 503 responses."></a><figcaption><strong>01 · Quote Consultation Price.</strong> Server-side price; a distinct response for every failure.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/next-care/n8n-02-create-payment-checkout.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/n8n-02-create-payment-checkout.webp" width="2447" height="516" loading="lazy" decoding="async" alt="n8n canvas of 02 Create Payment Checkout: validate input, consume the quote and verify the doctor, generate a public reference, write consultation and payment rows, build the PayMongo request, create the checkout session and redirect, with 400, 409, 502 and 503 responses."></a><figcaption><strong>02 · Create Payment Checkout.</strong> A quote can be consumed once; PayMongo failures return 502.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/next-care/n8n-03-receive-payment-webhook.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/n8n-03-receive-payment-webhook.webp" width="2434" height="484" loading="lazy" decoding="async" alt="n8n canvas of 03 Receive Payment Webhook: parse the signature header, build the signed string, compute the HMAC, check validity, insert the payment event idempotently, apply a guarded payment and consultation transition, with responses for invalid signature, duplicates, already settled, success and database unavailable."></a><figcaption><strong>03 · Receive Payment Webhook.</strong> Signed webhook → verified payment state, with a response for every outcome.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/next-care/n8n-04-report-payment-status.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/n8n-04-report-payment-status.webp" width="1176" height="469" loading="lazy" decoding="async" alt="n8n canvas of 04 Report Payment Status: receive a status request, query consultation payment state, and respond 200 found, 404 not found or 503 database unavailable."></a><figcaption><strong>04 · Report Payment Status.</strong> What the Payment Successful page reads — straight from the database.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/next-care/n8n-05-send-payment-confirmation-email.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/n8n-05-send-payment-confirmation-email.webp" width="2446" height="666" loading="lazy" decoding="async" alt="n8n canvas of 05 Send Payment Confirmation Email: scheduled check, load email safety config, find unsent paid confirmations, claim each email, validate the payment, check the recipient allowlist, send through Gmail, mark sent or failed, and alert if a send was not recorded."></a><figcaption><strong>05 · Send Payment Confirmation Email.</strong> Claimed, validated and allowlisted before sending; unrecorded sends raise an alert.</figcaption></figure>
+          <figure class="shot graph"><a class="shot-link" href="assets/images/projects/next-care/n8n-06-tag-paid-ghl-contact.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/next-care/n8n-06-tag-paid-ghl-contact.webp" width="2354" height="502" loading="lazy" decoding="async" alt="n8n canvas of Tag Paid GHL Contact: validate the request, load payment state, check eligibility and live mode, claim the sync, look up the GoHighLevel contact, apply the payment tag, read it back and finalize, with every unexpected route stopping on a sync error."></a><figcaption><strong>CRM sync · Tag Paid GHL Contact.</strong> Claims, verifies and reads back one tag write; kept locked outside controlled runs.</figcaption></figure>
         </div>
-        <p class="caption gallery-note">Graphs are drawn from each workflow's exported JSON — node names and connections only.</p>
+        <p class="caption gallery-note">Screenshots of the n8n editor canvas. Sticky notes are hidden; node names and connections are as built.</p>
         </div>
         <p class="case-stack"><b>Stack:</b> GoHighLevel · n8n · PostgreSQL (Supabase) · PayMongo · Webhooks + HMAC · Gmail API · HTML/CSS/JS</p>
       </article>
@@ -803,11 +817,6 @@
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Input validation and proposal numbering</li><li>Revision detection against existing proposals</li><li>Fee calculation and AI risk review</li><li>Document, PDF and record creation</li><li>Client delivery and status logging</li></ul></div>
           <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Manager review when the AI flags it</li><li>Sales accepts, adjusts or rejects the recommendation</li><li>Sales previews and explicitly approves the PDF before sending</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>The AI never calculates the base fee</li><li>Structured-output parsing on the AI review</li><li>Duplicate-send and duplicate-resend blocks</li><li>AI, PDF and email failures logged on their own paths</li><li>Separate error-alert workflow</li></ul></div>
-          <dl class="evidence span">
-            <div class="ev-fact"><dt>Documented evidence</dt><dd>Trial documentation records the core flow as completed and verified: pricing, AI review, Sales decision routing, PDF generation and preview, the approval gate, client delivery with Sales copied, persistent records, and the revision and AI/PDF/email failure paths.</dd></div>
-            <div class="ev-open"><dt>Not shown</dt><dd>The client's name, pricing rules, proposal content and delivery evidence are confidential and omitted.</dd></div>
-            <div class="ev-expected"><dt>Expected impact</dt><dd>Consistent, traceable pricing and no unapproved or duplicate proposals reaching clients. Time saved hasn't been measured.</dd></div>
-          </dl>
         </div>
         <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 12 images</span></p>
         <div class="gallery" data-count="12">
@@ -1126,14 +1135,27 @@
 </dialog>
 
 <footer class="site-footer">
-  <div class="wrap footer-row">
-    <p>© 2026 Angelo Torrevillas · AI Automation Specialist</p>
-    <ul>
-      <li><a href="mailto:angelo.automates@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/angelo-ai-automation" rel="me noopener" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/yowlshi" rel="me noopener" target="_blank">GitHub</a></li>
-      <li><a href="#top">Back to top</a></li>
-    </ul>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">AT</span><span>Angelo Torrevillas</span></a>
+        <p>AI automation specialist in the Philippines. Workflow automation, business integrations and AI — built with the checks that keep them reliable.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <div>
+          <h2>Site</h2>
+          <ul><li><a href="#work">Work</a></li><li><a href="#stack">Stack</a></li><li><a href="#approach">Approach</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul>
+        </div>
+        <div>
+          <h2>Connect</h2>
+          <ul><li><a href="#book">Book a call</a></li><li><a href="mailto:angelo.automates@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/angelo-ai-automation" rel="me noopener" target="_blank">LinkedIn</a></li><li><a href="https://github.com/yowlshi" rel="me noopener" target="_blank">GitHub</a></li></ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Angelo Torrevillas · AI Automation Specialist</p>
+      <a href="#top">Back to top <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
 </footer>
 </body>
