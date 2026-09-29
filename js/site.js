@@ -118,10 +118,12 @@
     home = document.createComment('case-home');
     node.before(home);
     body.append(node);
-    body.scrollTop = 0;
     const title = node.querySelector('.case-title');
     if (title) dialog.setAttribute('aria-labelledby', title.id);
     dialog.showModal();
+    // Reset only once the dialog is rendered: while closed it is display:none, so an earlier
+    // reset is ignored and the browser restores the previous case's scroll offset.
+    body.scrollTop = 0;
     syncScrollLock();
     dialog.querySelector('.dialog-close').focus();
     return true;
