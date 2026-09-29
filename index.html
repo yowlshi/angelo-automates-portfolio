@@ -95,12 +95,11 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header" id="top">
+<header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="#top" aria-label="Angelo Torrevillas — back to top">
-        <span class="brand-mark" aria-hidden="true">AT</span>
-        <span>Angelo Torrevillas</span>
+        <span class="brand-first">Angelo</span> Torrevillas
       </a>
       <div class="nav-right">
         <div class="nav-links" id="nav-links">
@@ -131,7 +130,7 @@
       <div>
         <p class="eyebrow">What I can automate for your business</p>
         <h1 class="display" id="hero-title"><span class="hero-line">Stop repeating tasks.</span> <span class="hero-line">Start <em class="hero-accent">automating.</em></span></h1>
-        <p class="lede">I'm Angelo Torrevillas, an AI automation specialist. I connect the tools your business runs on — CRM, payments, documents, email and chat — into reliable automated workflows, with AI where it helps and a person approving anything costly.</p>
+        <p class="lede">I connect the tools your business runs on — CRM, payments, documents, email and chat — into reliable automated workflows, with AI where it helps and a person approving anything costly.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#book">Book a call</a>
           <a class="btn btn-ghost" href="#work">See the systems
@@ -239,11 +238,11 @@
           </div>
         </article>
         <article class="card" data-reveal>
-          <div class="card-media"><img src="assets/images/projects/next-care/card.webp" width="800" height="500" loading="lazy" decoding="async" alt="NEXT-CARE Talk to a Doctor page with consultation price and Consult Now button."></div>
+          <div class="card-media"><img src="assets/images/projects/next-care/card.webp" width="800" height="500" loading="lazy" decoding="async" alt="NEXT-CARE landing page for a fictional clinic: headline 'Expert Medical Care, Right Where You Are', with Consult Now and Hospital Near You buttons."></div>
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">Healthcare funnel &amp; payments</span><span class="chip dev">In development · Sandbox</span></div>
             <h3><a href="#case-nc" data-case="case-nc">NEXT-CARE Medical Clinic System</a></h3>
-            <p class="card-desc">A paid consultation funnel where access is released only after a signed payment webhook is verified against the database.</p>
+            <p class="card-desc">Designed as a fictional medical clinic: one connected patient journey, from doctor discovery to consultation payment.</p>
             <ul class="pills" aria-label="Stack"><li>GoHighLevel</li><li>n8n</li><li>PostgreSQL</li><li>PayMongo</li></ul>
             <div class="card-foot"><p class="card-more" aria-hidden="true">Case study <span>→</span></p><a class="card-visit" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (fictional clinic, opens in a new tab)</span></a></div>
           </div>
@@ -1135,27 +1134,28 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">AT</span><span>Angelo Torrevillas</span></a>
-        <p>AI automation specialist in the Philippines. Workflow automation, business integrations and AI — built with the checks that keep them reliable.</p>
+    <div class="footer-sign">
+      <div>
+        <p class="footer-name"><span class="brand-first">Angelo</span> Torrevillas</p>
+        <p class="footer-role">AI Automation Specialist · Computer Engineer</p>
       </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <div>
-          <h2>Site</h2>
-          <ul><li><a href="#work">Work</a></li><li><a href="#stack">Stack</a></li><li><a href="#approach">Approach</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul>
-        </div>
-        <div>
-          <h2>Connect</h2>
-          <ul><li><a href="#book">Book a call</a></li><li><a href="mailto:angelo.automates@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/angelo-ai-automation" rel="me noopener" target="_blank">LinkedIn</a></li><li><a href="https://github.com/yowlshi" rel="me noopener" target="_blank">GitHub</a></li></ul>
-        </div>
+      <nav aria-label="Contact and social">
+        <ul class="footer-social">
+          <li><a href="mailto:angelo.automates@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/angelo-ai-automation" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/yowlshi" rel="me noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.facebook.com/the1andYowli" rel="me noopener" target="_blank">Facebook</a></li>
+          <li><a href="https://www.tiktok.com/@angelolearns.automation" rel="me noopener" target="_blank">TikTok</a></li>
+        </ul>
       </nav>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Angelo Torrevillas · AI Automation Specialist</p>
-      <a href="#top">Back to top <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
+    <p class="footer-legal">© 2026 Angelo Torrevillas · AI Automation Specialist</p>
   </div>
 </footer>
+
+<!-- Fixed to the viewport; shown once the hero has scrolled away (js/site.js). Without JS, "#top" still scrolls home natively. -->
+<a class="to-top" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4.5M4.75 9.5 10 4.25l5.25 5.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
 </body>
 </html>

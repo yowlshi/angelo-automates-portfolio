@@ -184,8 +184,11 @@ p + p { margin-top: var(--s4); }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
 @media (prefers-reduced-transparency: reduce) { .site-header { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; } }
 .nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--s4); min-height: 4rem; }
-.brand { display: inline-flex; align-items: center; gap: var(--s3); font-weight: 650; letter-spacing: -0.015em; text-decoration: none; font-size: 1rem; min-height: 44px; }
-.brand-mark { width: 1.75rem; height: 1.75rem; border-radius: 7px; flex: none; background: var(--accent); color: #131211; display: grid; place-items: center; font-size: 0.8125rem; font-weight: 700; letter-spacing: -0.02em; }
+.brand { display: inline-flex; align-items: center; gap: 0.3em; font-weight: 650; letter-spacing: -0.015em; text-decoration: none; font-size: 1rem; min-height: 44px; white-space: nowrap; color: var(--text); }
+/* Two-tone name (navbar + footer): first name in the accent, surname in the text colour.
+   Light theme uses the deeper coral, as .hero-accent does, so small text keeps AA contrast. */
+.brand-first { color: var(--accent); }
+:root[data-theme="light"] .brand-first { color: var(--btn-bg); }
 .nav-right { display: flex; align-items: center; gap: var(--s2); }
 .nav-links { display: flex; align-items: center; gap: var(--s1); }
 .nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--s3); font-size: var(--fs-ui); color: var(--muted); text-decoration: none; border-radius: var(--r-sm); transition: color var(--t-hover) var(--ease); }
@@ -621,17 +624,47 @@ details[open] > summary .sum-icon { transform: rotate(45deg); }
 .booking-frame iframe { display: block; width: 100%; height: 860px; border: 0; background: #fff; }
 
 /* ---------- Footer ---------- */
-.site-footer { padding-block: var(--s12) var(--s8); border-top: 1px solid var(--line); background: var(--bg-band); font-size: var(--fs-body-sm); color: var(--muted); }
-.footer-top { display: grid; gap: var(--s10); grid-template-columns: 1fr; padding-bottom: var(--s10); border-bottom: 1px solid var(--line); }
-@media (min-width: 48rem) { .footer-top { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } }
-.footer-brand .brand { color: var(--text); }
-.footer-brand p { margin-top: var(--s3); max-width: 26rem; line-height: 1.55; }
-.footer-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s6); }
-.footer-nav h2 { font-size: var(--fs-caption); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 650; color: var(--text); margin-bottom: var(--s2); line-height: 1.4; }
-.footer-nav a, .footer-bottom a { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; text-decoration: none; transition: color var(--t-hover) var(--ease); }
-.footer-nav a:hover, .footer-bottom a:hover { color: var(--text); }
-.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s2) var(--s6); padding-top: var(--s4); }
-.footer-bottom svg { width: 1em; height: 1em; }
+/* A signature, not a section: two-tone name and role on one side, plain text links on the other. */
+.site-footer { padding-block: var(--s10) var(--s6); border-top: 1px solid var(--line); background: var(--bg-band); font-size: var(--fs-body-sm); color: var(--muted); }
+.footer-sign { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s5) var(--s8); padding-bottom: var(--s8); border-bottom: 1px solid var(--line); }
+.footer-name { font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem); line-height: 1.2; letter-spacing: -0.025em; font-weight: 650; color: var(--text); }
+.footer-role { margin-top: var(--s2); line-height: 1.5; }
+.footer-social { display: flex; flex-wrap: wrap; gap: 0 var(--s5); margin-inline: calc(-1 * var(--s1)); }
+.footer-social a {
+  position: relative; display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--s1);
+  font-weight: 550; color: var(--muted); text-decoration: none;
+  transition: color var(--t-hover) var(--ease), transform 200ms var(--ease);
+}
+/* Accent hairline that draws in on hover/focus only — never a resting underline */
+.footer-social a::after {
+  content: ""; position: absolute; left: var(--s1); right: var(--s1); bottom: 0.6rem; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--ease);
+}
+.footer-social a:hover, .footer-social a:focus-visible { color: var(--accent-text); transform: translateY(-2px); }
+.footer-social a:hover::after, .footer-social a:focus-visible::after { transform: scaleX(1); }
+.footer-legal { padding-top: var(--s5); padding-right: calc(46px + var(--s4)); font-size: var(--fs-caption); }   /* clear of the back-to-top button at the page end */
+
+/* Back-to-top: fixed, bottom-right, revealed after the hero (js/site.js). Hidden while the
+   booking calendar is on screen so it never sits over the widget's controls. */
+.to-top {
+  position: fixed; z-index: 45;
+  right: max(var(--gutter), env(safe-area-inset-right));
+  bottom: max(var(--s5), calc(env(safe-area-inset-bottom) + var(--s3)));
+  display: grid; place-items: center; width: 46px; height: 46px;
+  border: 1px solid var(--line-strong); border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--surface) 92%, transparent); color: var(--text);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 10px 28px -12px rgb(0 0 0 / 0.5);
+  text-decoration: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+  transition: opacity 200ms var(--ease), transform 240ms var(--ease-spring), visibility 0s, border-color var(--t-hover) var(--ease), color var(--t-hover) var(--ease);
+}
+:root[data-theme="light"] .to-top { box-shadow: 0 10px 24px -14px rgb(31 29 27 / 0.35); }
+.to-top svg { width: 20px; height: 20px; transition: transform 200ms var(--ease); }
+.to-top:hover { border-color: color-mix(in srgb, var(--accent) 70%, var(--line-strong)); color: var(--accent-text); }
+.to-top:hover svg { transform: translateY(-2px); }
+.to-top:active { transform: scale(0.94); }
+.js .to-top:not(.is-visible) { opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 200ms var(--ease), transform 200ms var(--ease), visibility 0s linear 200ms; }
+@media (prefers-reduced-transparency: reduce) { .to-top { background: var(--surface); -webkit-backdrop-filter: none; backdrop-filter: none; } }
 
 /* ---------- Reveal: content stays visible unless JS opts in ---------- */
 @media (prefers-reduced-motion: no-preference) {
@@ -643,10 +676,11 @@ details[open] > summary .sum-icon { transform: rotate(45deg); }
   .btn:active, .icon-btn:active, .filter:active { transform: none; }
   .card-more span { transition: none; }
   .sum-icon, .js .nav-links { transition-duration: 1ms !important; }
+  .footer-social a:hover, .footer-social a:focus-visible, .to-top:active, .to-top:hover svg, .js .to-top:not(.is-visible) { transform: none; }
 }
 
 @media print {
-  .site-header, .booking, .nav-toggle, .skip-link, .filters, .show-more { display: none; }
+  .site-header, .booking, .nav-toggle, .skip-link, .filters, .show-more, .to-top { display: none; }
   .js .case-library { display: block; }
   .card[hidden] { display: flex; }
 }

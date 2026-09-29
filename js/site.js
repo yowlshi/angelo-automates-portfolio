@@ -83,6 +83,24 @@
   document.body.prepend(sentinel);
   new IntersectionObserver(([e]) => header.classList.toggle('is-scrolled', !e.isIntersecting)).observe(sentinel);
 
+  // Back-to-top: shown once the hero is fully above the viewport, hidden again at the top and
+  // while the booking calendar is on screen (so it never covers the widget). Observers, no scroll listener.
+  const toTop = document.querySelector('.to-top');
+  const hero = document.querySelector('.hero');
+  if (toTop && hero) {
+    let pastHero = false, overBooking = false;
+    const sync = () => toTop.classList.toggle('is-visible', pastHero && !overBooking);
+    new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(hero);
+    const booking = document.querySelector('.booking');
+    if (booking) new IntersectionObserver(([e]) => { overBooking = e.isIntersecting; sync(); }).observe(booking);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    toTop.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      header.querySelector('.brand').focus({ preventScroll: true });   // keep keyboard focus at the top, not on the now-hidden button
+    });
+  }
+
   // One-time reveals
   const reveals = document.querySelectorAll('[data-reveal]');
   const io = new IntersectionObserver(entries => {
