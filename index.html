@@ -244,7 +244,7 @@
             <h3><a href="#case-clinic" data-case="case-clinic">Medical Clinic Website &amp; Payment Integration</a></h3>
             <p class="card-desc">Designed as a fictional medical clinic: one connected patient journey, from doctor discovery to consultation payment.</p>
             <ul class="pills" aria-label="Stack"><li>GoHighLevel</li><li>n8n</li><li>PostgreSQL</li><li>PayMongo</li></ul>
-            <div class="card-foot"><p class="card-more" aria-hidden="true">Case study <span>→</span></p></div>
+            <div class="card-foot"><p class="card-more" aria-hidden="true">Case study <span>→</span></p><a class="card-visit" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (fictional clinic, opens in a new tab)</span></a></div>
           </div>
         </article>
       </div>
@@ -731,6 +731,7 @@
         <h3 class="case-title" id="case-clinic-title">Medical Clinic Website &amp; Payment Integration</h3>
         <ul class="chips" aria-label="Status"><li class="chip dev">In development · Sandbox</li><li class="chip plain">Portfolio system · fictional clinic</li></ul>
         <p class="case-summary">A paid online-consultation funnel where the patient only receives consultation access after a signed payment webhook has been verified against the database.</p>
+        <p class="case-actions"><a class="btn btn-primary" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a><span>Public GoHighLevel preview of the fictional clinic. Its checkout runs in PayMongo test mode only.</span></p>
         <div class="case-intro">
           <div><p class="kicker">Problem</p><p>For paid online consultations, the consultation link is the product. A clinic needs patients to move smoothly from interest to booking, but access should only be released once payment is genuinely confirmed — not because a redirect page said so.</p></div>
           <div><p class="kicker">Solution</p><p>Built in two stages. First the GoHighLevel layer: a patient funnel and CRM workflows that move contacts through a pipeline, send reminders and alert staff. Then a payment layer in n8n and PostgreSQL: server-side pricing, PayMongo hosted checkout, signature-verified webhooks and a database-backed payment state that decides what the patient receives — synced back to the CRM.</p></div>
