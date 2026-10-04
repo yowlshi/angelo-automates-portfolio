@@ -11,6 +11,6 @@ assets/images/projects/*/source/
 assets/images/profile/profile-studio-original.png
 assets/images/profile/profile-graduation-original.png
 
-# Full-resolution NEXT-CARE funnel and GHL captures supplied in the project folder stay local-only;
-# the site uses the optimized funnel-*.webp and ncmc-*.webp derivatives.
-assets/images/projects/next-care/*.png
+# Full-resolution clinic funnel and GHL captures supplied in the project folder stay local-only;
+# the site uses the optimized funnel-*.webp and ghl-*.webp derivatives.
+assets/images/projects/medical-clinic/*.png
