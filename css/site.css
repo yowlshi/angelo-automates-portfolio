@@ -256,22 +256,35 @@ section { padding-block: var(--section); }
 .hero-figure figcaption { margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line); }
 .hero-figure figcaption strong { color: var(--text); font-weight: 600; }
 
-/* Hero workflow diagram (inline SVG) */
+/* Hero workflow diagram (inline SVG process map)
+   Default = the complete map, lit and static (no JS, reduced motion, or JS failure).
+   .is-live (set by js/site.js) dims it; .is-on lights each step as the loop reaches it and
+   .is-current marks the step in progress. The No branch is dashed and labelled, so the
+   two decision paths never rely on colour alone. */
 .wf { width: 100%; height: auto; font-family: var(--font); }
 .wf .edge { fill: none; stroke: var(--d-edge); stroke-width: 1.5; }
-.wf .edge.lit { stroke: var(--accent); stroke-dasharray: 1; stroke-dashoffset: 0; }
-.wf .node rect, .wf .node polygon { fill: var(--d-node); stroke: var(--d-edge); stroke-width: 1.25; }
-.wf .node text { fill: var(--d-text); font-size: 13px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
-.wf .node.main rect, .wf .node.main polygon { fill: var(--d-lit-fill); stroke: var(--accent); }
-.wf .node.main text { fill: var(--text); }
-.wf .node.branch rect { stroke-dasharray: 4 3; }
-.wf .node.branch text { fill: var(--muted); font-size: 12px; }
-.wf .lbl { fill: var(--muted); font-size: 11px; font-weight: 500; }
-@media (prefers-reduced-motion: no-preference) {
-  .js .wf .node.main rect, .js .wf .node.main polygon { animation: wf-lit 420ms var(--ease) both; animation-delay: calc(var(--i) * 360ms + 250ms); }
-  .js .wf .node.main text { animation: wf-text 420ms var(--ease) both; animation-delay: calc(var(--i) * 360ms + 250ms); }
-  .js .wf .edge.lit { animation: wf-draw 360ms linear both; animation-delay: calc(var(--i) * 360ms + 70ms); }
-}
+.wf .edge-lit { fill: none; stroke: var(--accent); stroke-width: 1.75; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.wf .dash { stroke-dasharray: 5 4; }
+.wf .arrow { fill: var(--accent); }
+.wf .node rect, .wf .node polygon { fill: var(--d-lit-fill); stroke: var(--accent); stroke-width: 1.25; }
+.wf .node.alt rect { stroke-dasharray: 5 4; }
+.wf .node text { fill: var(--text); font-size: 15px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+.wf .lbl { fill: var(--accent-text); font-size: 12.5px; font-weight: 600; text-anchor: middle; }
+
+.wf.is-live .node rect, .wf.is-live .node polygon { fill: var(--d-node); stroke: var(--d-edge); transition: fill 600ms var(--ease), stroke 600ms var(--ease), stroke-width 300ms var(--ease); }
+.wf.is-live .node text { fill: var(--d-text); transition: fill 600ms var(--ease); }
+.wf.is-live .arrow { fill: var(--d-edge); transition: fill 600ms var(--ease); }
+.wf.is-live .lbl { fill: var(--muted); transition: fill 600ms var(--ease); }
+/* switching off fades the line out, then resets the draw, so the loop never "rewinds" */
+.wf.is-live .edge-lit { opacity: 0; stroke-dashoffset: 1; transition: opacity 600ms var(--ease), stroke-dashoffset 0s 600ms; }
+.wf.is-live .edge-lit.dash { stroke-dashoffset: 0; transition: opacity 600ms var(--ease); }
+.wf.is-live .node.is-on rect, .wf.is-live .node.is-on polygon { fill: var(--d-lit-fill); stroke: var(--accent); transition-duration: 350ms; }
+.wf.is-live .node.is-on text { fill: var(--text); transition-duration: 350ms; }
+.wf.is-live .node.is-current rect, .wf.is-live .node.is-current polygon { fill: color-mix(in srgb, var(--accent) 20%, var(--d-node)); stroke-width: 2; }
+.wf.is-live .edge-lit.is-on { opacity: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 450ms linear, opacity 0s; }
+.wf.is-live .edge-lit.dash.is-on { transition: opacity 450ms var(--ease); }
+.wf.is-live .arrow.is-on { fill: var(--accent); transition: fill 150ms linear 380ms; }
+.wf.is-live .lbl.is-on { fill: var(--accent-text); transition-duration: 350ms; }
 /* ---------- Ticker: warm band under the hero, drifting left to right ----------
    Two identical lists; the track moves by exactly one list width (-50% → 0), so the
    loop point is invisible. Each list is at least one viewport wide, so no gap opens
@@ -299,9 +312,6 @@ section { padding-block: var(--section); }
 }
 @keyframes ticker-ltr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-@keyframes wf-lit { from { fill: var(--d-node); stroke: var(--d-edge); } to { fill: var(--d-lit-fill); stroke: var(--accent); } }
-@keyframes wf-text { from { fill: var(--d-text); } to { fill: var(--text); } }
-@keyframes wf-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 
 /* ---------- Chips / pills ---------- */
 .chips { display: flex; flex-wrap: wrap; gap: var(--s2); }
@@ -688,8 +698,10 @@ details[open] > summary .sum-icon { transform: rotate(45deg); }
 
 /* Hero diagram: simplified stacked version on small screens */
 .wf-m { display: none; }
-.wf-m .node text { font-size: 15px; }
-.wf-m .lbl.note { font-size: 12.5px; }
+.wf-d { max-width: 30rem; margin-inline: auto; }   /* single column: keep the map from growing oversized */
+.wf-m .node text { font-size: 14.5px; }
+.wf-m .lbl { font-size: 11.5px; }
+.wf-m .node.alt text { font-size: 13px; }
 @media (max-width: 39.99rem) {
   .wf-d { display: none; }
   .wf-m { display: block; }

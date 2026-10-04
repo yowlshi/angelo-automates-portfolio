@@ -99,6 +99,44 @@
     });
   }
 
+  // Hero process map: lights the steps in order on a continuous loop. The first check finds
+  // information missing (No → request it → process again), the re-check passes (Yes) and the
+  // task completes. One timeout chain, running only while the hero is on screen and the tab
+  // is visible. Reduced motion (or no JS) keeps the complete static map from the CSS.
+  const flow = document.querySelector('.hero-figure');
+  if (flow) {
+    // keys lit at each tick; the last key named is the step in progress
+    const steps = ['start', 'e1 receive', 'e2 process', 'e3 decide', 'no recover', 'back process',
+      'decide', 'yes complete', 'e5 end', '', '', 'reset', ''];
+    const maps = flow.querySelectorAll('.wf');
+    const keyed = flow.querySelectorAll('[data-k]');
+    const motionOk = window.matchMedia('(prefers-reduced-motion: no-preference)');
+    let tick = 0, timer = 0, onScreen = false;
+    const clear = () => keyed.forEach(el => el.classList.remove('is-on', 'is-current'));
+    const advance = () => {
+      const keys = steps[tick].split(' ').filter(Boolean);
+      tick = (tick + 1) % steps.length;
+      if (keys[0] === 'reset') clear();
+      else if (keys.length) {
+        const current = keys[keys.length - 1];
+        keyed.forEach(el => {
+          if (keys.includes(el.dataset.k)) el.classList.add('is-on');
+          el.classList.toggle('is-current', el.dataset.k === current && el.classList.contains('node'));
+        });
+      }
+      timer = setTimeout(advance, 900);
+    };
+    const sync = () => {
+      clearTimeout(timer);
+      maps.forEach(svg => svg.classList.toggle('is-live', motionOk.matches));
+      if (!motionOk.matches) { clear(); tick = 0; return; }
+      if (onScreen && !document.hidden) timer = setTimeout(advance, 600);
+    };
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); }).observe(flow);
+    document.addEventListener('visibilitychange', sync);
+    motionOk.addEventListener('change', sync);
+  }
+
   // One-time reveals
   const reveals = document.querySelectorAll('[data-reveal]');
   const io = new IntersectionObserver(entries => {

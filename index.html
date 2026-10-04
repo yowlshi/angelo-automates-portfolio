@@ -143,55 +143,72 @@
       </div>
 
       <figure class="hero-figure">
-        <svg class="wf wf-d" viewBox="0 0 560 468" role="img" aria-labelledby="wf-title wf-desc">
-          <title id="wf-title">How a clinic payment becomes consultation access</title>
-          <desc id="wf-desc">PayMongo sends a signed webhook. If the signature is invalid, the request is rejected with a 401 and logged. A valid event is recorded once; duplicates are acknowledged and skipped. A guarded update marks the payment paid in PostgreSQL, ignoring already-settled payments. Only then is the confirmation email with the consultation links sent and the CRM contact tagged.</desc>
-          <!-- main path edges -->
-          <path class="edge lit" style="--i:1" pathLength="1" d="M150 60V90"/>
-          <path class="edge lit" style="--i:2" pathLength="1" d="M150 150V190"/>
-          <path class="edge lit" style="--i:3" pathLength="1" d="M150 234V268"/>
-          <path class="edge lit" style="--i:4" pathLength="1" d="M150 312V346"/>
-          <path class="edge lit" style="--i:5" pathLength="1" d="M150 390V420"/>
-          <path class="edge lit" style="--i:5" pathLength="1" d="M150 404H418V420"/>
-          <!-- rejection branches -->
-          <path class="edge" d="M240 120H316"/>
-          <path class="edge" d="M268 212H316"/>
-          <path class="edge" d="M268 290H316"/>
-          <text class="lbl" x="250" y="110">invalid</text>
-          <text class="lbl" x="276" y="203">dup.</text>
-          <text class="lbl" x="272" y="281">settled</text>
-          <text class="lbl" x="160" y="174">valid</text>
-          <!-- nodes -->
-          <g class="node main" style="--i:0"><rect x="32" y="20" width="236" height="40" rx="20"/><text x="150" y="40">PayMongo signed webhook</text></g>
-          <g class="node main" style="--i:1"><polygon points="150,90 244,120 150,150 56,120"/><text x="150" y="120">Signature valid?</text></g>
-          <g class="node main" style="--i:2"><rect x="32" y="190" width="236" height="44" rx="8"/><text x="150" y="212">Record event once</text></g>
-          <g class="node main" style="--i:3"><rect x="32" y="268" width="236" height="44" rx="8"/><text x="150" y="290">Guarded payment update</text></g>
-          <g class="node main" style="--i:4"><rect x="32" y="346" width="236" height="44" rx="8"/><text x="150" y="368">PostgreSQL: verified paid</text></g>
-          <g class="node main" style="--i:5"><rect x="32" y="420" width="236" height="44" rx="8"/><text x="150" y="442">Email consultation links</text></g>
-          <g class="node main" style="--i:5"><rect x="300" y="420" width="236" height="44" rx="8"/><text x="418" y="442">Tag CRM contact</text></g>
-          <g class="node branch"><rect x="316" y="100" width="220" height="40" rx="8"/><text x="426" y="120">Reject: 401, logged</text></g>
-          <g class="node branch"><rect x="316" y="192" width="220" height="40" rx="8"/><text x="426" y="212">Acknowledge, don't reprocess</text></g>
-          <g class="node branch"><rect x="316" y="270" width="220" height="40" rx="8"/><text x="426" y="290">Ignore: already settled</text></g>
+        <!-- Process map: pill = start/end, rectangle = task, diamond = decision. js/site.js steps
+             through it on a loop (data-k marks what lights up); without JS, or with reduced motion,
+             the complete map is shown static. -->
+        <svg class="wf wf-d" viewBox="0 0 460 450" role="img" aria-labelledby="wf-title wf-desc">
+          <title id="wf-title">How an automated business process runs</title>
+          <desc id="wf-desc">Start. Receive the request, then process the information. Decision: is everything ready? Yes: complete the task, then end. No: request the missing information; once it is received, process the information again and re-check.</desc>
+          <g aria-hidden="true">
+            <!-- edges: grey base, coral overlay drawn when that path is taken -->
+            <path class="edge" d="M120 54V76"/><path class="edge-lit" data-k="e1" pathLength="1" d="M120 54V76"/>
+            <path class="edge" d="M120 124V146"/><path class="edge-lit" data-k="e2" pathLength="1" d="M120 124V146"/>
+            <path class="edge" d="M120 194V214"/><path class="edge-lit" data-k="e3" pathLength="1" d="M120 194V214"/>
+            <path class="edge" d="M120 298V326"/><path class="edge-lit" data-k="yes" pathLength="1" d="M120 298V326"/>
+            <path class="edge" d="M120 374V396"/><path class="edge-lit" data-k="e5" pathLength="1" d="M120 374V396"/>
+            <path class="edge dash" d="M220 258H264"/><path class="edge-lit dash" data-k="no" d="M220 258H264"/>
+            <path class="edge dash" d="M358 236V172H224"/><path class="edge-lit dash" data-k="back" d="M358 236V172H224"/>
+            <polygon class="arrow" data-k="e1" points="115,72 125,72 120,80"/>
+            <polygon class="arrow" data-k="e2" points="115,142 125,142 120,150"/>
+            <polygon class="arrow" data-k="e3" points="115,210 125,210 120,218"/>
+            <polygon class="arrow" data-k="yes" points="115,322 125,322 120,330"/>
+            <polygon class="arrow" data-k="e5" points="115,392 125,392 120,400"/>
+            <polygon class="arrow" data-k="no" points="260,253 260,263 268,258"/>
+            <polygon class="arrow" data-k="back" points="228,167 228,177 220,172"/>
+            <text class="lbl" data-k="yes" x="142" y="314">Yes</text>
+            <text class="lbl" data-k="no" x="244" y="248">No</text>
+            <text class="lbl" data-k="back" x="289" y="162">Received</text>
+            <!-- shapes -->
+            <g class="node" data-k="start"><rect x="60" y="16" width="120" height="38" rx="19"/><text x="120" y="35">Start</text></g>
+            <g class="node" data-k="receive"><rect x="20" y="80" width="200" height="44" rx="8"/><text x="120" y="102">Receive request</text></g>
+            <g class="node" data-k="process"><rect x="20" y="150" width="200" height="44" rx="8"/><text x="120" y="172">Process information</text></g>
+            <g class="node" data-k="decide"><polygon points="120,218 220,258 120,298 20,258"/><text x="120" y="258">Everything ready?</text></g>
+            <g class="node" data-k="complete"><rect x="20" y="330" width="200" height="44" rx="8"/><text x="120" y="352">Complete task</text></g>
+            <g class="node" data-k="end"><rect x="60" y="400" width="120" height="38" rx="19"/><text x="120" y="419">End</text></g>
+            <g class="node alt" data-k="recover"><rect x="268" y="236" width="180" height="44" rx="8"/><text x="358" y="258">Request missing info</text></g>
+          </g>
         </svg>
-        <svg class="wf wf-m" viewBox="0 0 320 476" role="img" aria-labelledby="wfm-title wfm-desc">
-          <title id="wfm-title">How a clinic payment becomes consultation access</title>
-          <desc id="wfm-desc">A signed PayMongo webhook is verified; invalid signatures are rejected with a 401 and logged. The event is recorded once, and duplicates are acknowledged and skipped. A guarded update marks the payment verified in PostgreSQL, ignoring already-settled payments. Only then are the consultation links emailed and the CRM contact tagged.</desc>
-          <g class="node main" style="--i:0"><rect x="16" y="10" width="288" height="46" rx="23"/><text x="160" y="33">PayMongo signed webhook</text></g>
-          <path class="edge lit" style="--i:1" pathLength="1" d="M160 56V92"/>
-          <g class="node main" style="--i:1"><rect x="16" y="92" width="288" height="46" rx="8"/><text x="160" y="115">Verify signature (HMAC)</text></g>
-          <text class="lbl note" x="172" y="156">invalid → 401, logged</text>
-          <path class="edge lit" style="--i:2" pathLength="1" d="M160 138V174"/>
-          <g class="node main" style="--i:2"><rect x="16" y="174" width="288" height="46" rx="8"/><text x="160" y="197">Record event once</text></g>
-          <text class="lbl note" x="172" y="238">duplicate → skipped</text>
-          <path class="edge lit" style="--i:3" pathLength="1" d="M160 220V256"/>
-          <g class="node main" style="--i:3"><rect x="16" y="256" width="288" height="46" rx="8"/><text x="160" y="279">Guarded payment update</text></g>
-          <text class="lbl note" x="172" y="320">settled → ignored</text>
-          <path class="edge lit" style="--i:4" pathLength="1" d="M160 302V338"/>
-          <g class="node main" style="--i:4"><rect x="16" y="338" width="288" height="46" rx="8"/><text x="160" y="361">PostgreSQL: verified paid</text></g>
-          <path class="edge lit" style="--i:5" pathLength="1" d="M160 384V420"/>
-          <g class="node main" style="--i:5"><rect x="16" y="420" width="288" height="46" rx="8"/><text x="160" y="443">Email links + tag CRM contact</text></g>
+        <svg class="wf wf-m" viewBox="0 0 320 450" role="img" aria-labelledby="wfm-title wfm-desc">
+          <title id="wfm-title">How an automated business process runs</title>
+          <desc id="wfm-desc">Start. Receive the request, then process the information. Decision: is everything ready? Yes: complete the task, then end. No: request the missing information; once it is received, process the information again and re-check.</desc>
+          <g aria-hidden="true">
+            <path class="edge" d="M96 54V76"/><path class="edge-lit" data-k="e1" pathLength="1" d="M96 54V76"/>
+            <path class="edge" d="M96 124V146"/><path class="edge-lit" data-k="e2" pathLength="1" d="M96 124V146"/>
+            <path class="edge" d="M96 194V214"/><path class="edge-lit" data-k="e3" pathLength="1" d="M96 194V214"/>
+            <path class="edge" d="M96 298V326"/><path class="edge-lit" data-k="yes" pathLength="1" d="M96 298V326"/>
+            <path class="edge" d="M96 374V396"/><path class="edge-lit" data-k="e5" pathLength="1" d="M96 374V396"/>
+            <path class="edge dash" d="M186 258H210"/><path class="edge-lit dash" data-k="no" d="M186 258H210"/>
+            <path class="edge dash" d="M264 232V172H190"/><path class="edge-lit dash" data-k="back" d="M264 232V172H190"/>
+            <polygon class="arrow" data-k="e1" points="91,72 101,72 96,80"/>
+            <polygon class="arrow" data-k="e2" points="91,142 101,142 96,150"/>
+            <polygon class="arrow" data-k="e3" points="91,210 101,210 96,218"/>
+            <polygon class="arrow" data-k="yes" points="91,322 101,322 96,330"/>
+            <polygon class="arrow" data-k="e5" points="91,392 101,392 96,400"/>
+            <polygon class="arrow" data-k="no" points="206,253 206,263 214,258"/>
+            <polygon class="arrow" data-k="back" points="194,167 194,177 186,172"/>
+            <text class="lbl" data-k="yes" x="118" y="314">Yes</text>
+            <text class="lbl" data-k="no" x="200" y="248">No</text>
+            <text class="lbl" data-k="back" x="225" y="162">Received</text>
+            <g class="node" data-k="start"><rect x="46" y="16" width="100" height="38" rx="19"/><text x="96" y="35">Start</text></g>
+            <g class="node" data-k="receive"><rect x="6" y="80" width="180" height="44" rx="8"/><text x="96" y="102">Receive request</text></g>
+            <g class="node" data-k="process"><rect x="6" y="150" width="180" height="44" rx="8"/><text x="96" y="172">Process information</text></g>
+            <g class="node" data-k="decide"><polygon points="96,218 186,258 96,298 6,258"/><text x="96" y="258">Everything ready?</text></g>
+            <g class="node" data-k="complete"><rect x="6" y="330" width="180" height="44" rx="8"/><text x="96" y="352">Complete task</text></g>
+            <g class="node" data-k="end"><rect x="46" y="400" width="100" height="38" rx="19"/><text x="96" y="419">End</text></g>
+            <g class="node alt" data-k="recover"><rect x="214" y="232" width="100" height="52" rx="8"/><text x="264" y="258"><tspan x="264" dy="-0.6em">Request</tspan><tspan x="264" dy="1.2em">missing info</tspan></text></g>
+          </g>
         </svg>
-        <figcaption><strong>Clinic payment to access.</strong> The real branches of the signed-webhook workflow and what follows it. PayMongo sandbox; fictional clinic.</figcaption>
+        <figcaption><strong>From request to done.</strong> Map the process, automate the repetitive steps, check that everything is ready, then route the result. Missing details are requested, not guessed.</figcaption>
       </figure>
     </div>
   </section>
@@ -1142,7 +1159,7 @@
       <nav aria-label="Social">
         <ul class="footer-social">
           <li><a href="https://www.facebook.com/the1andYowli" rel="me noopener" target="_blank">Facebook</a></li>
-          <li><a href="https://www.tiktok.com/@angelolearns.automation" rel="me noopener" target="_blank">TikTok</a></li>
+          <li><a href="https://www.tiktok.com/@angeloautomates?is_from_webapp=1&amp;sender_device=pc" rel="me noopener" target="_blank">TikTok</a></li>
         </ul>
       </nav>
     </div>
