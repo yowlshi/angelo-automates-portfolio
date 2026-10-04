@@ -78,7 +78,7 @@
         {
           "@type": "Question",
           "name": "How does he approach automation reliability?",
-          "acceptedAnswer": { "@type": "Answer", "text": "He maps the business process, sets architecture boundaries and runs a premortem before building. Deterministic rules come first; AI gets a narrow role and no authority over money or records. Systems use idempotency, allowlists and kill switches, a person approves anything costly or irreversible, and each project's status states what has and hasn't been tested." }
+          "acceptedAnswer": { "@type": "Answer", "text": "He maps how the business process actually works and runs a premortem to find what could go wrong before building. Fixed rules handle anything that must be exact, such as prices and payment status; AI gets a narrow role and no authority over money or records. Systems are built so a retry can't send the same email twice, sending can be stopped instantly with a kill switch, and a person approves anything costly or irreversible." }
         },
         {
           "@type": "Question",
@@ -231,7 +231,7 @@
       <header class="section-head" data-reveal>
         <p class="eyebrow">Selected systems</p>
         <h2 id="work-title">Systems, not just workflows.</h2>
-        <p class="lede">Each opens as a full case study: the problem, how it runs, where people decide, and what has and hasn't been proven.</p>
+        <p class="lede">Each one opens into a full case study: the problem, how the automation works, and where people make the call.</p>
       </header>
       <div class="grid three">
         <article class="card" data-reveal>
@@ -294,8 +294,8 @@
     <div class="wrap">
       <header class="section-head" data-reveal>
         <p class="eyebrow">All builds</p>
-        <h2 id="builds-title">Earlier agents and integrations.</h2>
-        <p class="lede">Single-workflow builds and experiments — active builds first, then newest first. This is where the patterns above started.</p>
+        <h2 id="builds-title">More automations, agents and integrations.</h2>
+        <p class="lede">Smaller builds and experiments — AI assistants, chatbots and CRM workflows built with n8n, Zapier and GoHighLevel. Several ideas in the systems above were first tried here.</p>
       </header>
 
       <div class="filters" role="group" aria-label="Filter builds by platform" hidden>
@@ -398,7 +398,7 @@
           </div>
         </article>
         <article class="card build" data-tags="zapier">
-          <div class="card-media"><img src="assets/images/projects/zapier-asana-crm/card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Zapier editor: Asana trigger split into paths for ready to start, no response, quoted, approved, paid and closed."></div>
+          <div class="card-media"><img src="assets/images/projects/zapier-asana-crm/card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Zapier editor: Asana trigger split into five paths: Ready to Start, No Response, Quoted, Approved, and Paid and Closed."></div>
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">Zapier · CRM</span><span class="chip plain">Earlier build</span></div>
             <h3><a href="#case-zap-asana" data-case="case-zap-asana">Zapier–Asana CRM Automation</a></h3>
@@ -523,12 +523,12 @@
       <header class="section-head" data-reveal>
         <p class="eyebrow">How I build</p>
         <h2 id="approach-title">Design before workflow.</h2>
-        <p class="lede">The selected systems went through the same written gates, each needing sign-off before the next.</p>
+        <p class="lede">I plan before I build: map how the work really happens, decide what should be automated and what stays with people, and look for what could go wrong — then build and test.</p>
       </header>
       <ol class="steps">
         <li data-reveal><h3>Process map</h3><p>Actors, decisions, exceptions and hand-offs — and where automation should stop.</p></li>
         <li data-reveal><h3>Architecture gate</h3><p>What is deterministic, where AI is allowed, which database holds the truth.</p></li>
-        <li data-reveal><h3>Premortem</h3><p>Assume it failed and find out why. For AR Payment Chasing: seven design holes, fixed before building.</p></li>
+        <li data-reveal><h3>Premortem</h3><p>Assume it failed and find out why. For AR Payment Chasing: seven design holes, each given a fix in the plan before building.</p></li>
         <li data-reveal><h3>Implementation spec</h3><p>States, contracts, tests and scope — sent back when it isn't build-ready.</p></li>
         <li data-reveal><h3>Build &amp; validate</h3><p>Structural and runtime evidence reported separately; blocked and failed paths exercised.</p></li>
         <li data-reveal><h3>Honest status</h3><p>Untested paths, deferrals and known limitations written down.</p></li>
@@ -605,7 +605,7 @@
         </details>
         <details>
           <summary>How does he approach automation reliability? <span class="sum-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></summary>
-          <div class="answer"><p>He maps the business process, sets architecture boundaries and runs a premortem before building. Deterministic rules come first; AI gets a narrow role and no authority over money or records. Systems use idempotency, allowlists and kill switches, a person approves anything costly or irreversible, and each project's status states what has and hasn't been tested.</p></div>
+          <div class="answer"><p>He maps how the business process actually works and runs a premortem to find what could go wrong before building. Fixed rules handle anything that must be exact, such as prices and payment status; AI gets a narrow role and no authority over money or records. Systems are built so a retry can't send the same email twice, sending can be stopped instantly with a kill switch, and a person approves anything costly or irreversible.</p></div>
         </details>
         <details>
           <summary>How can someone work with him? <span class="sum-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></summary>
@@ -671,6 +671,7 @@
         <p class="eyebrow">Selected system · Accounts receivable</p>
         <h3 class="case-title" id="case-ar-title">AR Payment Chasing</h3>
         <ul class="chips" aria-label="Status"><li class="chip final">Concept Demo · FINAL</li><li class="chip plain">Portfolio system · synthetic data</li></ul>
+        <p class="caption" style="margin-top:var(--s2)">Concept Demo · FINAL: the four core workflows are complete and run on synthetic invoices. A real accounting connection, the final-notice approval step and monitoring are planned for a later phase.</p>
         <p class="case-summary">Chases overdue invoices by email — once per customer, at the right escalation level, and never after they've paid.</p>
         <div class="case-intro">
           <div><p class="kicker">Problem</p><p>Chasing overdue invoices is repetitive, but mistakes are expensive: a reminder sent after payment, three emails to one customer, or a message to the wrong address damages the relationship. Simple automations can't rule those out.</p></div>
@@ -707,6 +708,7 @@
         <p class="eyebrow">Selected system · Bids &amp; proposals</p>
         <h3 class="case-title" id="case-rfp-title">RFP &amp; Tender Response</h3>
         <ul class="chips" aria-label="Status"><li class="chip final">FINAL · structural completeness</li><li class="chip plain">Portfolio system · synthetic tenders</li></ul>
+        <p class="caption" style="margin-top:var(--s2)">FINAL · structural completeness: every workflow is built and passes validation; full runtime testing of the system is still to come.</p>
         <p class="case-summary">Turns tender documents into reviewed, approved draft answers — with a person signing off at every point that matters.</p>
         <div class="case-intro">
           <div><p class="kicker">Problem</p><p>Answering a tender means pulling every requirement out of long, inconsistent documents, finding the best previously approved answer, drafting the rest and getting sign-off before a hard deadline. A missed requirement or an unapproved claim can cost the bid.</p></div>
@@ -756,7 +758,7 @@
         <div class="flow-wrap"><p class="kicker">System layers and their status</p>
           <ol class="layers">
             <li><b>Patient funnel</b><span>GoHighLevel pages: landing → talk to a doctor → doctor profile → patient details → payment → confirmation</span><span class="chip info">Built · public preview</span></li>
-            <li><b>CRM &amp; booking</b><span>Four GHL workflows: readiness routing, pipeline stages, booking reminder loop, medical-history stage, visit follow-up</span><span class="chip final">Implemented</span></li>
+            <li><b>CRM &amp; booking</b><span>Four GHL workflows and a booking-reminder loop: readiness routing, pipeline stages, booking reminders, medical-history stage, visit follow-up</span><span class="chip final">Implemented</span></li>
             <li><b>Pricing</b><span>Server-side quote with USD → PHP conversion; the browser never sets the price</span><span class="chip final">Runtime-tested</span></li>
             <li><b>Checkout</b><span>PayMongo hosted checkout with a guard that refuses anything but test mode</span><span class="chip dev">Sandbox-tested</span></li>
             <li><b>Payment verification</b><span>Signed webhook → HMAC check → idempotent event → guarded state change in PostgreSQL</span><span class="chip dev">Built · sandbox</span></li>
@@ -764,6 +766,7 @@
             <li><b>CRM sync</b><span>Verified payment → one controlled tag write to the GHL contact</span><span class="chip dev">Verified once · controlled</span></li>
             <li><b>Staff notification</b><span>GHL alert to staff when the verified-payment tag lands</span><span class="chip final">Implemented</span></li>
           </ol>
+          <p class="caption" style="margin-top:var(--s3)">Sandbox means PayMongo test mode — no real money moves. Verified once · controlled means one deliberate, supervised run has verified the CRM sync, which stays locked outside such runs.</p>
         </div>
         <div class="case-body">
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Lead routing, pipeline moves and booking reminders in GHL</li><li>Price quote, checkout creation and webhook verification</li><li>Payment-state transitions and confirmation email</li><li>Verified-payment status synced to the CRM contact</li></ul></div>
@@ -985,7 +988,7 @@
         <p class="eyebrow">Earlier build · Zapier</p>
         <h3 class="case-title" id="case-zap-asana-title">Zapier–Asana CRM Automation</h3>
         <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
-        <p class="case-summary">An updated Asana task splits into five paths — ready to start, no response, quoted, approved, paid and closed — that create lead folders and sub-tasks, send timed Gmail follow-ups, and draft welcome and recommendation emails with AI.</p>
+        <p class="case-summary">An updated Asana task splits into five paths — Ready to Start, No Response, Quoted, Approved, and Paid and Closed — that create lead folders and sub-tasks, send timed Gmail follow-ups, and draft welcome and recommendation emails with AI.</p>
         <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 1 image</span></p>
         <div class="gallery" data-count="1">
           <figure class="shot"><a class="shot-link" href="assets/images/projects/zapier-asana-crm/evidence.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/zapier-asana-crm/evidence.webp" width="1000" height="803" loading="lazy" decoding="async" alt="Zapier editor showing the Asana trigger and five paths with Google Drive, Asana, Gmail, delay, filter and AI steps."></a><figcaption><strong>Zap structure.</strong> One trigger, five stage-specific paths.</figcaption></figure>
