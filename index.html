@@ -671,7 +671,7 @@
         <p class="eyebrow">Selected system · Accounts receivable</p>
         <h3 class="case-title" id="case-ar-title">AR Payment Chasing</h3>
         <ul class="chips" aria-label="Status"><li class="chip final">Concept Demo · FINAL</li><li class="chip plain">Portfolio system · synthetic data</li></ul>
-        <p class="caption" style="margin-top:var(--s2)">Concept Demo · FINAL: the four core workflows are complete and run on synthetic invoices. A real accounting connection, the final-notice approval step and monitoring are planned for a later phase.</p>
+        <p class="caption" style="margin-top:var(--s2)">Concept Demo · FINAL: the four core workflows are complete and run on synthetic invoices. A real accounting connection, the final-notice approval step, opt-out suppression and monitoring are planned for a later phase.</p>
         <p class="case-summary">Chases overdue invoices by email — once per customer, at the right escalation level, and never after they've paid.</p>
         <div class="case-intro">
           <div><p class="kicker">Problem</p><p>Chasing overdue invoices is repetitive, but mistakes are expensive: a reminder sent after payment, three emails to one customer, or a message to the wrong address damages the relationship. Simple automations can't rule those out.</p></div>
@@ -688,7 +688,7 @@
           </ol>
         </div>
         <div class="case-body">
-          <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Invoice sync with stable, duplicate-free upserts</li><li>Eligibility and escalation-tier decisions</li><li>Per-customer consolidation and outbox de-duplication</li><li>Template rendering per tier</li><li>Reply triage: opt-out, bounce, out-of-office, promise-to-pay, dispute</li></ul></div>
+          <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Invoice sync with stable, duplicate-free upserts</li><li>Eligibility and escalation-tier decisions</li><li>Per-customer consolidation and outbox de-duplication</li><li>Template rendering per tier</li><li>Reply triage: a verified promise to pay pauses chasing and a dispute stops it; opt-out, bounce and out-of-office replies are flagged for a person</li></ul></div>
           <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Final notices for invoices 45 or more days overdue stay in <em>awaiting approval</em>; dispatch cannot claim them, and no approval step is built yet</li><li>Low-confidence reply classifications aren't acted on automatically</li><li>An operator can stop all sending with the kill switch</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>Atomic claim — a single <code>UPDATE … RETURNING</code></li><li>Send-time revalidation: paid or closed invoices are superseded, not sent</li><li>Recipient-domain allowlist</li><li>Kill switch that safely releases claimed rows</li><li>AI classifier has no tools and no write access to financial state</li></ul></div>
         </div>
