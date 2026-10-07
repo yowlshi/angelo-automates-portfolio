@@ -476,23 +476,14 @@
         <p class="lede">See how each automation moves from trigger to outcome — and where AI, automation and human decisions fit into the process.</p>
       </header>
 
-      <ul class="maps-key" aria-label="How to read the process maps">
-        <li><span class="key-mark k-auto" aria-hidden="true"></span>Automated step</li>
-        <li><span class="key-mark k-ai" aria-hidden="true"></span>AI-assisted step</li>
-        <li><span class="key-mark k-human" aria-hidden="true"></span>Human action</li>
-        <li><span class="key-mark k-decision" aria-hidden="true"></span>Decision</li>
-        <li><span class="key-mark k-ok" aria-hidden="true"></span>Start or successful outcome</li>
-        <li><span class="key-mark k-stop" aria-hidden="true"></span>Stop or failure</li>
-      </ul>
-
-      <div class="grid maps-grid">
+      <div class="grid maps-grid" id="maps-grid">
         <article class="card map-card">
           <div class="card-media"><img src="assets/images/projects/ar-payment-chasing/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the AR Payment Chasing process map."></div>
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">Accounts receivable</span><span class="chip final">Concept Demo · FINAL</span></div>
             <h3>AR Payment Chasing</h3>
             <p class="card-desc">Chase overdue invoices by email: once per customer, at the right level of firmness, never after payment.</p>
-            <a class="map-open" href="assets/images/projects/ar-payment-chasing/process-map.webp" data-w="1175" data-h="2722" data-alt="Process map: overdue invoices are checked, one reminder per customer is planned, held for approval if it is a final notice, re-checked for payment, recipient and sending switch, then sent; customer replies are classified with AI and routed to a payment-promise pause, a dispute stop or a person." data-caption="AR Payment Chasing · Concept Demo · FINAL">View process map<span class="visually-hidden">: AR Payment Chasing</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-ar" data-case="map-ar">View process map<span class="visually-hidden">: AR Payment Chasing</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -501,7 +492,7 @@
             <div class="card-meta"><span class="card-cat">Bids &amp; proposals</span><span class="chip final">FINAL · structural</span></div>
             <h3>RFP &amp; Tender Response</h3>
             <p class="card-desc">Turn tender documents into reviewed, approved answers, with a person signing off at every point that matters.</p>
-            <a class="map-open" href="assets/images/projects/rfp-tender-response/process-map.webp" data-w="1729" data-h="2441" data-alt="Process map: a tender is uploaded, the owner decides whether to bid, AI pulls out the requirements for a coordinator to confirm, answers are drafted from approved sources or handed to a person, reviewed, compiled, signed off by the owner and submitted by the team; buyer changes are summarised and confirmed separately." data-caption="RFP &amp; Tender Response · FINAL · structural">View process map<span class="visually-hidden">: RFP &amp; Tender Response</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-rfp" data-case="map-rfp">View process map<span class="visually-hidden">: RFP &amp; Tender Response</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -510,7 +501,7 @@
             <div class="card-meta"><span class="card-cat">Healthcare funnel &amp; payments</span><span class="chip dev">In development · Sandbox</span></div>
             <h3>Medical Clinic Website &amp; Payment Integration</h3>
             <p class="card-desc">A patient only receives consultation access after the payment has been genuinely confirmed.</p>
-            <a class="map-open" href="assets/images/projects/medical-clinic/process-map.webp" data-w="2075" data-h="2301" data-alt="Process map: the patient chooses a doctor and enters details, the price is quoted, the patient pays on a secure test-mode page, and only a genuine payment confirmation marks the consultation paid and emails access links; a separate clinic CRM follow-up handles booking reminders, the medical-history form and visit follow-up." data-caption="Medical Clinic Website &amp; Payment Integration · In development · Sandbox">View process map<span class="visually-hidden">: Medical Clinic Website &amp; Payment Integration</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-clinic" data-case="map-clinic">View process map<span class="visually-hidden">: Medical Clinic Website &amp; Payment Integration</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -519,7 +510,7 @@
             <div class="card-meta"><span class="card-cat">Interior design firm · Anonymized</span><span class="chip final">Core flow delivered &amp; verified</span></div>
             <h3>AI Proposal Intake &amp; Pricing System</h3>
             <p class="card-desc">Turn a sales intake into a priced, AI-reviewed, approved proposal that reaches the client once.</p>
-            <a class="map-open" href="assets/images/projects/ai-proposal-intake/process-map.webp" data-w="1429" data-h="2581" data-alt="Process map: a sales intake is validated, priced with fixed rules, reviewed by AI for risks, decided by Sales, turned into a PDF, approved by Sales and emailed once; unfinished steps such as manager review are shown as stopping points, and failures are recorded." data-caption="AI Proposal Intake &amp; Pricing System · Core flow delivered &amp; verified">View process map<span class="visually-hidden">: AI Proposal Intake &amp; Pricing System</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-proposal" data-case="map-proposal">View process map<span class="visually-hidden">: AI Proposal Intake &amp; Pricing System</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -528,7 +519,7 @@
             <div class="card-meta"><span class="card-cat">n8n · RAG</span><span class="chip final">Active</span></div>
             <h3>RAG Employee Handbook Assistant</h3>
             <p class="card-desc">Answer staff policy questions in the team chat, grounded in the company&#x27;s own handbook documents.</p>
-            <a class="map-open" href="assets/images/projects/rag-employee-handbook/process-map.webp" data-w="1129" data-h="901" data-alt="Process map: new handbook documents are indexed for search; when an employee asks a policy question in Slack, AI finds the relevant passages and the answer is posted back." data-caption="RAG Employee Handbook Assistant · Active">View process map<span class="visually-hidden">: RAG Employee Handbook Assistant</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-rag" data-case="map-rag">View process map<span class="visually-hidden">: RAG Employee Handbook Assistant</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -536,8 +527,8 @@
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">n8n · AI agent</span><span class="chip final">Active</span></div>
             <h3>Messenger Inquiry Assistant</h3>
-            <p class="card-desc">Answer customer questions about services on the business&#x27;s Facebook page, around the clock.</p>
-            <a class="map-open" href="assets/images/projects/messenger-assistant/process-map.webp" data-w="829" data-h="1041" data-alt="Process map: a customer messages the business page, non-text messages are ignored, service information is looked up, AI writes a reply using the recent conversation and the reply is sent in Messenger." data-caption="Messenger Inquiry Assistant · Active">View process map<span class="visually-hidden">: Messenger Inquiry Assistant</span> <span aria-hidden="true">→</span></a>
+            <p class="card-desc">Answer customer questions about services on the business&#x27;s Facebook page.</p>
+            <a class="map-open" href="#map-messenger" data-case="map-messenger">View process map<span class="visually-hidden">: Messenger Inquiry Assistant</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -545,8 +536,8 @@
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">n8n · Document AI</span><span class="chip final">Active</span></div>
             <h3>Invoice Agent for Telegram</h3>
-            <p class="card-desc">Photo of an invoice in, checked invoice record out, without anyone retyping it.</p>
-            <a class="map-open" href="assets/images/projects/invoice-agent/process-map.webp" data-w="1129" data-h="1321" data-alt="Process map: an invoice photo is read, AI pulls out the details, missing details or duplicates are reported back to the user, otherwise the invoice is stored and confirmed; unexpected failures raise an error alert." data-caption="Invoice Agent for Telegram · Active">View process map<span class="visually-hidden">: Invoice Agent for Telegram</span> <span aria-hidden="true">→</span></a>
+            <p class="card-desc">Photo of an invoice in, checked invoice record out.</p>
+            <a class="map-open" href="#map-invoice" data-case="map-invoice">View process map<span class="visually-hidden">: Invoice Agent for Telegram</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -555,7 +546,7 @@
             <div class="card-meta"><span class="card-cat">n8n · AI agent</span><span class="chip dev">Experimental</span></div>
             <h3>SQL Sales Analytics Assistant</h3>
             <p class="card-desc">Answer sales questions in the team chat from the company&#x27;s sales records.</p>
-            <a class="map-open" href="assets/images/projects/sql-sales-analytics/process-map.webp" data-w="587" data-h="785" data-alt="Process map: a team member asks a sales question in Slack, AI looks up the sales records and works out the answer, and the answer is posted in the thread." data-caption="SQL Sales Analytics Assistant · Experimental">View process map<span class="visually-hidden">: SQL Sales Analytics Assistant</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-sql" data-case="map-sql">View process map<span class="visually-hidden">: SQL Sales Analytics Assistant</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -564,7 +555,7 @@
             <div class="card-meta"><span class="card-cat">n8n · Voice agent</span><span class="chip plain">Built · inactive</span></div>
             <h3>Dental Voice Appointment Setter</h3>
             <p class="card-desc">An AI voice assistant answers calls and books, moves or cancels appointments in the clinic calendar.</p>
-            <a class="map-open" href="assets/images/projects/dental-appointment-setter/process-map.webp" data-w="1729" data-h="1601" data-alt="Process map: an AI voice assistant talks with the caller and, depending on the request, finds free times, books, moves or cancels an appointment; invalid booking details are sent back for correction and every call outcome is recorded." data-caption="Dental Voice Appointment Setter · Built · inactive">View process map<span class="visually-hidden">: Dental Voice Appointment Setter</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-dental" data-case="map-dental">View process map<span class="visually-hidden">: Dental Voice Appointment Setter</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -573,7 +564,7 @@
             <div class="card-meta"><span class="card-cat">n8n · Experiment</span><span class="chip plain">Experiment</span></div>
             <h3>Full-Context Assistant: document in the prompt</h3>
             <p class="card-desc">Knowledge-grounding experiment 1 of 3: the reference material is written into the assistant&#x27;s instructions.</p>
-            <a class="map-open" href="assets/images/projects/knowledge-grounding-experiments/process-map-prompt.webp" data-w="752" data-h="632" data-alt="Process map: a user asks a question in the chat and AI answers from reference material written into its instructions." data-caption="Full-Context Assistant: document in the prompt · Experiment">View process map<span class="visually-hidden">: Full-Context Assistant: document in the prompt</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-fc-prompt" data-case="map-fc-prompt">View process map<span class="visually-hidden">: Full-Context Assistant: document in the prompt</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -582,7 +573,7 @@
             <div class="card-meta"><span class="card-cat">n8n · Experiment</span><span class="chip plain">Experiment</span></div>
             <h3>Full-Context Assistant: documents fetched per message</h3>
             <p class="card-desc">Knowledge-grounding experiment 2 of 3: both reference documents are fetched in full for every message.</p>
-            <a class="map-open" href="assets/images/projects/knowledge-grounding-experiments/process-map-flexible.webp" data-w="834" data-h="761" data-alt="Process map: a user asks a question, both reference documents are fetched on every message, and AI answers using their full text." data-caption="Full-Context Assistant: documents fetched per message · Experiment">View process map<span class="visually-hidden">: Full-Context Assistant: documents fetched per message</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-fc-flexible" data-case="map-fc-flexible">View process map<span class="visually-hidden">: Full-Context Assistant: documents fetched per message</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -591,7 +582,7 @@
             <div class="card-meta"><span class="card-cat">n8n · Experiment</span><span class="chip plain">Experiment</span></div>
             <h3>Full-Context Assistant: documents as tools</h3>
             <p class="card-desc">Knowledge-grounding experiment 3 of 3: the assistant decides for itself when to read the reference documents.</p>
-            <a class="map-open" href="assets/images/projects/knowledge-grounding-experiments/process-map-tool.webp" data-w="829" data-h="761" data-alt="Process map: a user asks a question, AI decides whether to read the reference documents, then writes the answer." data-caption="Full-Context Assistant: documents as tools · Experiment">View process map<span class="visually-hidden">: Full-Context Assistant: documents as tools</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-fc-tool" data-case="map-fc-tool">View process map<span class="visually-hidden">: Full-Context Assistant: documents as tools</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -600,7 +591,7 @@
             <div class="card-meta"><span class="card-cat">n8n · AI agent</span><span class="chip plain">Superseded by SQL version</span></div>
             <h3>AI Sales Data Assistant</h3>
             <p class="card-desc">The first sales assistant, answering from a small sample sales table. Replaced by the SQL Sales Analytics Assistant.</p>
-            <a class="map-open" href="assets/images/projects/sql-sales-analytics/process-map-sales-data.webp" data-w="575" data-h="632" data-alt="Process map: a user asks a sales question in the chat and AI looks up sales by product, date or transaction and calculates the answer. Superseded experiment." data-caption="AI Sales Data Assistant · Superseded by SQL version">View process map<span class="visually-hidden">: AI Sales Data Assistant</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-sales-data" data-case="map-sales-data">View process map<span class="visually-hidden">: AI Sales Data Assistant</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -609,7 +600,7 @@
             <div class="card-meta"><span class="card-cat">Zapier · CRM</span><span class="chip plain">Earlier build</span></div>
             <h3>Zapier–Asana CRM Automation</h3>
             <p class="card-desc">When the team moves a lead to a new stage, the matching follow-up happens automatically.</p>
-            <a class="map-open" href="assets/images/projects/zapier-asana-crm/process-map.webp" data-w="1729" data-h="1041" data-alt="Process map: the team updates a lead&#x27;s stage, and each stage triggers its own follow-up: a project folder and task, timed follow-up emails, quote follow-ups, or an AI-written welcome or recommendation email that is sent automatically." data-caption="Zapier–Asana CRM Automation · Earlier build">View process map<span class="visually-hidden">: Zapier–Asana CRM Automation</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-zap-asana" data-case="map-zap-asana">View process map<span class="visually-hidden">: Zapier–Asana CRM Automation</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -618,7 +609,7 @@
             <div class="card-meta"><span class="card-cat">Zapier · Lead qualification</span><span class="chip plain">Earlier build</span></div>
             <h3>Zapier Lead Qualification &amp; Outreach</h3>
             <p class="card-desc">Enrich and score every new enquiry, then follow up according to how promising the lead is.</p>
-            <a class="map-open" href="assets/images/projects/zapier-lead-qualification/process-map.webp" data-w="1129" data-h="1321" data-alt="Process map: an enquiry is enriched with company details, scored by AI and saved; high and medium leads are sent an AI-written outreach or nurturing email automatically with a sales alert, and low leads are summarised for sales." data-caption="Zapier Lead Qualification &amp; Outreach · Earlier build">View process map<span class="visually-hidden">: Zapier Lead Qualification &amp; Outreach</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-zap-lead" data-case="map-zap-lead">View process map<span class="visually-hidden">: Zapier Lead Qualification &amp; Outreach</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -627,7 +618,7 @@
             <div class="card-meta"><span class="card-cat">Zapier · Content</span><span class="chip plain">Earlier build</span></div>
             <h3>Zapier Content Repurposing</h3>
             <p class="card-desc">Turn one recorded audio file into blog and social posts, publishing or holding them for review.</p>
-            <a class="map-open" href="assets/images/projects/zapier-content-repurposing/process-map.webp" data-w="1129" data-h="1321" data-alt="Process map: an MP3 added to a shared folder is transcribed and drafted into blog and social posts by AI; an AI decision either publishes to Facebook and LinkedIn or saves the drafts for a person to review." data-caption="Zapier Content Repurposing · Earlier build">View process map<span class="visually-hidden">: Zapier Content Repurposing</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-zap-content" data-case="map-zap-content">View process map<span class="visually-hidden">: Zapier Content Repurposing</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -635,8 +626,8 @@
           <div class="card-body">
             <div class="card-meta"><span class="card-cat">GoHighLevel · CRM</span><span class="chip plain">Earlier build</span></div>
             <h3>Car Insurance Sales Workflows</h3>
-            <p class="card-desc">Move a car-insurance lead from first contact to an issued policy, with the team alerted at each step.</p>
-            <a class="map-open" href="assets/images/projects/ghl-car-insurance-sales/process-map.webp" data-w="866" data-h="2034" data-alt="Process map: a new lead gets the insurance form and an agent, submits the form, receives package options, replies with a choice, and once payment and the policy are marked, moves through paid-customer upsells to policy delivery." data-caption="Car Insurance Sales Workflows · Earlier build">View process map<span class="visually-hidden">: Car Insurance Sales Workflows</span> <span aria-hidden="true">→</span></a>
+            <p class="card-desc">Move a car-insurance lead from first contact to an issued policy, with follow-up at each stage.</p>
+            <a class="map-open" href="#map-ghl-insurance" data-case="map-ghl-insurance">View process map<span class="visually-hidden">: Car Insurance Sales Workflows</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -645,7 +636,7 @@
             <div class="card-meta"><span class="card-cat">GoHighLevel · CRM</span><span class="chip plain">Earlier build</span></div>
             <h3>Salon Client Retention Pipeline</h3>
             <p class="card-desc">Take a salon client from first enquiry through their service to a rebooking follow-up.</p>
-            <a class="map-open" href="assets/images/projects/ghl-salon-client-retention/process-map.webp" data-w="595" data-h="1614" data-alt="Process map: an enquiry creates the client record and a welcome email, then each stage staff move the client to — consultation booked, service in progress, follow-up — sends the matching emails and tasks, ending with a rebooking offer." data-caption="Salon Client Retention Pipeline · Earlier build">View process map<span class="visually-hidden">: Salon Client Retention Pipeline</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-ghl-salon" data-case="map-ghl-salon">View process map<span class="visually-hidden">: Salon Client Retention Pipeline</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="card map-card">
@@ -654,11 +645,15 @@
             <div class="card-meta"><span class="card-cat">GoHighLevel · CRM</span><span class="chip plain">Earlier build</span></div>
             <h3>Lead Nurturing Pipeline</h3>
             <p class="card-desc">Keep in touch with a new lead until they book an appointment, then welcome them as a client once paid.</p>
-            <a class="map-open" href="assets/images/projects/ghl-lead-nurturing-pipeline/process-map.webp" data-w="1168" data-h="1601" data-alt="Process map: a new lead is sent a booking link; if not booked, nurturing emails repeat daily until they book, when the booking is confirmed; once payment is marked the lead becomes a client and is thanked." data-caption="Lead Nurturing Pipeline · Earlier build">View process map<span class="visually-hidden">: Lead Nurturing Pipeline</span> <span aria-hidden="true">→</span></a>
+            <a class="map-open" href="#map-ghl-nurture" data-case="map-ghl-nurture">View process map<span class="visually-hidden">: Lead Nurturing Pipeline</span> <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
-      <p class="caption maps-note">Each map shows the business process as built, with its status and limitations noted in the footer. Planned steps that aren't built yet are drawn dashed or marked as stopping points.</p>
+
+      <div class="builds-foot">
+        <p class="builds-count" id="maps-count" aria-live="polite">19 process maps</p>
+        <button class="btn btn-ghost show-more" type="button" aria-expanded="false" aria-controls="maps-grid" hidden>Show all process maps</button>
+      </div>
     </div>
   </section>
 
@@ -1310,6 +1305,355 @@
         </div>
         </div>
         <p class="case-stack"><b>Stack:</b> PHP · MySQL · JavaScript · HTML/CSS</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Process map details: shown inline without JS; with JS each opens in the case dialog -->
+  <section id="map-library" class="case-library" aria-labelledby="map-library-title">
+    <div class="wrap">
+      <h2 id="map-library-title">Process maps in detail</h2>
+      <article class="case-full map-detail" id="map-ar" aria-labelledby="map-ar-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Accounts receivable</p>
+        <h3 class="case-title" id="map-ar-title">AR Payment Chasing</h3>
+        <ul class="chips" aria-label="Status"><li class="chip final">Concept Demo · FINAL</li></ul>
+        <p class="case-summary">Chase overdue invoices by email: once per customer, at the right level of firmness, never after payment.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Chasing overdue invoices is repetitive, but mistakes are costly: a reminder after payment, several emails to one customer or a message to the wrong address damages the relationship.</p></div>
+            <div><p class="kicker">The approach</p><p>Fixed rules decide who to chase and how firmly, every reminder is re-checked just before it&#x27;s sent, and customer replies are sorted by an AI classifier that can&#x27;t change any financial records.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ar-payment-chasing/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/ar-payment-chasing/process-map.webp" width="1176" height="2651" loading="lazy" decoding="async" alt="Process map: overdue invoices are checked, one reminder per customer is planned, held for approval if it is a final notice, re-checked for payment, recipient and sending switch, then sent; customer replies are classified with AI and routed to a payment-promise pause, a dispute stop or a person."></a><figcaption class="visually-hidden">AR Payment Chasing · Concept Demo · FINAL</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/ar-payment-chasing/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-rfp" aria-labelledby="map-rfp-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Bids &amp; proposals</p>
+        <h3 class="case-title" id="map-rfp-title">RFP &amp; Tender Response</h3>
+        <ul class="chips" aria-label="Status"><li class="chip final">FINAL · structural</li></ul>
+        <p class="case-summary">Turn tender documents into reviewed, approved answers, with a person signing off at every point that matters.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Answering a tender means pulling every requirement out of long, inconsistent documents and getting approved answers signed off before a hard deadline. A missed requirement or an unapproved claim can cost the bid.</p></div>
+            <div><p class="kicker">The approach</p><p>Requirements are extracted and confirmed by a person, answers are drafted only from an approved library, and every answer goes through review, approval and the owner&#x27;s final sign-off.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rfp-tender-response/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/rfp-tender-response/process-map.webp" width="1729" height="2364" loading="lazy" decoding="async" alt="Process map: a tender is uploaded, the owner decides whether to bid, AI pulls out the requirements for a coordinator to confirm, answers are drafted from approved sources or handed to a person, reviewed, compiled, signed off by the owner and submitted by the team; buyer changes are summarised and confirmed separately."></a><figcaption class="visually-hidden">RFP &amp; Tender Response · FINAL · structural</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/rfp-tender-response/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-clinic" aria-labelledby="map-clinic-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Healthcare funnel &amp; payments</p>
+        <h3 class="case-title" id="map-clinic-title">Medical Clinic Website &amp; Payment Integration</h3>
+        <ul class="chips" aria-label="Status"><li class="chip dev">In development · Sandbox</li></ul>
+        <p class="case-summary">A patient only receives consultation access after the payment has been genuinely confirmed.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>For paid online consultations, the consultation link is the product: access should only be released once payment is genuinely confirmed, not because a confirmation page said so.</p></div>
+            <div><p class="kicker">The approach</p><p>A patient journey from choosing a doctor to payment, where the clinic&#x27;s system sets the price, checks that the payment confirmation is genuine and only then sends the consultation links. A separate CRM process follows up on bookings and visits.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/medical-clinic/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/medical-clinic/process-map.webp" width="2075" height="2224" loading="lazy" decoding="async" alt="Process map: the patient chooses a doctor and enters details, the price is quoted, the patient pays on a secure test-mode page, and only a genuine payment confirmation marks the consultation paid and emails access links; a separate clinic CRM follow-up handles booking reminders, the medical-history form and visit follow-up."></a><figcaption class="visually-hidden">Medical Clinic Website &amp; Payment Integration · In development · Sandbox</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/medical-clinic/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-proposal" aria-labelledby="map-proposal-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Interior design firm · Anonymized</p>
+        <h3 class="case-title" id="map-proposal-title">AI Proposal Intake &amp; Pricing System</h3>
+        <ul class="chips" aria-label="Status"><li class="chip final">Core flow delivered &amp; verified</li></ul>
+        <p class="case-summary">Turn a sales intake into a priced, AI-reviewed, approved proposal that reaches the client once.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>The firm needed design-fee proposals from sales intake where the same inputs always give the same fee, Sales approves before anything is sent, and retries never duplicate a proposal or a client email.</p></div>
+            <div><p class="kicker">The approach</p><p>Rule-based pricing runs first, AI reviews proposal risk and recommends a complexity-based fee uplift, Sales reviews the fee and approves the PDF, and the client receives the proposal once.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/ai-proposal-intake/process-map.webp" width="1429" height="2504" loading="lazy" decoding="async" alt="Process map: a sales intake is validated, priced with fixed rules, reviewed by AI for risks, decided by Sales, turned into a PDF, approved by Sales and emailed once; unfinished steps such as manager review are shown as stopping points, and failures are recorded."></a><figcaption class="visually-hidden">AI Proposal Intake &amp; Pricing System · Core flow delivered &amp; verified</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/ai-proposal-intake/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-rag" aria-labelledby="map-rag-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · RAG</p>
+        <h3 class="case-title" id="map-rag-title">RAG Employee Handbook Assistant</h3>
+        <ul class="chips" aria-label="Status"><li class="chip final">Active</li></ul>
+        <p class="case-summary">Answer staff policy questions in the team chat, grounded in the company&#x27;s own handbook documents.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Staff have policy questions whose answers are in the company&#x27;s handbook documents.</p></div>
+            <div><p class="kicker">The approach</p><p>New handbook documents are indexed as they&#x27;re added; when someone asks in Slack, AI finds the relevant passages and answers from them.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/rag-employee-handbook/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/rag-employee-handbook/process-map.webp" width="1129" height="824" loading="lazy" decoding="async" alt="Process map: new handbook documents are indexed for search; when an employee asks a policy question in Slack, AI finds the relevant passages and the answer is posted back."></a><figcaption class="visually-hidden">RAG Employee Handbook Assistant · Active</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/rag-employee-handbook/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-messenger" aria-labelledby="map-messenger-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · AI agent</p>
+        <h3 class="case-title" id="map-messenger-title">Messenger Inquiry Assistant</h3>
+        <ul class="chips" aria-label="Status"><li class="chip final">Active</li></ul>
+        <p class="case-summary">Answer customer questions about services on the business&#x27;s Facebook page.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Customers send inquiries about the business&#x27;s services through Facebook Messenger.</p></div>
+            <div><p class="kicker">The approach</p><p>Text messages are answered by AI from a single services document, with short conversation memory; other message types are ignored.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/messenger-assistant/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/messenger-assistant/process-map.webp" width="829" height="964" loading="lazy" decoding="async" alt="Process map: a customer messages the business page, non-text messages are ignored, service information is looked up, AI writes a reply using the recent conversation and the reply is sent in Messenger."></a><figcaption class="visually-hidden">Messenger Inquiry Assistant · Active</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/messenger-assistant/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-invoice" aria-labelledby="map-invoice-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · Document AI</p>
+        <h3 class="case-title" id="map-invoice-title">Invoice Agent for Telegram</h3>
+        <ul class="chips" aria-label="Status"><li class="chip final">Active</li></ul>
+        <p class="case-summary">Photo of an invoice in, checked invoice record out.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Invoice photos need to become structured records, with missing details and duplicate invoices caught before anything is stored.</p></div>
+            <div><p class="kicker">The approach</p><p>The text is read from the photo, AI pulls out the invoice details, and missing details or duplicates are reported back before anything is stored.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/invoice-agent/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/invoice-agent/process-map.webp" width="1128" height="1244" loading="lazy" decoding="async" alt="Process map: an invoice photo is read, AI pulls out the details, missing details or duplicates are reported back to the user, otherwise the invoice is stored and confirmed; unexpected failures raise an error alert."></a><figcaption class="visually-hidden">Invoice Agent for Telegram · Active</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/invoice-agent/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-sql" aria-labelledby="map-sql-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · AI agent</p>
+        <h3 class="case-title" id="map-sql-title">SQL Sales Analytics Assistant</h3>
+        <ul class="chips" aria-label="Status"><li class="chip dev">Experimental</li></ul>
+        <p class="case-summary">Answer sales questions in the team chat from the company&#x27;s sales records.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Sales questions need answers drawn from the sales records, including calculated totals.</p></div>
+            <div><p class="kicker">The approach</p><p>Questions asked in Slack are answered by an AI agent that looks up the sales records and uses a calculator. Answer accuracy is still being evaluated.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/sql-sales-analytics/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/sql-sales-analytics/process-map.webp" width="587" height="684" loading="lazy" decoding="async" alt="Process map: a team member asks a sales question in Slack, AI looks up the sales records and works out the answer, and the answer is posted in the thread."></a><figcaption class="visually-hidden">SQL Sales Analytics Assistant · Experimental</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/sql-sales-analytics/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-dental" aria-labelledby="map-dental-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · Voice agent</p>
+        <h3 class="case-title" id="map-dental-title">Dental Voice Appointment Setter</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Built · inactive</li></ul>
+        <p class="case-summary">An AI voice assistant answers calls and books, moves or cancels appointments in the clinic calendar.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Callers need to check, book, move or cancel appointments over the phone.</p></div>
+            <div><p class="kicker">The approach</p><p>An AI voice assistant handles the call and uses calendar actions to find free times and book, move or cancel appointments, recording the outcome of every call.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/dental-appointment-setter/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/dental-appointment-setter/process-map.webp" width="1729" height="1524" loading="lazy" decoding="async" alt="Process map: an AI voice assistant talks with the caller and, depending on the request, finds free times, books, moves or cancels an appointment; invalid booking details are sent back for correction and every call outcome is recorded."></a><figcaption class="visually-hidden">Dental Voice Appointment Setter · Built · inactive</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/dental-appointment-setter/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-fc-prompt" aria-labelledby="map-fc-prompt-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · Experiment</p>
+        <h3 class="case-title" id="map-fc-prompt-title">Full-Context Assistant: document in the prompt</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Experiment</li></ul>
+        <p class="case-summary">Knowledge-grounding experiment 1 of 3: the reference material is written into the assistant&#x27;s instructions.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Comparing ways to give a chat assistant the reference material it answers from.</p></div>
+            <div><p class="kicker">The approach</p><p>The reference material is written directly into the assistant&#x27;s instructions, with no lookup step.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/knowledge-grounding-experiments/process-map-prompt.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/knowledge-grounding-experiments/process-map-prompt.webp" width="752" height="544" loading="lazy" decoding="async" alt="Process map: a user asks a question in the chat and AI answers from reference material written into its instructions."></a><figcaption class="visually-hidden">Full-Context Assistant: document in the prompt · Experiment</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/knowledge-grounding-experiments/process-map-prompt.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-fc-flexible" aria-labelledby="map-fc-flexible-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · Experiment</p>
+        <h3 class="case-title" id="map-fc-flexible-title">Full-Context Assistant: documents fetched per message</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Experiment</li></ul>
+        <p class="case-summary">Knowledge-grounding experiment 2 of 3: both reference documents are fetched in full for every message.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Comparing ways to give a chat assistant the reference material it answers from.</p></div>
+            <div><p class="kicker">The approach</p><p>Both reference documents are fetched in full on every message, trading cost per message for complete context.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/knowledge-grounding-experiments/process-map-flexible.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/knowledge-grounding-experiments/process-map-flexible.webp" width="834" height="684" loading="lazy" decoding="async" alt="Process map: a user asks a question, both reference documents are fetched on every message, and AI answers using their full text."></a><figcaption class="visually-hidden">Full-Context Assistant: documents fetched per message · Experiment</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/knowledge-grounding-experiments/process-map-flexible.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-fc-tool" aria-labelledby="map-fc-tool-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · Experiment</p>
+        <h3 class="case-title" id="map-fc-tool-title">Full-Context Assistant: documents as tools</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Experiment</li></ul>
+        <p class="case-summary">Knowledge-grounding experiment 3 of 3: the assistant decides for itself when to read the reference documents.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Comparing ways to give a chat assistant the reference material it answers from.</p></div>
+            <div><p class="kicker">The approach</p><p>The documents are available as tools, so the assistant decides for itself when to read them.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/knowledge-grounding-experiments/process-map-tool.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/knowledge-grounding-experiments/process-map-tool.webp" width="829" height="684" loading="lazy" decoding="async" alt="Process map: a user asks a question, AI decides whether to read the reference documents, then writes the answer."></a><figcaption class="visually-hidden">Full-Context Assistant: documents as tools · Experiment</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/knowledge-grounding-experiments/process-map-tool.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-sales-data" aria-labelledby="map-sales-data-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · n8n · AI agent</p>
+        <h3 class="case-title" id="map-sales-data-title">AI Sales Data Assistant</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Superseded by SQL version</li></ul>
+        <p class="case-summary">The first sales assistant, answering from a small sample sales table. Replaced by the SQL Sales Analytics Assistant.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>An early test of answering sales questions from a small sample dataset.</p></div>
+            <div><p class="kicker">The approach</p><p>A chat assistant looks up sales by product, date or transaction and calculates totals. It was later replaced by the SQL Sales Analytics Assistant.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/sql-sales-analytics/process-map-sales-data.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/sql-sales-analytics/process-map-sales-data.webp" width="575" height="544" loading="lazy" decoding="async" alt="Process map: a user asks a sales question in the chat and AI looks up sales by product, date or transaction and calculates the answer. Superseded experiment."></a><figcaption class="visually-hidden">AI Sales Data Assistant · Superseded by SQL version</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/sql-sales-analytics/process-map-sales-data.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-zap-asana" aria-labelledby="map-zap-asana-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Zapier · CRM</p>
+        <h3 class="case-title" id="map-zap-asana-title">Zapier–Asana CRM Automation</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
+        <p class="case-summary">When the team moves a lead to a new stage, the matching follow-up happens automatically.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>Each stage a lead reaches on the project board calls for a different follow-up.</p></div>
+            <div><p class="kicker">The approach</p><p>When the team updates a lead&#x27;s stage, the matching follow-up runs: a project folder and task, timed follow-up emails, quote follow-ups, or an AI-written welcome or recommendation email.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/zapier-asana-crm/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/zapier-asana-crm/process-map.webp" width="1729" height="964" loading="lazy" decoding="async" alt="Process map: the team updates a lead&#x27;s stage, and each stage triggers its own follow-up: a project folder and task, timed follow-up emails, quote follow-ups, or an AI-written welcome or recommendation email that is sent automatically."></a><figcaption class="visually-hidden">Zapier–Asana CRM Automation · Earlier build</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/zapier-asana-crm/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-zap-lead" aria-labelledby="map-zap-lead-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Zapier · Lead qualification</p>
+        <h3 class="case-title" id="map-zap-lead-title">Zapier Lead Qualification &amp; Outreach</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
+        <p class="case-summary">Enrich and score every new enquiry, then follow up according to how promising the lead is.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>New form enquiries need enriching with company data and prioritising, so each gets the right follow-up.</p></div>
+            <div><p class="kicker">The approach</p><p>Each enquiry is enriched with company details and scored by AI; high and medium leads are automatically sent an AI-written email with a sales alert, and low leads are summarised for sales.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/zapier-lead-qualification/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/zapier-lead-qualification/process-map.webp" width="1129" height="1244" loading="lazy" decoding="async" alt="Process map: an enquiry is enriched with company details, scored by AI and saved; high and medium leads are sent an AI-written outreach or nurturing email automatically with a sales alert, and low leads are summarised for sales."></a><figcaption class="visually-hidden">Zapier Lead Qualification &amp; Outreach · Earlier build</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/zapier-lead-qualification/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-zap-content" aria-labelledby="map-zap-content-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · Zapier · Content</p>
+        <h3 class="case-title" id="map-zap-content-title">Zapier Content Repurposing</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
+        <p class="case-summary">Turn one recorded audio file into blog and social posts, publishing or holding them for review.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>One audio recording needs to become blog posts and social posts.</p></div>
+            <div><p class="kicker">The approach</p><p>The audio is transcribed and drafted into blog and social posts by AI; an AI check then publishes them or saves them for a person to review.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/zapier-content-repurposing/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/zapier-content-repurposing/process-map.webp" width="1129" height="1251" loading="lazy" decoding="async" alt="Process map: an MP3 added to a shared folder is transcribed and drafted into blog and social posts by AI; an AI decision either publishes to Facebook and LinkedIn or saves the drafts for a person to review."></a><figcaption class="visually-hidden">Zapier Content Repurposing · Earlier build</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/zapier-content-repurposing/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-ghl-insurance" aria-labelledby="map-ghl-insurance-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · GoHighLevel · CRM</p>
+        <h3 class="case-title" id="map-ghl-insurance-title">Car Insurance Sales Workflows</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
+        <p class="case-summary">Move a car-insurance lead from first contact to an issued policy, with follow-up at each stage.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>A car-insurance lead passes through several stages, from first contact to an issued policy, each with its own follow-up.</p></div>
+            <div><p class="kicker">The approach</p><p>Each stage triggers its own emails, assignments and team alerts, from the intake form and package options to upsell offers and policy delivery.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ghl-car-insurance-sales/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/ghl-car-insurance-sales/process-map.webp" width="866" height="1944" loading="lazy" decoding="async" alt="Process map: a new lead gets the insurance form and an agent, submits the form, receives package options, replies with a choice, and once payment and the policy are marked, moves through paid-customer upsells to policy delivery."></a><figcaption class="visually-hidden">Car Insurance Sales Workflows · Earlier build</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/ghl-car-insurance-sales/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-ghl-salon" aria-labelledby="map-ghl-salon-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · GoHighLevel · CRM</p>
+        <h3 class="case-title" id="map-ghl-salon-title">Salon Client Retention Pipeline</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
+        <p class="case-summary">Take a salon client from first enquiry through their service to a rebooking follow-up.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>A salon client moves from first enquiry, through their service, to rebooking, and each stage has its own follow-up.</p></div>
+            <div><p class="kicker">The approach</p><p>The enquiry creates the client record and a welcome email; as staff move the client through each stage, the matching emails, notes and tasks follow, ending with a rebooking offer.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ghl-salon-client-retention/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/ghl-salon-client-retention/process-map.webp" width="595" height="1524" loading="lazy" decoding="async" alt="Process map: an enquiry creates the client record and a welcome email, then each stage staff move the client to — consultation booked, service in progress, follow-up — sends the matching emails and tasks, ending with a rebooking offer."></a><figcaption class="visually-hidden">Salon Client Retention Pipeline · Earlier build</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/ghl-salon-client-retention/process-map.webp">View full process map</a>
+          </div>
+        </div>
+      </article>
+      <article class="case-full map-detail" id="map-ghl-nurture" aria-labelledby="map-ghl-nurture-title" data-close-label="Close process map">
+        <p class="eyebrow">Process map · GoHighLevel · CRM</p>
+        <h3 class="case-title" id="map-ghl-nurture-title">Lead Nurturing Pipeline</h3>
+        <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
+        <p class="case-summary">Keep in touch with a new lead until they book an appointment, then welcome them as a client once paid.</p>
+        <div class="map-detail-grid">
+          <div class="map-points">
+            <div><p class="kicker">The challenge</p><p>New leads who don&#x27;t book straight away need following up until they do.</p></div>
+            <div><p class="kicker">The approach</p><p>Leads get a booking link, then a nurturing email each day until they book; the booking is confirmed, and paid clients are moved to the client stage and thanked.</p></div>
+          </div>
+          <div class="gallery-wrap map-figure">
+            <div class="gallery" data-count="1">
+              <figure class="shot graph"><a class="shot-link" href="assets/images/projects/ghl-lead-nurturing-pipeline/process-map.webp" data-hidpi><span class="visually-hidden">View full process map: </span><img src="assets/images/projects/ghl-lead-nurturing-pipeline/process-map.webp" width="1168" height="1524" loading="lazy" decoding="async" alt="Process map: a new lead is sent a booking link; if not booked, nurturing emails repeat daily until they book, when the booking is confirmed; once payment is marked the lead becomes a client and is thanked."></a><figcaption class="visually-hidden">Lead Nurturing Pipeline · Earlier build</figcaption></figure>
+            </div>
+            <a class="btn btn-ghost map-full" href="assets/images/projects/ghl-lead-nurturing-pipeline/process-map.webp">View full process map</a>
+          </div>
+        </div>
       </article>
     </div>
   </section>

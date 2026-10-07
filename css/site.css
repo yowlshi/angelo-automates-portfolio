@@ -523,19 +523,8 @@ figcaption strong { color: var(--text); font-weight: 600; }
 @media (max-width: 39.99rem) { .viewer-cap { font-size: var(--fs-caption); } }
 
 /* ---------- Process maps ---------- */
-/* Cards reuse the card anatomy; the whole card opens the image viewer through its one link. */
+/* Cards reuse the card anatomy; the whole card opens the map's detail in the case dialog. */
 .maps-section { border-bottom: 1px solid var(--line); }
-.maps-key { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin: calc(-1 * var(--s4)) 0 var(--s8); padding: 0; list-style: none; font-size: var(--fs-label); color: var(--muted); }
-.maps-key li { display: inline-flex; align-items: center; gap: var(--s2); }
-/* Marks repeat the maps' own shapes and fills, so the key never relies on colour alone */
-.key-mark { flex: none; width: 1.125rem; height: 0.75rem; border: 1px solid; border-radius: 3px; }
-.k-auto { background: #DAE8FC; border-color: #6C8EBF; }
-.k-ai { background: #E1D5E7; border-color: #9673A6; }
-.k-human { background: #FFF2CC; border-color: #D6B656; }
-.k-decision { width: 0.6875rem; height: 0.6875rem; margin-inline: 0.22rem; border-radius: 1px; transform: rotate(45deg); background: #F2F2F2; border-color: #9E9E9E; }
-.k-ok, .k-stop { border-radius: 50%; }
-.k-ok { background: #D5E8D4; border-color: #82B366; }
-.k-stop { background: #F8CECC; border-color: #B85450; }
 .map-card .card-media { background: #FFFFFF; }   /* the maps are white documents in both themes */
 .map-card .card-media img { object-fit: cover; object-position: top center; }
 .map-open { margin-top: auto; padding-top: var(--s2); font-size: var(--fs-body-sm); font-weight: 600; color: var(--accent-text); text-decoration: none; }
@@ -544,7 +533,18 @@ figcaption strong { color: var(--text); font-weight: 600; }
 .map-open:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -2px; }
 .map-open span[aria-hidden] { display: inline-block; transition: transform var(--t-hover) var(--ease); }
 .map-card:hover .map-open span[aria-hidden] { transform: translateX(3px); }
-.maps-note { margin-top: var(--s6); max-width: var(--measure); }
+/* Map detail (case-content markup, shown in the case dialog): context beside the map on wide screens */
+.map-detail-grid { display: grid; gap: var(--s8); margin-top: var(--s8); grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 52rem) { .map-detail-grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); } }
+.map-points { display: grid; gap: var(--s6); }
+.map-points p:not(.kicker) { font-size: 1rem; line-height: 1.6; }
+.map-figure { margin-top: 0; }
+.map-figure .gallery { margin-top: 0; }
+/* The preview opens on the start of the flow; the whole map is one tap away in the viewer */
+.map-detail .shot.graph .shot-link { aspect-ratio: 1 / 1; background: #FFFFFF; }
+.map-detail .gallery[data-count] .shot-link img { height: 100%; max-height: none; object-fit: cover; object-position: top left; padding: 0; }
+@media (max-width: 39.99rem) { .map-detail .shot.graph .shot-link { aspect-ratio: 4 / 3; } }
+.map-full { margin-top: var(--s4); }
 
 /* ---------- Stack ---------- */
 .stack-section { border-bottom: 1px solid var(--line); }

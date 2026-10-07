@@ -158,6 +158,8 @@
     body.append(node);
     const title = node.querySelector('.case-title');
     if (title) dialog.setAttribute('aria-labelledby', title.id);
+    // The same dialog shows case studies and process-map details; its close button names which
+    dialog.querySelector('.dialog-close').setAttribute('aria-label', node.dataset.closeLabel || 'Close case study');
     dialog.showModal();
     // Reset only once the dialog is rendered: while closed it is display:none, so an earlier
     // reset is ignored and the browser restores the previous case's scroll offset.
@@ -182,8 +184,8 @@
   });
 
   // Image viewer: its own modal layer over the case dialog. Without JS, gallery links open the image file.
-  // Also opens the process maps (a.map-open): their full-size dimensions, alt text and caption come
-  // from the link's data attributes, because the card thumbnail is a smaller crop.
+  // Process maps are 2x images (link has data-hidpi): "actual size" is their CSS width, and one that
+  // fits the screen's width opens at actual size.
   const viewer = document.getElementById('viewer');
   const vStage = viewer.querySelector('.viewer-stage');
   const vImg = viewer.querySelector('.viewer-img');
@@ -206,19 +208,18 @@
   const show = i => {
     index = (i + shots.length) % shots.length;
     const link = shots[index];
-    const isMap = link.classList.contains('map-open');
+    const isMap = 'hidpi' in link.dataset;
     const thumb = link.querySelector('img');
-    const cap = isMap ? null : link.closest('figure').querySelector('figcaption');
-    const w = isMap ? +link.dataset.w : +thumb.getAttribute('width');
-    const h = isMap ? +link.dataset.h : +thumb.getAttribute('height');
+    const cap = link.closest('figure').querySelector('figcaption');
+    const w = +thumb.getAttribute('width'), h = +thumb.getAttribute('height');
     mapW = 0;
     setZoom(false);
     mapW = isMap ? w : 0;
     vImg.width = w; vImg.height = h;
     vImg.src = link.href;
-    vImg.alt = isMap ? link.dataset.alt : thumb.alt;
+    vImg.alt = thumb.alt;
     vCount.textContent = `${index + 1} / ${shots.length}`;
-    vCap.textContent = isMap ? link.dataset.caption : (cap ? cap.textContent.trim() : '');
+    vCap.textContent = cap ? cap.textContent.trim() : '';
     // "Actual size" only helps when the image is larger than the space it is fitted into
     canZoom = w > vStage.clientWidth + 1 || h > vStage.clientHeight + 1;
     vZoom.hidden = !canZoom;
@@ -228,7 +229,7 @@
     if (isMap && canZoom && w <= vStage.clientWidth) setZoom(true);
   };
   const openViewer = link => {
-    shots = [...link.closest('.gallery-wrap, .maps-grid').querySelectorAll('.shot-link, .map-open')];
+    shots = [...link.closest('.gallery-wrap').querySelectorAll('.shot-link')];
     vPrev.hidden = vNext.hidden = shots.length < 2;
     viewer.showModal();
     syncScrollLock();
@@ -263,45 +264,62 @@
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
   }, { passive: true });
   document.addEventListener('click', e => {
-    const a = e.target.closest('a.shot-link, a.map-open');
+    const a = e.target.closest('a.shot-link, a.map-full');
     if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
     e.preventDefault();
-    openViewer(a);
+    // "View full process map" opens its map's image; focus returns to the button afterwards
+    openViewer(a.classList.contains('map-full') ? a.closest('.gallery-wrap').querySelector('.shot-link') : a);
+    origin = a;
   });
 
-  if (location.hash.startsWith('#case-')) openCase(location.hash.slice(1));
+  if (/^#(case|map)-/.test(location.hash)) openCase(location.hash.slice(1));
+
+  // "Show all": a card grid shows its first LIMIT matching cards, then toggles to all and back.
+  // Shared by All builds (with filters) and Process maps; focus moves to the first card revealed.
+  const LIMIT = 6;
+  const showAll = ({ grid, more, count, noun, match = () => true, focusSel }) => {
+    const cards = [...grid.querySelectorAll('.card')];
+    let expanded = false;
+    const render = () => {
+      const matches = cards.filter(match);
+      cards.forEach(c => { c.hidden = true; });
+      matches.forEach((c, i) => { c.hidden = !expanded && i >= LIMIT; });
+      const shown = matches.filter(c => !c.hidden).length;
+      count.textContent = `Showing ${shown} of ${matches.length} ${matches.length === 1 ? noun[0] : noun[1]}`;
+      more.hidden = matches.length <= LIMIT;
+      more.setAttribute('aria-expanded', String(expanded));
+      more.textContent = expanded ? 'Show fewer' : `Show all ${matches.length} ${noun[1]}`;
+    };
+    more.addEventListener('click', () => {
+      const firstHidden = cards.find(c => c.hidden && match(c));
+      expanded = !expanded;
+      render();
+      if (expanded && firstHidden) firstHidden.querySelector(focusSel).focus({ preventScroll: true });
+    });
+    render();
+    return render;
+  };
 
   // All builds: filters + "show all"
-  const grid = document.getElementById('builds-grid');
-  const cards = [...grid.querySelectorAll('.card')];
   const filters = document.querySelector('.filters');
-  const more = document.querySelector('.show-more');
-  const count = document.getElementById('builds-count');
-  const LIMIT = 6;
-  let filter = 'all', expanded = false;
-  const render = () => {
-    const matches = cards.filter(c => filter === 'all' || c.dataset.tags.split(' ').includes(filter));
-    cards.forEach(c => { c.hidden = true; });
-    matches.forEach((c, i) => { c.hidden = !expanded && i >= LIMIT; });
-    const shown = matches.filter(c => !c.hidden).length;
-    count.textContent = `Showing ${shown} of ${matches.length} ${matches.length === 1 ? 'build' : 'builds'}`;
-    more.hidden = matches.length <= LIMIT;
-    more.setAttribute('aria-expanded', String(expanded));
-    more.textContent = expanded ? 'Show fewer' : `Show all ${matches.length} builds`;
-  };
+  let filter = 'all';
+  const renderBuilds = showAll({
+    grid: document.getElementById('builds-grid'), more: document.querySelector('#builds .show-more'),
+    count: document.getElementById('builds-count'), noun: ['build', 'builds'], focusSel: 'h3 a',
+    match: c => filter === 'all' || c.dataset.tags.split(' ').includes(filter)
+  });
   filters.hidden = false;
   filters.addEventListener('click', e => {
     const b = e.target.closest('.filter');
     if (!b) return;
     filter = b.dataset.filter;
     filters.querySelectorAll('.filter').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    render();
+    renderBuilds();
   });
-  more.addEventListener('click', () => {
-    const firstHidden = cards.find(c => c.hidden && (filter === 'all' || c.dataset.tags.split(' ').includes(filter)));
-    expanded = !expanded;
-    render();
-    if (expanded && firstHidden) firstHidden.querySelector('h3 a').focus({ preventScroll: true });
+
+  // Process maps: "show all"
+  showAll({
+    grid: document.getElementById('maps-grid'), more: document.querySelector('#process-maps .show-more'),
+    count: document.getElementById('maps-count'), noun: ['process map', 'process maps'], focusSel: '.map-open'
   });
-  render();
 })();
