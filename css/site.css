@@ -194,6 +194,13 @@ p + p { margin-top: var(--s4); }
 .nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--s3); font-size: var(--fs-ui); color: var(--muted); text-decoration: none; border-radius: var(--r-sm); transition: color var(--t-hover) var(--ease); }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.nav-cta { margin-left: var(--s2); color: var(--btn-text); padding: 0 var(--s5); border-radius: var(--r-md); }
+/* Labels stay on one line; between the mobile menu and wide screens the links tighten to fit */
+.nav-links a { white-space: nowrap; }
+@media (min-width: 48rem) and (max-width: 59.99rem) {
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 0 var(--s2); }
+  .nav-links a.nav-cta { margin-left: var(--s1); padding: 0 var(--s4); }
+}
 .icon-btn {
   display: inline-flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border: 1px solid var(--line); border-radius: var(--r-md);
@@ -514,6 +521,30 @@ figcaption strong { color: var(--text); font-weight: 600; }
 .viewer.is-zoomed .viewer-img { max-width: none; max-height: none; margin-inline: auto; cursor: zoom-out; }
 @media (prefers-reduced-motion: no-preference) { .viewer[open] { animation: fade 180ms linear both; } }
 @media (max-width: 39.99rem) { .viewer-cap { font-size: var(--fs-caption); } }
+
+/* ---------- Process maps ---------- */
+/* Cards reuse the card anatomy; the whole card opens the image viewer through its one link. */
+.maps-section { border-bottom: 1px solid var(--line); }
+.maps-key { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin: calc(-1 * var(--s4)) 0 var(--s8); padding: 0; list-style: none; font-size: var(--fs-label); color: var(--muted); }
+.maps-key li { display: inline-flex; align-items: center; gap: var(--s2); }
+/* Marks repeat the maps' own shapes and fills, so the key never relies on colour alone */
+.key-mark { flex: none; width: 1.125rem; height: 0.75rem; border: 1px solid; border-radius: 3px; }
+.k-auto { background: #DAE8FC; border-color: #6C8EBF; }
+.k-ai { background: #E1D5E7; border-color: #9673A6; }
+.k-human { background: #FFF2CC; border-color: #D6B656; }
+.k-decision { width: 0.6875rem; height: 0.6875rem; margin-inline: 0.22rem; border-radius: 1px; transform: rotate(45deg); background: #F2F2F2; border-color: #9E9E9E; }
+.k-ok, .k-stop { border-radius: 50%; }
+.k-ok { background: #D5E8D4; border-color: #82B366; }
+.k-stop { background: #F8CECC; border-color: #B85450; }
+.map-card .card-media { background: #FFFFFF; }   /* the maps are white documents in both themes */
+.map-card .card-media img { object-fit: cover; object-position: top center; }
+.map-open { margin-top: auto; padding-top: var(--s2); font-size: var(--fs-body-sm); font-weight: 600; color: var(--accent-text); text-decoration: none; }
+.map-open::after { content: ""; position: absolute; inset: 0; border-radius: var(--r-lg); }
+.map-open:focus-visible { outline: none; }
+.map-open:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -2px; }
+.map-open span[aria-hidden] { display: inline-block; transition: transform var(--t-hover) var(--ease); }
+.map-card:hover .map-open span[aria-hidden] { transform: translateX(3px); }
+.maps-note { margin-top: var(--s6); max-width: var(--measure); }
 
 /* ---------- Stack ---------- */
 .stack-section { border-bottom: 1px solid var(--line); }

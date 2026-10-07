@@ -104,6 +104,7 @@
       <div class="nav-right">
         <div class="nav-links" id="nav-links">
           <a href="#work">Work</a>
+          <a href="#process-maps">Process maps</a>
           <a href="#approach">Approach</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -281,7 +282,7 @@
         <div class="card-body">
           <div class="card-meta"><span class="card-cat">Interior design firm · Anonymized</span><span class="chip final">Core flow delivered &amp; verified</span></div>
           <h3><a href="#case-proposal" data-case="case-proposal">AI Proposal Intake &amp; Pricing System</a></h3>
-          <p class="card-desc">Turns a sales intake into a priced, AI-reviewed, approved proposal PDF — and makes sure only an approved proposal reaches the client, once. Deterministic pricing runs first; the AI only advises.</p>
+          <p class="card-desc">Turns a sales intake into a priced, AI-reviewed, approved proposal PDF — and makes sure only an approved proposal reaches the client, once. Deterministic pricing runs first; AI reviews proposal risk and recommends a complexity-based fee uplift.</p>
           <ul class="pills" aria-label="Stack"><li>n8n Forms</li><li>OpenRouter (Llama 3.3 70B)</li><li>Google Docs &amp; Sheets</li><li>Gmail</li></ul>
           <p class="card-more" aria-hidden="true">Case study <span>→</span></p>
         </div>
@@ -463,6 +464,201 @@
         <p class="builds-count" id="builds-count" aria-live="polite">15 builds</p>
         <button class="btn btn-ghost show-more" type="button" aria-expanded="false" aria-controls="builds-grid" hidden>Show all builds</button>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS MAPS ===================== -->
+  <section id="process-maps" class="maps-section" aria-labelledby="maps-title">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">Process maps</p>
+        <h2 id="maps-title">From trigger to outcome.</h2>
+        <p class="lede">See how each automation moves from trigger to outcome — and where AI, automation and human decisions fit into the process.</p>
+      </header>
+
+      <ul class="maps-key" aria-label="How to read the process maps">
+        <li><span class="key-mark k-auto" aria-hidden="true"></span>Automated step</li>
+        <li><span class="key-mark k-ai" aria-hidden="true"></span>AI-assisted step</li>
+        <li><span class="key-mark k-human" aria-hidden="true"></span>Human action</li>
+        <li><span class="key-mark k-decision" aria-hidden="true"></span>Decision</li>
+        <li><span class="key-mark k-ok" aria-hidden="true"></span>Start or successful outcome</li>
+        <li><span class="key-mark k-stop" aria-hidden="true"></span>Stop or failure</li>
+      </ul>
+
+      <div class="grid maps-grid">
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/ar-payment-chasing/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the AR Payment Chasing process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Accounts receivable</span><span class="chip final">Concept Demo · FINAL</span></div>
+            <h3>AR Payment Chasing</h3>
+            <p class="card-desc">Chase overdue invoices by email: once per customer, at the right level of firmness, never after payment.</p>
+            <a class="map-open" href="assets/images/projects/ar-payment-chasing/process-map.webp" data-w="1175" data-h="2722" data-alt="Process map: overdue invoices are checked, one reminder per customer is planned, held for approval if it is a final notice, re-checked for payment, recipient and sending switch, then sent; customer replies are classified with AI and routed to a payment-promise pause, a dispute stop or a person." data-caption="AR Payment Chasing · Concept Demo · FINAL">View process map<span class="visually-hidden">: AR Payment Chasing</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/rfp-tender-response/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the RFP &amp; Tender Response process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Bids &amp; proposals</span><span class="chip final">FINAL · structural</span></div>
+            <h3>RFP &amp; Tender Response</h3>
+            <p class="card-desc">Turn tender documents into reviewed, approved answers, with a person signing off at every point that matters.</p>
+            <a class="map-open" href="assets/images/projects/rfp-tender-response/process-map.webp" data-w="1729" data-h="2441" data-alt="Process map: a tender is uploaded, the owner decides whether to bid, AI pulls out the requirements for a coordinator to confirm, answers are drafted from approved sources or handed to a person, reviewed, compiled, signed off by the owner and submitted by the team; buyer changes are summarised and confirmed separately." data-caption="RFP &amp; Tender Response · FINAL · structural">View process map<span class="visually-hidden">: RFP &amp; Tender Response</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/medical-clinic/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Medical Clinic Website &amp; Payment Integration process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Healthcare funnel &amp; payments</span><span class="chip dev">In development · Sandbox</span></div>
+            <h3>Medical Clinic Website &amp; Payment Integration</h3>
+            <p class="card-desc">A patient only receives consultation access after the payment has been genuinely confirmed.</p>
+            <a class="map-open" href="assets/images/projects/medical-clinic/process-map.webp" data-w="2075" data-h="2301" data-alt="Process map: the patient chooses a doctor and enters details, the price is quoted, the patient pays on a secure test-mode page, and only a genuine payment confirmation marks the consultation paid and emails access links; a separate clinic CRM follow-up handles booking reminders, the medical-history form and visit follow-up." data-caption="Medical Clinic Website &amp; Payment Integration · In development · Sandbox">View process map<span class="visually-hidden">: Medical Clinic Website &amp; Payment Integration</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/ai-proposal-intake/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the AI Proposal Intake &amp; Pricing System process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Interior design firm · Anonymized</span><span class="chip final">Core flow delivered &amp; verified</span></div>
+            <h3>AI Proposal Intake &amp; Pricing System</h3>
+            <p class="card-desc">Turn a sales intake into a priced, AI-reviewed, approved proposal that reaches the client once.</p>
+            <a class="map-open" href="assets/images/projects/ai-proposal-intake/process-map.webp" data-w="1429" data-h="2581" data-alt="Process map: a sales intake is validated, priced with fixed rules, reviewed by AI for risks, decided by Sales, turned into a PDF, approved by Sales and emailed once; unfinished steps such as manager review are shown as stopping points, and failures are recorded." data-caption="AI Proposal Intake &amp; Pricing System · Core flow delivered &amp; verified">View process map<span class="visually-hidden">: AI Proposal Intake &amp; Pricing System</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/rag-employee-handbook/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the RAG Employee Handbook Assistant process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · RAG</span><span class="chip final">Active</span></div>
+            <h3>RAG Employee Handbook Assistant</h3>
+            <p class="card-desc">Answer staff policy questions in the team chat, grounded in the company&#x27;s own handbook documents.</p>
+            <a class="map-open" href="assets/images/projects/rag-employee-handbook/process-map.webp" data-w="1129" data-h="901" data-alt="Process map: new handbook documents are indexed for search; when an employee asks a policy question in Slack, AI finds the relevant passages and the answer is posted back." data-caption="RAG Employee Handbook Assistant · Active">View process map<span class="visually-hidden">: RAG Employee Handbook Assistant</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/messenger-assistant/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Messenger Inquiry Assistant process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · AI agent</span><span class="chip final">Active</span></div>
+            <h3>Messenger Inquiry Assistant</h3>
+            <p class="card-desc">Answer customer questions about services on the business&#x27;s Facebook page, around the clock.</p>
+            <a class="map-open" href="assets/images/projects/messenger-assistant/process-map.webp" data-w="829" data-h="1041" data-alt="Process map: a customer messages the business page, non-text messages are ignored, service information is looked up, AI writes a reply using the recent conversation and the reply is sent in Messenger." data-caption="Messenger Inquiry Assistant · Active">View process map<span class="visually-hidden">: Messenger Inquiry Assistant</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/invoice-agent/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Invoice Agent for Telegram process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · Document AI</span><span class="chip final">Active</span></div>
+            <h3>Invoice Agent for Telegram</h3>
+            <p class="card-desc">Photo of an invoice in, checked invoice record out, without anyone retyping it.</p>
+            <a class="map-open" href="assets/images/projects/invoice-agent/process-map.webp" data-w="1129" data-h="1321" data-alt="Process map: an invoice photo is read, AI pulls out the details, missing details or duplicates are reported back to the user, otherwise the invoice is stored and confirmed; unexpected failures raise an error alert." data-caption="Invoice Agent for Telegram · Active">View process map<span class="visually-hidden">: Invoice Agent for Telegram</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/sql-sales-analytics/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the SQL Sales Analytics Assistant process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · AI agent</span><span class="chip dev">Experimental</span></div>
+            <h3>SQL Sales Analytics Assistant</h3>
+            <p class="card-desc">Answer sales questions in the team chat from the company&#x27;s sales records.</p>
+            <a class="map-open" href="assets/images/projects/sql-sales-analytics/process-map.webp" data-w="587" data-h="785" data-alt="Process map: a team member asks a sales question in Slack, AI looks up the sales records and works out the answer, and the answer is posted in the thread." data-caption="SQL Sales Analytics Assistant · Experimental">View process map<span class="visually-hidden">: SQL Sales Analytics Assistant</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/dental-appointment-setter/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Dental Voice Appointment Setter process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · Voice agent</span><span class="chip plain">Built · inactive</span></div>
+            <h3>Dental Voice Appointment Setter</h3>
+            <p class="card-desc">An AI voice assistant answers calls and books, moves or cancels appointments in the clinic calendar.</p>
+            <a class="map-open" href="assets/images/projects/dental-appointment-setter/process-map.webp" data-w="1729" data-h="1601" data-alt="Process map: an AI voice assistant talks with the caller and, depending on the request, finds free times, books, moves or cancels an appointment; invalid booking details are sent back for correction and every call outcome is recorded." data-caption="Dental Voice Appointment Setter · Built · inactive">View process map<span class="visually-hidden">: Dental Voice Appointment Setter</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/knowledge-grounding-experiments/process-map-prompt-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Full-Context Assistant: document in the prompt process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · Experiment</span><span class="chip plain">Experiment</span></div>
+            <h3>Full-Context Assistant: document in the prompt</h3>
+            <p class="card-desc">Knowledge-grounding experiment 1 of 3: the reference material is written into the assistant&#x27;s instructions.</p>
+            <a class="map-open" href="assets/images/projects/knowledge-grounding-experiments/process-map-prompt.webp" data-w="752" data-h="632" data-alt="Process map: a user asks a question in the chat and AI answers from reference material written into its instructions." data-caption="Full-Context Assistant: document in the prompt · Experiment">View process map<span class="visually-hidden">: Full-Context Assistant: document in the prompt</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/knowledge-grounding-experiments/process-map-flexible-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Full-Context Assistant: documents fetched per message process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · Experiment</span><span class="chip plain">Experiment</span></div>
+            <h3>Full-Context Assistant: documents fetched per message</h3>
+            <p class="card-desc">Knowledge-grounding experiment 2 of 3: both reference documents are fetched in full for every message.</p>
+            <a class="map-open" href="assets/images/projects/knowledge-grounding-experiments/process-map-flexible.webp" data-w="834" data-h="761" data-alt="Process map: a user asks a question, both reference documents are fetched on every message, and AI answers using their full text." data-caption="Full-Context Assistant: documents fetched per message · Experiment">View process map<span class="visually-hidden">: Full-Context Assistant: documents fetched per message</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/knowledge-grounding-experiments/process-map-tool-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Full-Context Assistant: documents as tools process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · Experiment</span><span class="chip plain">Experiment</span></div>
+            <h3>Full-Context Assistant: documents as tools</h3>
+            <p class="card-desc">Knowledge-grounding experiment 3 of 3: the assistant decides for itself when to read the reference documents.</p>
+            <a class="map-open" href="assets/images/projects/knowledge-grounding-experiments/process-map-tool.webp" data-w="829" data-h="761" data-alt="Process map: a user asks a question, AI decides whether to read the reference documents, then writes the answer." data-caption="Full-Context Assistant: documents as tools · Experiment">View process map<span class="visually-hidden">: Full-Context Assistant: documents as tools</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/sql-sales-analytics/process-map-sales-data-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the AI Sales Data Assistant process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">n8n · AI agent</span><span class="chip plain">Superseded by SQL version</span></div>
+            <h3>AI Sales Data Assistant</h3>
+            <p class="card-desc">The first sales assistant, answering from a small sample sales table. Replaced by the SQL Sales Analytics Assistant.</p>
+            <a class="map-open" href="assets/images/projects/sql-sales-analytics/process-map-sales-data.webp" data-w="575" data-h="632" data-alt="Process map: a user asks a sales question in the chat and AI looks up sales by product, date or transaction and calculates the answer. Superseded experiment." data-caption="AI Sales Data Assistant · Superseded by SQL version">View process map<span class="visually-hidden">: AI Sales Data Assistant</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/zapier-asana-crm/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Zapier–Asana CRM Automation process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Zapier · CRM</span><span class="chip plain">Earlier build</span></div>
+            <h3>Zapier–Asana CRM Automation</h3>
+            <p class="card-desc">When the team moves a lead to a new stage, the matching follow-up happens automatically.</p>
+            <a class="map-open" href="assets/images/projects/zapier-asana-crm/process-map.webp" data-w="1729" data-h="1041" data-alt="Process map: the team updates a lead&#x27;s stage, and each stage triggers its own follow-up: a project folder and task, timed follow-up emails, quote follow-ups, or an AI-written welcome or recommendation email that is sent automatically." data-caption="Zapier–Asana CRM Automation · Earlier build">View process map<span class="visually-hidden">: Zapier–Asana CRM Automation</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/zapier-lead-qualification/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Zapier Lead Qualification &amp; Outreach process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Zapier · Lead qualification</span><span class="chip plain">Earlier build</span></div>
+            <h3>Zapier Lead Qualification &amp; Outreach</h3>
+            <p class="card-desc">Enrich and score every new enquiry, then follow up according to how promising the lead is.</p>
+            <a class="map-open" href="assets/images/projects/zapier-lead-qualification/process-map.webp" data-w="1129" data-h="1321" data-alt="Process map: an enquiry is enriched with company details, scored by AI and saved; high and medium leads are sent an AI-written outreach or nurturing email automatically with a sales alert, and low leads are summarised for sales." data-caption="Zapier Lead Qualification &amp; Outreach · Earlier build">View process map<span class="visually-hidden">: Zapier Lead Qualification &amp; Outreach</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/zapier-content-repurposing/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Zapier Content Repurposing process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">Zapier · Content</span><span class="chip plain">Earlier build</span></div>
+            <h3>Zapier Content Repurposing</h3>
+            <p class="card-desc">Turn one recorded audio file into blog and social posts, publishing or holding them for review.</p>
+            <a class="map-open" href="assets/images/projects/zapier-content-repurposing/process-map.webp" data-w="1129" data-h="1321" data-alt="Process map: an MP3 added to a shared folder is transcribed and drafted into blog and social posts by AI; an AI decision either publishes to Facebook and LinkedIn or saves the drafts for a person to review." data-caption="Zapier Content Repurposing · Earlier build">View process map<span class="visually-hidden">: Zapier Content Repurposing</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/ghl-car-insurance-sales/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Car Insurance Sales Workflows process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">GoHighLevel · CRM</span><span class="chip plain">Earlier build</span></div>
+            <h3>Car Insurance Sales Workflows</h3>
+            <p class="card-desc">Move a car-insurance lead from first contact to an issued policy, with the team alerted at each step.</p>
+            <a class="map-open" href="assets/images/projects/ghl-car-insurance-sales/process-map.webp" data-w="866" data-h="2034" data-alt="Process map: a new lead gets the insurance form and an agent, submits the form, receives package options, replies with a choice, and once payment and the policy are marked, moves through paid-customer upsells to policy delivery." data-caption="Car Insurance Sales Workflows · Earlier build">View process map<span class="visually-hidden">: Car Insurance Sales Workflows</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/ghl-salon-client-retention/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Salon Client Retention Pipeline process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">GoHighLevel · CRM</span><span class="chip plain">Earlier build</span></div>
+            <h3>Salon Client Retention Pipeline</h3>
+            <p class="card-desc">Take a salon client from first enquiry through their service to a rebooking follow-up.</p>
+            <a class="map-open" href="assets/images/projects/ghl-salon-client-retention/process-map.webp" data-w="595" data-h="1614" data-alt="Process map: an enquiry creates the client record and a welcome email, then each stage staff move the client to — consultation booked, service in progress, follow-up — sends the matching emails and tasks, ending with a rebooking offer." data-caption="Salon Client Retention Pipeline · Earlier build">View process map<span class="visually-hidden">: Salon Client Retention Pipeline</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="card map-card">
+          <div class="card-media"><img src="assets/images/projects/ghl-lead-nurturing-pipeline/process-map-card.webp" width="800" height="500" loading="lazy" decoding="async" alt="Preview of the Lead Nurturing Pipeline process map."></div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-cat">GoHighLevel · CRM</span><span class="chip plain">Earlier build</span></div>
+            <h3>Lead Nurturing Pipeline</h3>
+            <p class="card-desc">Keep in touch with a new lead until they book an appointment, then welcome them as a client once paid.</p>
+            <a class="map-open" href="assets/images/projects/ghl-lead-nurturing-pipeline/process-map.webp" data-w="1168" data-h="1601" data-alt="Process map: a new lead is sent a booking link; if not booked, nurturing emails repeat daily until they book, when the booking is confirmed; once payment is marked the lead becomes a client and is thanked." data-caption="Lead Nurturing Pipeline · Earlier build">View process map<span class="visually-hidden">: Lead Nurturing Pipeline</span> <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="caption maps-note">Each map shows the business process as built, with its status and limitations noted in the footer. Planned steps that aren't built yet are drawn dashed or marked as stopping points.</p>
     </div>
   </section>
 
@@ -828,7 +1024,7 @@
             <li><div><strong>Version check</strong><span>New proposal, material revision, or delivery-only correction</span></div></li>
             <li><div><strong>Deterministic pricing</strong><span>Rules-based fee with a visible breakdown</span></div></li>
             <li><div><strong>AI risk review</strong><span>Structured JSON; flags items for manager review</span></div></li>
-            <li class="human"><div><strong>Sales decision <em>Human decision</em></strong><span>Continue, adjust pricing, or request changes</span></div></li>
+            <li class="human"><div><strong>Sales decision <em>Human decision</em></strong><span>Review the fee and AI findings, then continue; the adjust-pricing and request-changes options aren't connected yet</span></div></li>
             <li><div><strong>Proposal PDF</strong><span>Document built, exported and stored</span></div></li>
             <li class="human"><div><strong>Preview &amp; approve <em>Human decision</em></strong><span>Approve or send back for revision</span></div></li>
             <li><div><strong>Deliver once</strong><span>Duplicate-send check, then email client and CC Sales</span></div></li>
@@ -836,7 +1032,7 @@
         </div>
         <div class="case-body">
           <div><p class="kicker">Runs automatically</p><ul class="ticks"><li>Input validation and proposal numbering</li><li>Revision detection against existing proposals</li><li>Fee calculation and AI risk review</li><li>Document, PDF and record creation</li><li>Client delivery and status logging</li></ul></div>
-          <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Manager review when the AI flags it</li><li>Sales accepts, adjusts or rejects the recommendation</li><li>Sales previews and explicitly approves the PDF before sending</li></ul></div>
+          <div><p class="kicker">Where humans decide</p><ul class="ticks"><li>Higher-risk proposals are flagged for manager review; that review step isn't built yet</li><li>Sales reviews the fee and the AI findings before the proposal is built</li><li>Sales previews and explicitly approves the PDF before sending</li></ul></div>
           <div><p class="kicker">Guardrails</p><ul class="ticks"><li>The AI never calculates the base fee</li><li>Structured-output parsing on the AI review</li><li>Duplicate-send and duplicate-resend blocks</li><li>AI, PDF and email failures logged on their own paths</li><li>Separate error-alert workflow</li></ul></div>
         </div>
         <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 12 images</span></p>
@@ -845,8 +1041,8 @@
           <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-1-intake-validation.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-1-intake-validation.webp" width="1600" height="721" loading="lazy" decoding="async" alt="n8n canvas, Phase 1 Intake and Validation: capture sales intake, normalize submission data, validate submission, submission valid check, then a check for an existing proposal number."></a><figcaption><strong>Phase 1 · Intake &amp; validation.</strong> Form input is normalized and validated first.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-2-revision-detection.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-2-revision-detection.webp" width="1600" height="749" loading="lazy" decoding="async" alt="n8n canvas, Phase 2 Existing Proposal or Revision Detection: look up existing proposal in a sheet, determine revision state, existing proposal found check, not-found branch, and a delivery-only correction check."></a><figcaption><strong>Phase 2 · Revision detection.</strong> New proposal, material revision, or delivery-only correction.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-3a-base-pricing.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-3a-base-pricing.webp" width="1600" height="744" loading="lazy" decoding="async" alt="n8n canvas, Phase 3A: initialize new proposal version, calculate base pricing in code, then check whether pricing review is required."></a><figcaption><strong>Phase 3A · Deterministic pricing.</strong> The base fee is calculated in code, not by AI.</figcaption></figure>
-          <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-3b-ai-pricing-review.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-3b-ai-pricing-review.webp" width="1600" height="748" loading="lazy" decoding="async" alt="n8n canvas, Phase 3B: prepare final pricing, then a Review Project Pricing AI step using a Llama 3.3 model with a structured output parser, routing on to manager review."></a><figcaption><strong>Phase 3B · AI pricing review.</strong> Structured AI review that advises but never sets the fee.</figcaption></figure>
-          <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-3c-sales-decision.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-3c-sales-decision.webp" width="1600" height="747" loading="lazy" decoding="async" alt="n8n canvas, Phase 3C: route manager review, prepare proposal data, capture sales decision on a form page, process and route the sales decision, then build proposal content."></a><figcaption><strong>Phase 3C · Sales decision.</strong> Sales continues, adjusts pricing or requests changes.</figcaption></figure>
+          <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-3b-ai-pricing-review.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-3b-ai-pricing-review.webp" width="1600" height="748" loading="lazy" decoding="async" alt="n8n canvas, Phase 3B: prepare final pricing, then a Review Project Pricing AI step using a Llama 3.3 model with a structured output parser, routing on to manager review."></a><figcaption><strong>Phase 3B · AI pricing review.</strong> AI reviews proposal risk and recommends a complexity-based fee uplift; the base fee comes from fixed rules.</figcaption></figure>
+          <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-3c-sales-decision.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-3c-sales-decision.webp" width="1600" height="747" loading="lazy" decoding="async" alt="n8n canvas, Phase 3C: route manager review, prepare proposal data, capture sales decision on a form page, process and route the sales decision, then build proposal content."></a><figcaption><strong>Phase 3C · Sales decision.</strong> Sales continues to the proposal; the adjust-pricing and request-changes branches aren't connected yet.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-4-proposal-pdf.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-4-proposal-pdf.webp" width="1600" height="754" loading="lazy" decoding="async" alt="n8n canvas, Phase 4 Proposal and PDF Generation: create and update the proposal document, set page orientation, export and store the proposal PDF, create the proposal record, with error paths to PDF failure logging."></a><figcaption><strong>Phase 4 · Proposal PDF.</strong> Document built, exported and stored, with failures logged.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-5-approval-delivery.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-5-approval-delivery.webp" width="1600" height="747" loading="lazy" decoding="async" alt="n8n canvas, Phase 5 Approval and Delivery: create proposal record and AI review log, preview and approve proposal, approval gate, check prior send status, block duplicate send, attach PDF, send client email and record it, or log delivery failure."></a><figcaption><strong>Phase 5 · Approval &amp; delivery.</strong> Approval gate → prior-send check → duplicate block → client email.</figcaption></figure>
           <figure class="shot"><a class="shot-link" href="assets/images/projects/ai-proposal-intake/phase-6-delivery-correction.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/ai-proposal-intake/phase-6-delivery-correction.webp" width="1600" height="752" loading="lazy" decoding="async" alt="n8n canvas, Phase 6 Delivery Correction: delivery-only correction check, prepare delivery correction, check prior delivery status, block duplicate resend, download existing PDF, resend corrected email and record it."></a><figcaption><strong>Phase 6 · Delivery correction.</strong> Resends a corrected email without re-pricing, once.</figcaption></figure>
@@ -1004,7 +1200,7 @@
         <p class="eyebrow">Earlier build · Zapier</p>
         <h3 class="case-title" id="case-zap-lead-title">Zapier Lead Qualification &amp; Outreach</h3>
         <ul class="chips" aria-label="Status"><li class="chip plain">Earlier build</li></ul>
-        <p class="case-summary">A form submission is enriched with company data from Apollo, scored by AI and stored through Supabase's REST API, then routed by priority: high and medium leads get a drafted outreach or nurturing email and a Slack alert; low leads get a summary in Slack.</p>
+        <p class="case-summary">A form submission is enriched with company data from Apollo, scored by AI and stored through Supabase's REST API, then routed by priority: high and medium leads are automatically sent an AI-written outreach or nurturing email, with a Slack alert; low leads get a summary in Slack.</p>
         <div class="gallery-wrap"><p class="kicker">Evidence <span class="gallery-count">· 1 image</span></p>
         <div class="gallery" data-count="1">
           <figure class="shot top"><a class="shot-link" href="assets/images/projects/zapier-lead-qualification/evidence.webp"><span class="visually-hidden">Enlarge: </span><img src="assets/images/projects/zapier-lead-qualification/evidence.webp" width="1000" height="1556" loading="lazy" decoding="async" alt="Zapier editor: form trigger, Apollo lookup, AI lead score, Supabase webhook, then high, medium and low priority paths with AI emails, Gmail and Slack."></a><figcaption><strong>Zap structure.</strong> Enrichment and scoring, then three priority paths.</figcaption></figure>

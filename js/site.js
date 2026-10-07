@@ -182,6 +182,8 @@
   });
 
   // Image viewer: its own modal layer over the case dialog. Without JS, gallery links open the image file.
+  // Also opens the process maps (a.map-open): their full-size dimensions, alt text and caption come
+  // from the link's data attributes, because the card thumbnail is a smaller crop.
   const viewer = document.getElementById('viewer');
   const vStage = viewer.querySelector('.viewer-stage');
   const vImg = viewer.querySelector('.viewer-img');
@@ -190,10 +192,11 @@
   const vPrev = viewer.querySelector('.viewer-prev');
   const vNext = viewer.querySelector('.viewer-next');
   const vZoom = viewer.querySelector('.viewer-zoom');
-  let shots = [], index = 0, canZoom = false, origin = null;
+  let shots = [], index = 0, canZoom = false, origin = null, mapW = 0;
   function syncScrollLock() { root.classList.toggle('dialog-open', dialog.open || viewer.open); }
   const setZoom = on => {
     viewer.classList.toggle('is-zoomed', on);
+    vImg.style.width = on && mapW ? `${mapW}px` : '';   // maps are 2x images: actual size is their CSS width
     vZoom.setAttribute('aria-pressed', String(on));
     vZoom.setAttribute('aria-label', on ? 'Fit image to screen' : 'Show actual size');
     if (on) { vStage.tabIndex = 0; vStage.setAttribute('aria-label', 'Image at actual size, scrollable'); }
@@ -203,22 +206,29 @@
   const show = i => {
     index = (i + shots.length) % shots.length;
     const link = shots[index];
+    const isMap = link.classList.contains('map-open');
     const thumb = link.querySelector('img');
-    const cap = link.closest('figure').querySelector('figcaption');
-    const w = +thumb.getAttribute('width'), h = +thumb.getAttribute('height');
+    const cap = isMap ? null : link.closest('figure').querySelector('figcaption');
+    const w = isMap ? +link.dataset.w : +thumb.getAttribute('width');
+    const h = isMap ? +link.dataset.h : +thumb.getAttribute('height');
+    mapW = 0;
     setZoom(false);
+    mapW = isMap ? w : 0;
     vImg.width = w; vImg.height = h;
     vImg.src = link.href;
-    vImg.alt = thumb.alt;
+    vImg.alt = isMap ? link.dataset.alt : thumb.alt;
     vCount.textContent = `${index + 1} / ${shots.length}`;
-    vCap.textContent = cap ? cap.textContent.trim() : '';
+    vCap.textContent = isMap ? link.dataset.caption : (cap ? cap.textContent.trim() : '');
     // "Actual size" only helps when the image is larger than the space it is fitted into
     canZoom = w > vStage.clientWidth + 1 || h > vStage.clientHeight + 1;
     vZoom.hidden = !canZoom;
     viewer.classList.toggle('can-zoom', canZoom);
+    // A map that fits the screen's width opens at actual size (readable, scrolls down); a wider
+    // one opens fitted, with actual size one tap away.
+    if (isMap && canZoom && w <= vStage.clientWidth) setZoom(true);
   };
   const openViewer = link => {
-    shots = [...link.closest('.gallery-wrap').querySelectorAll('.shot-link')];
+    shots = [...link.closest('.gallery-wrap, .maps-grid').querySelectorAll('.shot-link, .map-open')];
     vPrev.hidden = vNext.hidden = shots.length < 2;
     viewer.showModal();
     syncScrollLock();
@@ -253,7 +263,7 @@
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
   }, { passive: true });
   document.addEventListener('click', e => {
-    const a = e.target.closest('a.shot-link');
+    const a = e.target.closest('a.shot-link, a.map-open');
     if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
     e.preventDefault();
     openViewer(a);
