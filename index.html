@@ -178,7 +178,7 @@
           "name": "Can I try any of them?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The medical clinic website has a public preview that uses test payments only."
+            "text": "Yes. The SQL Sales Analytics Assistant has a public demo on a sample sales dataset, and the medical clinic website has a public preview that uses test payments only."
           }
         },
         {
@@ -524,7 +524,7 @@
             <h3><a href="#case-sql" data-case="case-sql">SQL Sales Analytics Assistant</a></h3>
             <p class="card-desc">Ask questions about sales data in plain English and get answers with the figures. Tested on a sample dataset. AI answers can be wrong, so check important numbers.</p>
             <ul class="pills" aria-label="Stack"><li>Slack</li><li>PostgreSQL</li><li>OpenRouter</li></ul>
-            <p class="card-more" aria-hidden="true">Details <span>→</span></p>
+            <div class="card-foot"><p class="card-more" aria-hidden="true">Details <span>→</span></p><a class="card-visit" href="https://sql-sales-assistant-demo.vercel.app/" target="_blank" rel="noopener">Visit Live Demo <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (separate web demo on sample sales data, opens in a new tab)</span></a></div>
           </div>
         </article>
         <article class="card build" data-tags="n8n ai">
@@ -992,7 +992,7 @@
         </details>
         <details>
           <summary>Can I try any of them? <span class="sum-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></summary>
-          <div class="answer"><p>Yes. The medical clinic website has a public preview that uses test payments only.</p></div>
+          <div class="answer"><p>Yes. The SQL Sales Analytics Assistant has a public demo on a sample sales dataset, and the medical clinic website has a public preview that uses test payments only.</p></div>
         </details>
         <details>
           <summary>Which tools do you work with? <span class="sum-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></summary>
@@ -1264,6 +1264,7 @@
         <h3 class="case-title" id="case-sql-title">SQL Sales Analytics Assistant</h3>
         <ul class="chips" aria-label="Status"><li class="chip dev">Experiment</li><li class="chip plain">Sample data</li></ul>
         <p class="case-summary">Lets a team ask questions about their sales data in plain English, such as monthly revenue or the top region, and get an answer with the figures. The original version is an n8n workflow used from Slack. A separate public web demo lets anyone try the idea on a sample dataset.</p>
+        <p class="case-actions"><a class="btn btn-primary" href="https://sql-sales-assistant-demo.vercel.app/" target="_blank" rel="noopener">Visit Live Demo <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a><span>A separate web demo, not the n8n and Slack workflow. It uses a sample sales dataset, and AI answers can be wrong.</span></p>
         <div class="case-intro">
           <div><p class="kicker">The original workflow</p><p>Built in n8n and used from Slack. An AI agent looks up a sales table in PostgreSQL and uses a calculator before replying. It was tested on a sample dataset of 240 sales.</p></div>
           <div><p class="kicker">The public web demo</p><p>A separate small web app built for this portfolio, not the n8n workflow. AI writes one database query, a safety check allows only read-only queries on the sample table, and AI then summarises the result. It never touches a real database.</p></div>
