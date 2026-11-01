@@ -355,51 +355,208 @@
     </div>
   </div>
 
-  <!-- ===================== SERVICES ===================== -->
+  <!-- ===================== SERVICES =====================
+       Each card: an illustrative mini-flow (role="img", visuals aria-hidden), then problem →
+       what I build → related projects. js/site.js plays each flow once when it comes into view
+       and replays it on hover or keyboard focus. Without JS, or with reduced motion, every flow
+       shows its finished state, static. These are illustrations, not live integrations. -->
   <section id="services" aria-labelledby="services-title">
     <div class="wrap">
-      <header class="section-head" data-reveal>
-        <p class="eyebrow">Services</p>
-        <h2 id="services-title">What I can automate for your business</h2>
-        <p class="lede">Most of the work I automate falls into four areas. The examples below are labelled honestly. Most are portfolio demonstrations built with sample data or test payments, and one was delivered in a paid client trial. None is presented as a live client deployment.</p>
+      <header class="svc-head" data-reveal>
+        <div>
+          <p class="eyebrow">Services</p>
+          <h2 id="services-title">What I can automate for your business</h2>
+        </div>
+        <div>
+          <p class="lede">Most of the work I automate falls into four areas. Each one starts with a business problem and links to projects you can open.</p>
+          <p class="svc-note">The examples are labelled honestly. Most are portfolio demonstrations built with sample data or test payments, and one was delivered in a paid client trial. None is presented as a live client deployment, and the small animated flows are illustrations, not connected systems.</p>
+        </div>
       </header>
-      <div class="grid">
-        <article class="card" data-reveal>
-          <div class="card-body">
+
+      <div class="svc-grid">
+
+        <!-- 01 · Follow-ups: an invoice goes overdue → reminder → paid; the next reminder is cancelled -->
+        <article class="svc" data-reveal data-svc>
+          <div class="svc-viz" role="img" aria-label="Illustration: a sample overdue invoice gets a reminder, is marked paid, and the next reminder is cancelled.">
+            <div class="viz-meta" aria-hidden="true"><span class="viz-num">01</span><span>Illustration</span></div>
+            <div class="viz viz-invoice ui" aria-hidden="true">
+              <div class="inv-head">
+                <span class="inv-ico"><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3M6 8.25h4.5M6 10.75h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+                <span class="inv-id"><b>Invoice #1042</b><small>Sample customer</small></span>
+                <span class="swap">
+                  <span class="chip dev" data-a="flash" style="--at:0ms;--for:1150ms">Overdue</span>
+                  <span class="chip client" data-a="flash" style="--at:1100ms;--for:1150ms">Reminder sent</span>
+                  <span class="chip final" data-a="in" style="--at:2200ms">Paid</span>
+                </span>
+              </div>
+              <div class="track">
+                <span class="track-line" data-a="draw" style="--at:500ms"></span>
+                <span class="track-line two" data-a="draw" style="--at:1600ms"></span>
+                <span class="step" data-a="lit" style="--at:100ms"><i></i>Overdue</span>
+                <span class="step" data-a="lit" style="--at:1100ms"><i></i>Reminder sent</span>
+                <span class="step ok" data-a="lit" style="--at:2200ms"><i></i>Paid</span>
+              </div>
+              <div class="inv-note" data-a="in" style="--at:2700ms"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span><s>Second reminder</s> cancelled: invoice paid</span></div>
+            </div>
+          </div>
+          <div class="svc-body">
             <h3>Follow-ups and reminders</h3>
-            <p class="card-desc">Chasing unpaid invoices, following up leads and reminding people about bookings is repetitive and easy to get wrong.</p>
-            <p class="card-desc">I build automations that send the right message at the right time, stop once someone has paid, booked or replied, and set unusual replies aside for a person to review.</p>
-            <p class="kicker">Related projects</p>
-            <ul class="ticks"><li><a href="#case-ar" data-case="case-ar">Accounts Receivable Payment Chasing</a> (demo · sample invoices)</li><li><a href="#case-ghl-nurture" data-case="case-ghl-nurture">Lead Nurturing Pipeline</a> (earlier build)</li><li><a href="#case-ghl-insurance" data-case="case-ghl-insurance">Car Insurance Sales Workflows</a> (earlier build)</li></ul>
+            <div class="svc-point">
+              <p class="svc-label">The problem</p>
+              <p class="svc-problem">Chasing unpaid invoices, following up leads and reminding people about bookings is repetitive and easy to get wrong.</p>
+            </div>
+            <div class="svc-point">
+              <p class="svc-label is-muted">What I build</p>
+              <p class="svc-does">I build automations that send the right message at the right time, stop once someone has paid, booked or replied, and set unusual replies aside for a person to review.</p>
+            </div>
+            <div class="svc-proof">
+              <p class="kicker">Related projects</p>
+              <ul class="svc-projects">
+                <li><a href="#case-ar" data-case="case-ar">Accounts Receivable Payment Chasing</a><span class="chip final">Demo · sample invoices</span></li>
+                <li><a href="#case-ghl-nurture" data-case="case-ghl-nurture">Lead Nurturing Pipeline</a><span class="chip plain">Earlier build</span></li>
+                <li><a href="#case-ghl-insurance" data-case="case-ghl-insurance">Car Insurance Sales Workflows</a><span class="chip plain">Earlier build</span></li>
+              </ul>
+            </div>
           </div>
         </article>
-        <article class="card" data-reveal>
-          <div class="card-body">
+
+        <!-- 02 · Answers from documents: question → document found → grounded answer with its source -->
+        <article class="svc" data-reveal data-svc>
+          <div class="svc-viz" role="img" aria-label="Illustration: a staff question is answered from a sample employee handbook, and the answer names its source.">
+            <div class="viz-meta" aria-hidden="true"><span class="viz-num">02</span><span>Illustration</span></div>
+            <div class="viz viz-chat" aria-hidden="true">
+              <div class="lib">
+                <span class="hit" data-a="lit" style="--at:900ms"><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Handbook</span>
+                <span><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Policies</span>
+                <span><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>FAQ</span>
+              </div>
+              <div class="chat">
+                <span class="bub q" data-a="in" style="--at:100ms">How many leave days do new staff get?</span>
+                <span class="swap">
+                  <span class="typing" data-a="flash" style="--at:550ms;--for:1100ms"><i></i><i></i><i></i></span>
+                  <span class="bub a" data-a="in" style="--at:1600ms">New staff get 15 days of paid leave a year.</span>
+                </span>
+                <span class="src" data-a="in" style="--at:2200ms"><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Source: Employee handbook · Leave policy</span>
+              </div>
+            </div>
+          </div>
+          <div class="svc-body">
             <h3>Answers from your own documents</h3>
-            <p class="card-desc">Staff and customers ask the same questions again and again, and the answers already exist in your handbooks, service documents or records.</p>
-            <p class="card-desc">I build assistants for Slack, Facebook Messenger or the web that answer from the documents and data you provide.</p>
-            <p class="kicker">Related projects</p>
-            <ul class="ticks"><li><a href="#case-messenger" data-case="case-messenger">Messenger Inquiry Assistant</a> (test data)</li><li><a href="#case-rag" data-case="case-rag">RAG Employee Handbook Assistant</a> (test data)</li><li><a href="#case-sql" data-case="case-sql">SQL Sales Analytics Assistant</a> (experiment · sample data)</li></ul>
+            <div class="svc-point">
+              <p class="svc-label">The problem</p>
+              <p class="svc-problem">Staff and customers ask the same questions again and again, and the answers already exist in your handbooks, service documents or records.</p>
+            </div>
+            <div class="svc-point">
+              <p class="svc-label is-muted">What I build</p>
+              <p class="svc-does">I build assistants for Slack, Facebook Messenger or the web that answer from the documents and data you provide.</p>
+            </div>
+            <div class="svc-proof">
+              <p class="kicker">Related projects</p>
+              <ul class="svc-projects">
+                <li><a href="#case-messenger" data-case="case-messenger">Messenger Inquiry Assistant</a><span class="chip info">Test data</span></li>
+                <li><a href="#case-rag" data-case="case-rag">RAG Employee Handbook Assistant</a><span class="chip info">Test data</span></li>
+                <li><a href="#case-sql" data-case="case-sql">SQL Sales Analytics Assistant</a><span class="chip plain">Experiment · sample data</span></li>
+              </ul>
+            </div>
           </div>
         </article>
-        <article class="card" data-reveal>
-          <div class="card-body">
+
+        <!-- 03 · Documents & proposals: request → details extracted → your rules → draft awaiting approval -->
+        <article class="svc" data-reveal data-svc>
+          <div class="svc-viz" role="img" aria-label="Illustration: details are pulled out of an incoming request, pricing rules are applied, and a draft proposal waits for a person to approve it.">
+            <div class="viz-meta" aria-hidden="true"><span class="viz-num">03</span><span>Illustration</span></div>
+            <div class="viz viz-prop" aria-hidden="true">
+              <div class="prop-top">
+                <div class="req ui">
+                  <span class="req-name"><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Request</span>
+                  <span class="ln"><i data-a="draw" style="--at:300ms"></i></span>
+                  <span class="ln w2"></span>
+                  <span class="ln"><i data-a="draw" style="--at:600ms"></i></span>
+                  <span class="ln w3"></span>
+                  <span class="ln w2"><i data-a="draw" style="--at:900ms"></i></span>
+                </div>
+                <svg class="prop-arrow" viewBox="0 0 20 12" data-a="in" style="--at:1000ms"><path d="M1 6h16M12.5 1.5 17.5 6l-5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="fields">
+                  <span class="field" data-a="in" style="--at:1100ms"><svg viewBox="0 0 16 16"><path d="M3.5 8.5 6.5 11.5 12.5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Scope<span class="val"></span></span>
+                  <span class="field" data-a="in" style="--at:1300ms"><svg viewBox="0 0 16 16"><path d="M3.5 8.5 6.5 11.5 12.5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Quantities<span class="val short"></span></span>
+                  <span class="field" data-a="in" style="--at:1500ms"><svg viewBox="0 0 16 16"><path d="M3.5 8.5 6.5 11.5 12.5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Deadline<span class="val"></span></span>
+                  <span class="field rule" data-a="in" style="--at:1850ms"><svg viewBox="0 0 16 16"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Your pricing rules</span>
+                </span>
+              </div>
+              <div class="draft ui" data-a="in" style="--at:2250ms">
+                <span class="draft-name"><svg viewBox="0 0 16 16"><path d="M4 1.75h5.25l3 3v9.5H4z M9.25 1.75v3h3M6 8.25h4.5M6 10.75h3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg>Draft proposal</span>
+                <span class="chip dev" data-a="in" style="--at:2650ms">Awaiting your approval</span>
+              </div>
+            </div>
+          </div>
+          <div class="svc-body">
             <h3>Documents, forms and proposals</h3>
-            <p class="card-desc">Copying invoice details into a spreadsheet, pulling requirements out of tender documents or preparing proposals by hand is slow, and small mistakes are costly.</p>
-            <p class="card-desc">I build systems that read the document or form, pull out the details, apply your rules, and either save a checked record or prepare a draft for a person to review and approve.</p>
-            <p class="kicker">Related projects</p>
-            <ul class="ticks"><li><a href="#case-proposal" data-case="case-proposal">AI Proposal Intake &amp; Pricing System</a> (paid client trial)</li><li><a href="#case-invoice" data-case="case-invoice">Invoice Agent for Telegram</a> (test data)</li><li><a href="#case-rfp" data-case="case-rfp">Request for Proposal (RFP) &amp; Tender Response Preparation System</a> (portfolio system · not yet tested end to end)</li></ul>
+            <div class="svc-point">
+              <p class="svc-label">The problem</p>
+              <p class="svc-problem">Copying invoice details into a spreadsheet, pulling requirements out of tender documents or preparing proposals by hand is slow, and small mistakes are costly.</p>
+            </div>
+            <div class="svc-point">
+              <p class="svc-label is-muted">What I build</p>
+              <p class="svc-does">I build systems that read the document or form, pull out the details, apply your rules, and either save a checked record or prepare a draft for a person to review and approve.</p>
+            </div>
+            <div class="svc-proof">
+              <p class="kicker">Related projects</p>
+              <ul class="svc-projects">
+                <li><a href="#case-proposal" data-case="case-proposal">AI Proposal Intake &amp; Pricing System</a><span class="chip client">Paid client trial</span></li>
+                <li><a href="#case-invoice" data-case="case-invoice">Invoice Agent for Telegram</a><span class="chip info">Test data</span></li>
+                <li><a href="#case-rfp" data-case="case-rfp">Request for Proposal (RFP) &amp; Tender Response Preparation System</a><span class="chip dev">Portfolio system · not yet tested end to end</span></li>
+              </ul>
+            </div>
           </div>
         </article>
-        <article class="card" data-reveal>
-          <div class="card-body">
+
+        <!-- 04 · CRM, booking & payment: a contact moves enquiry → booked → payment verified → confirmed -->
+        <article class="svc" data-reveal data-svc>
+          <div class="svc-viz" role="img" aria-label="Illustration: a sample contact moves from enquiry to booked, the payment is verified, and only then is the confirmation sent.">
+            <div class="viz-meta" aria-hidden="true"><span class="viz-num">04</span><span>Illustration</span></div>
+            <div class="viz viz-crm ui" aria-hidden="true">
+              <div class="cols">
+                <span data-a="lit" style="--at:150ms">Enquiry</span>
+                <span data-a="lit" style="--at:950ms">Booked</span>
+                <span class="gate" data-a="lit" style="--at:1750ms"><svg viewBox="0 0 16 16"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2M3.5 7h9v6.5h-9z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Paid</span>
+                <span data-a="lit" style="--at:2550ms">Confirmed</span>
+              </div>
+              <div class="lane">
+                <span class="well"></span><span class="well"></span><span class="well"></span><span class="well"></span>
+                <span class="contact" data-a="move" style="--at:150ms">
+                  <span class="avatar">SC</span>
+                  <span class="swap">
+                    <span data-a="flash" style="--at:0ms;--for:950ms">New enquiry</span>
+                    <span data-a="flash" style="--at:900ms;--for:900ms">Slot booked</span>
+                    <span data-a="flash" style="--at:1750ms;--for:850ms">Checking payment</span>
+                    <span data-a="in" style="--at:2550ms">Link sent</span>
+                  </span>
+                </span>
+              </div>
+              <div class="gate-note" data-a="in" style="--at:2300ms"><svg viewBox="0 0 16 16"><path d="M8 1.75 13 3.5v4c0 3-2.1 5.4-5 6.75C5.1 12.9 3 10.5 3 7.5v-4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.75 8 7.4 9.6 10.4 6.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Payment verified before the link is released</div>
+            </div>
+          </div>
+          <div class="svc-body">
             <h3>CRM, booking and payment workflows</h3>
-            <p class="card-desc">When enquiries, bookings and payments live in separate tools, leads go cold and staff update records by hand.</p>
-            <p class="card-desc">I build workflows that move contacts through your sales pipeline, send booking reminders and confirmations, check online payments before access is released, and alert staff when something needs them. When a website or landing page is part of that journey, I build it as part of the workflow.</p>
-            <p class="kicker">Related projects</p>
-            <ul class="ticks"><li><a href="#case-clinic" data-case="case-clinic">Medical Clinic Website &amp; Payment Integration</a> (fictional clinic · test payments only)</li><li><a href="#case-ghl-salon" data-case="case-ghl-salon">Salon Client Retention Pipeline</a> (earlier build)</li><li><a href="#case-zap-asana" data-case="case-zap-asana">Zapier–Asana CRM Automation</a> (earlier build)</li></ul>
+            <div class="svc-point">
+              <p class="svc-label">The problem</p>
+              <p class="svc-problem">When enquiries, bookings and payments live in separate tools, leads go cold and staff update records by hand.</p>
+            </div>
+            <div class="svc-point">
+              <p class="svc-label is-muted">What I build</p>
+              <p class="svc-does">I build workflows that move contacts through your sales pipeline, send booking reminders and confirmations, check online payments before access is released, and alert staff when something needs them. When a website or landing page is part of that journey, I build it as part of the workflow.</p>
+            </div>
+            <div class="svc-proof">
+              <p class="kicker">Related projects</p>
+              <ul class="svc-projects">
+                <li><a href="#case-clinic" data-case="case-clinic">Medical Clinic Website &amp; Payment Integration</a><span class="chip dev">Fictional clinic · test payments only</span></li>
+                <li><a href="#case-ghl-salon" data-case="case-ghl-salon">Salon Client Retention Pipeline</a><span class="chip plain">Earlier build</span></li>
+                <li><a href="#case-zap-asana" data-case="case-zap-asana">Zapier–Asana CRM Automation</a><span class="chip plain">Earlier build</span></li>
+              </ul>
+            </div>
           </div>
         </article>
+
       </div>
       <p class="approach-note">Not sure which of these fits? <a href="#book">Book a call</a> and we'll look at your process together.</p>
     </div>
@@ -441,7 +598,7 @@
             <h3><a href="#case-clinic" data-case="case-clinic">Medical Clinic Website &amp; Payment Integration</a></h3>
             <p class="card-desc">A fictional clinic's website and patient journey, designed so patients choose a doctor, pay online and receive their consultation link only after the payment is confirmed.</p>
             <ul class="pills" aria-label="Stack"><li>GoHighLevel</li><li>n8n</li><li>PostgreSQL</li><li>PayMongo</li></ul>
-            <div class="card-foot"><p class="card-more" aria-hidden="true">Case study <span>→</span></p><a class="card-visit" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (fictional clinic, opens in a new tab)</span></a></div>
+            <div class="card-foot"><p class="card-more" aria-hidden="true">Case study <span>→</span></p><a class="card-visit" href="https://api.levelupacademy.ph/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (fictional clinic, opens in a new tab)</span></a></div>
           </div>
         </article>
       </div>
@@ -1152,7 +1309,7 @@
         <h3 class="case-title" id="case-clinic-title">Medical Clinic Website &amp; Payment Integration</h3>
         <ul class="chips" aria-label="Status"><li class="chip dev">In development · Sandbox</li><li class="chip plain">Portfolio system · fictional clinic</li></ul>
         <p class="case-summary">A website and booking journey for a fictional clinic, designed so patients receive their online consultation link only after the payment provider confirms the payment and the clinic's system checks that the confirmation is genuine. Payments run in test mode only.</p>
-        <p class="case-actions"><a class="btn btn-primary" href="https://links.levelupservices.cc/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a><span>Public GoHighLevel preview of the fictional clinic. Its checkout runs in PayMongo test mode only.</span></p>
+        <p class="case-actions"><a class="btn btn-primary" href="https://api.levelupacademy.ph/preview/jZfMP8kA15QSNXfX2ZdX?notrack=true" target="_blank" rel="noopener">Visit demo site <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5H3.5v9h9V10M9 3.5h3.5V7M12.5 3.5 7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a><span>Public GoHighLevel preview of the fictional clinic. Its checkout runs in PayMongo test mode only.</span></p>
         <div class="case-intro">
           <div><p class="kicker">Problem</p><p>For paid online consultations, the consultation link is the product. A clinic needs patients to move smoothly from interest to booking, but access should only be released once payment is genuinely confirmed — not because a redirect page said so.</p></div>
           <div><p class="kicker">Solution</p><p>Built in two stages. First, the clinic's website pages and CRM workflows in GoHighLevel, which move patients through booking, send reminders and alert staff. Then a payment system in n8n with a database, which sets the price on the server, sends the patient to PayMongo's secure checkout, checks each payment confirmation and only then sends the consultation links and updates the CRM.</p></div>

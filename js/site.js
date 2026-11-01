@@ -137,6 +137,48 @@
     motionOk.addEventListener('change', sync);
   }
 
+  // Services illustrations: each card's mini-flow plays once as it comes into view, and again
+  // on mouse hover or when keyboard focus enters the card. Playback is pure CSS (.is-armed holds
+  // the first frame, .is-playing runs the ~3s timeline); this only toggles the classes. Without
+  // JS or with reduced motion, the CSS shows every flow's finished state, static.
+  const svcCards = document.querySelectorAll('[data-svc]');
+  if (svcCards.length) {
+    const motionOk = window.matchMedia('(prefers-reduced-motion: no-preference)');
+    const PLAY_MS = 3300;   // longest --at + animation duration in the markup, plus a margin
+    const play = card => {
+      if (!motionOk.matches || card.dataset.busy) return;
+      card.dataset.busy = '1';
+      card.classList.remove('is-armed', 'is-playing');
+      void card.offsetWidth;   // restart the CSS animations from their first frame
+      card.classList.add('is-armed', 'is-playing');
+      // .is-playing stays on, so a throttled tab still finishes the flow when it next renders;
+      // the timer only blocks restarts mid-flow.
+      setTimeout(() => { delete card.dataset.busy; }, PLAY_MS);
+    };
+    // Unplayed cards wait on their first frame; reduced motion drops back to the static finish.
+    const arm = () => svcCards.forEach(card => {
+      if (!motionOk.matches) card.classList.remove('is-armed', 'is-playing');
+      else if (!card.dataset.played) card.classList.add('is-armed');
+    });
+    arm();
+    motionOk.addEventListener('change', arm);
+    const svcIo = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const card = entry.target.closest('[data-svc]');
+        svcIo.unobserve(entry.target);
+        card.dataset.played = '1';
+        play(card);
+      }
+    }, { threshold: 0.6 });
+    svcCards.forEach(card => {
+      const viz = card.querySelector('.svc-viz');
+      if (viz) svcIo.observe(viz);
+      card.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') play(card); });
+      card.addEventListener('focusin', e => { if (!card.contains(e.relatedTarget)) play(card); });
+    });
+  }
+
   // One-time reveals
   const reveals = document.querySelectorAll('[data-reveal]');
   const io = new IntersectionObserver(entries => {
