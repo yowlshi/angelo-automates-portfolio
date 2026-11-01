@@ -1,0 +1,274 @@
+/* =========================================================
+   GHL "Discovery Call with Angelo" widget — torrevillas.tech theme
+   Paste into: Calendars → Discovery Call with Angelo → Advanced
+   settings → Widget appearance → Insert custom code.
+   Tokens mirror Portfolio/css/site.css (dark theme).
+   ========================================================= */
+
+/* 1. Theme variables.
+   The widget draws almost everything (calendar, slots, time zone,
+   back button, "Book a Call" button) from these variables; per GHL's
+   stylesheet the confirmation screen uses them too (not viewed live).
+   GHL declares them as ":root { ... !important }"; ":root:root" has
+   higher specificity, so these win regardless of load order.
+   Text on the primary colour uses the background variable, which
+   gives the portfolio's dark-text-on-coral buttons. */
+:root:root {
+  --appointment_widgets-primary-color: #FF6240 !important;         /* coral */
+  --appointment_widgets-background-color: #1C1A18 !important;      /* surface */
+  --appointment_widgets-border-color: #34302C !important;          /* line */
+  --appointment_widgets-light-primary-color: #FF62401F !important; /* coral tint for available days / arrows */
+  --appointment_widgets-text-color: #F2EEE9 !important;
+  --appointment_widgets-light-text-color: #A9A199 !important;      /* muted */
+  --appointment_widgets-blur-color: #1C1A18B3 !important;
+  /* referenced by GHL but not defined by the theme settings */
+  --appointment_widgets-gray-text-color: #A9A199;
+  --appointment_widgets-light-background-color: #24211F;
+  --appointment_widgets-black-text-color: #F2EEE9;
+}
+
+/* 2. Page behind the card: transparent by default, which shows as
+   white inside the portfolio's iframe. Guarded by :has() so it only
+   applies to a document that contains this booking widget. */
+html:has(.hl-app .appointment_widgets--revamp--booking),
+html:has(.hl-app .appointment_widgets--revamp--booking) body {
+  background: #1C1A18;
+}
+
+/* 3. Typography: the widget already uses Inter (GHL loads 400–600),
+   so no font import is needed. Title weight/tracking as on the site. */
+.hl-app .appointment_widgets--revamp--info .widgets--service-name {
+  font-weight: 600 !important;
+  letter-spacing: -0.015em;
+}
+
+/* 4. Card: portfolio card radius (12px); drop GHL's light-theme shadow. */
+.hl-app .appointment_widgets--revamp--inner {
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+/* Rules 5–6 start with ".hl-app.hl-app .appointment_widgets--revamp--booking
+   .appointment_widgets--revamp--steps": one class more specific than GHL's
+   own "!important" rules for the same elements, so they win regardless
+   of stylesheet order. */
+
+/* 5. Calendar days.
+   Hover: GHL puts near-white text on the coral fill (about 2.9:1);
+   use the dark surface colour instead, matching the selected day. */
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-date-block .vdpCell.selectable .vdpCellContent {
+  border-color: transparent !important;
+}
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-date-block .vdpCell.selectable .vdpCellContent:hover {
+  background: #FF6240 !important;
+  color: #1C1A18 !important;
+}
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-date-block .vdpCell.selectable.selected .vdpCellContent {
+  font-weight: 600;
+}
+
+/* 6. Time slots: styled like the portfolio's secondary button
+   (neutral border, light text, 10px radius); coral on hover.
+   The selected slot keeps GHL's behaviour: the time turns muted and
+   a coral confirm button slides in beside it. */
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-slot-block .widgets-time-slots .widgets-time-slot > span {
+  border: 1px solid #4A4540 !important;
+  border-radius: 10px !important;
+  color: #F2EEE9;
+  font-weight: 600;
+}
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-slot-block .widgets-time-slots .widgets-time-slot > span:hover {
+  border-color: #FF6240 !important;
+  color: #FF8566;
+}
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-slot-block .widgets-time-slots .widgets-time-slot.actived > span {
+  border: 1px solid #A9A199 !important;
+  color: #1C1A18;
+}
+.hl-app.hl-app .appointment_widgets--revamp--booking .appointment_widgets--revamp--steps .widgets-slot-block .widgets-time-slots .widgets-time-slot.actived button {
+  border-radius: 10px !important;
+  font-weight: 600;
+}
+
+/* 6b. Time-zone list: keyboard/hover highlight was a leftover blue. */
+.hl-app .widgets-timezone-picker .multiselect__option--highlight:not(.multiselect__option--selected) {
+  background: rgb(255 98 64 / 0.16) !important;
+  color: #F2EEE9 !important;
+}
+
+/* 7. Details step: the "BOOK A CALL WITH ME" Form Builder form.
+   Its own styles are generated as "#_builder-form ... !important";
+   the ".hl-app #_builder-form" prefix is one class more specific.
+   Its title colours are inline rich-text styles, hence !important. */
+
+/* 7a. Form card: flat, warm, portfolio radius (was a white card).
+   GHL reserves 80px of bottom padding for the absolutely positioned
+   "Book a Call" bar, which then covers the card's bottom border. Keep
+   the same 80px total but move 60px of it outside the card. */
+.hl-app #_builder-form.form-builder--wrap {
+  background: transparent !important;
+  border: 1px solid #34302C !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 60px !important;
+}
+
+/* 7b. Form title: light text, no white highlight, calmer size. */
+.hl-app #_builder-form h1,
+.hl-app #_builder-form h1 span,
+.hl-app #_builder-form h1 mark {
+  color: #F2EEE9 !important;
+  background: transparent !important;
+}
+.hl-app #_builder-form h1 span {
+  font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2rem) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* 7c. Labels (the required "*" stays, inheriting the label colour). */
+.hl-app #_builder-form label,
+.hl-app #_builder-form label * {
+  color: #F2EEE9;
+}
+
+/* 7d. Inputs: inset dark field, neutral border, coral focus. */
+.hl-app #_builder-form .form-builder--item input[type=text][class=form-control],
+.hl-app #_builder-form .form-builder--item input[type=number],
+.hl-app #_builder-form input[type=tel],
+.hl-app #_builder-form input[type=email],
+.hl-app #_builder-form textarea {
+  background-color: #131211 !important;
+  color: #F2EEE9 !important;
+  border: 1px solid #4A4540 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+.hl-app #_builder-form .form-builder--item input[type=text][class=form-control]:hover,
+.hl-app #_builder-form .form-builder--item input[type=number]:hover,
+.hl-app #_builder-form input[type=tel]:hover,
+.hl-app #_builder-form input[type=email]:hover,
+.hl-app #_builder-form textarea:hover {
+  border: 1px solid #A9A199 !important;
+}
+.hl-app #_builder-form .form-builder--item input[type=text][class=form-control]:focus,
+.hl-app #_builder-form .form-builder--item input[type=number]:focus,
+.hl-app #_builder-form input[type=tel]:focus,
+.hl-app #_builder-form input[type=email]:focus,
+.hl-app #_builder-form textarea:focus {
+  border: 1px solid #FF6240 !important;
+  box-shadow: 0 0 0 3px rgb(255 98 64 / 0.28) !important;
+  outline: none;
+}
+.hl-app #_builder-form ::placeholder {
+  color: #A9A199 !important;
+  opacity: 1;
+}
+.hl-app #_builder-form .input-icon {
+  color: #A9A199 !important;
+}
+
+/* 7e. Validation message: GHL's #CB3837 is ~3:1 on the dark card. */
+.hl-app #_builder-form .error {
+  color: #FF8A80 !important;
+}
+
+/* 7f. "Book a Call" submit: portfolio primary button. */
+.hl-app.hl-app .btn-schedule {
+  min-height: 44px;
+  padding-inline: 1.25rem;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+  transition: background-color 150ms, transform 100ms;
+}
+.hl-app.hl-app .btn-schedule:hover {
+  background: #FD7354 !important;   /* site.css: coral mixed 12% toward text */
+}
+.hl-app.hl-app .btn-schedule:active {
+  transform: scale(0.97);
+}
+.hl-app.hl-app .btn-schedule:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 7g. Intro block pasted into the form's Custom HTML element
+   (docs/ghl-discovery-call-custom-html.html): heading + one muted line. */
+.hl-app #_builder-form .nc-form-intro {
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.hl-app #_builder-form .nc-form-intro__title {
+  margin: 0;
+  color: #F2EEE9;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+.hl-app #_builder-form .nc-form-intro__text {
+  margin: 0.25rem 0 0;
+  color: #A9A199;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* 8. Keyboard focus: GHL removes outlines on several controls. */
+.hl-app a:focus-visible,
+.hl-app button:focus-visible,
+.hl-app [tabindex]:focus-visible,
+.hl-app .multiselect:has(:focus-visible) {
+  outline: 2px solid #FF6240 !important;
+  outline-offset: 3px;
+}
+/* One ring on the time-zone control, not a second one on its search input. */
+.hl-app .multiselect .multiselect__input:focus-visible {
+  outline: none !important;
+}
+/* Month/year pickers are an invisible native <select> laid over the
+   visible button; ring the button while the select has keyboard focus. */
+.hl-app .vdpPeriodControl:has(select:focus-visible) > button {
+  outline: 2px solid #FF6240 !important;
+  outline-offset: 3px;
+}
+
+/* 9. Respect reduced-motion (GHL animates slot buttons). */
+@media (prefers-reduced-motion: reduce) {
+  .hl-app .widgets-time-slots .widgets-time-slot > span,
+  .hl-app .widgets-time-slots .widgets-time-slot button {
+    transition: none !important;
+  }
+}
+
+/* 10. Narrow widths (the portfolio embed is 286–353px wide on phones).
+   Confirmation screen: GHL fixes the booking-details box at 320px
+   (".show-all-details"). As the widest item in the confirmation's flex
+   wrapper (min-width: auto), it forced the wrapper and everything in it
+   to 320px inside a card that is only 90% of the widget, so it spilled
+   out at phone widths. Cap the box at 320px but let it follow the card,
+   and let the wrapper shrink.
+   Date grid: GHL gives it a 28em (280px) minimum; drop it. */
+.hl-app .appointment_widgets--revamp--confirmation .appointment_widgets--revamp--booking-info.show-all-details {
+  width: 100% !important;
+  max-width: 320px;
+}
+.hl-app .appointment_widgets--revamp--confirmation > div {
+  min-width: 0;
+}
+/* Details step: the form's flex row holds the fields column (inline
+   width: 100%, flex: 0 0 auto) plus an EMPTY second column whose inner
+   .fields-container still has 20px + 20px padding. That 40px is pushed
+   past the card and 9px past the step's scroll area at every width,
+   which showed as a horizontal scrollbar under the form. Drop the
+   padding only while that column is empty. */
+.hl-app #_builder-form .flex.items-center > div:not(.form-side) > .fields-container:empty {
+  padding: 0 !important;
+}
+.hl-app .calendarVdpComponent .vdpInnerWrap {
+  min-width: 0 !important;
+}
